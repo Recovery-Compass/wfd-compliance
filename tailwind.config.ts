@@ -76,18 +76,40 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// WFD Brand Colors
+				// WFD Brand Colors - Refined Professional Palette
 				wfd: {
+					'purple-dark': 'hsl(var(--wfd-purple-dark))',
 					purple: 'hsl(var(--wfd-purple))',
 					'purple-light': 'hsl(var(--wfd-purple-light))',
+					'blue-dark': 'hsl(var(--wfd-blue-dark))',
 					blue: 'hsl(var(--wfd-blue))',
 					'blue-light': 'hsl(var(--wfd-blue-light))',
+					'gold-dark': 'hsl(var(--wfd-gold-dark))',
 					gold: 'hsl(var(--wfd-gold))',
-					'gold-light': 'hsl(var(--wfd-gold-light))',
-					sunrise: 'hsl(var(--wfd-sunrise))'
+					'gold-light': 'hsl(var(--wfd-gold-light))'
 				},
-				success: 'hsl(var(--success))',
-				warning: 'hsl(var(--warning))',
+				// Semantic Enterprise Colors
+				danger: {
+					DEFAULT: 'hsl(var(--danger))',
+					light: 'hsl(var(--danger-light))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					light: 'hsl(var(--warning-light))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					light: 'hsl(var(--success-light))'
+				},
+				// Professional Neutrals
+				gray: {
+					900: 'hsl(var(--gray-900))',
+					700: 'hsl(var(--gray-700))',
+					500: 'hsl(var(--gray-500))',
+					300: 'hsl(var(--gray-300))',
+					100: 'hsl(var(--gray-100))'
+				},
+				white: 'hsl(var(--white))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -124,7 +146,23 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'hover-lift': 'hover-lift 200ms ease-in-out',
+				'skeleton': 'skeleton-pulse 1.5s ease-in-out infinite',
+				'fade-slide-in': 'fade-slide-in 300ms ease-out'
+			},
+			maxWidth: {
+				'dashboard': '1440px'
+			},
+			height: {
+				'header': '72px',
+				'gauge': '400px',
+				'card': '240px'
+			},
+			boxShadow: {
+				'enterprise': '0 2px 8px rgba(0,0,0,0.08)',
+				'enterprise-hover': '0 8px 24px -4px rgba(74, 20, 140, 0.15)',
+				'card-subtle': '0 1px 3px 0 rgba(74, 20, 140, 0.1), 0 1px 2px -1px rgba(74, 20, 140, 0.1)'
 			}
 		}
 	},

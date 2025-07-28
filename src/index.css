@@ -20,14 +20,32 @@
     --spacing-xl: 3rem;         /* 48px - page margins */
     --spacing-2xl: 4rem;        /* 64px - hero sections */
     
-    /* WFD BRAND COLORS - Enterprise Grade */
-    --wfd-purple: 276 100% 27%; /* Deep purple #4A148C */
-    --wfd-purple-light: 293 69% 49%; /* Light purple #7B1FA2 */
-    --wfd-blue: 207 90% 42%; /* Bright blue #1976D2 */
-    --wfd-blue-light: 207 73% 63%; /* Light blue #42A5F5 */
-    --wfd-gold: 45 100% 50%; /* Warm gold #FFB300 */
-    --wfd-gold-light: 45 100% 70%; /* Light gold #FFD54F */
-    --wfd-sunrise: 30 100% 60%; /* Orange sunrise */
+    /* WFD BRAND COLORS - Refined Professional Palette */
+    --wfd-purple-dark: 251 40% 35%; /* #311B92 */
+    --wfd-purple: 276 100% 27%; /* #4A148C */
+    --wfd-purple-light: 293 69% 49%; /* #7B1FA2 */
+    --wfd-blue-dark: 220 100% 34%; /* #0D47A1 */
+    --wfd-blue: 207 90% 42%; /* #1976D2 */
+    --wfd-blue-light: 207 73% 63%; /* #42A5F5 */
+    --wfd-gold-dark: 33 100% 48%; /* #F57C00 */
+    --wfd-gold: 45 100% 50%; /* #FFB300 */
+    --wfd-gold-light: 45 100% 70%; /* #FFD54F */
+
+    /* Semantic Enterprise Colors */
+    --danger: 4 90% 58%; /* #D32F2F */
+    --danger-light: 354 70% 87%; /* #FFCDD2 */
+    --warning: 33 100% 48%; /* #F57C00 */
+    --warning-light: 35 100% 85%; /* #FFE0B2 */
+    --success: 122 39% 49%; /* #388E3C */
+    --success-light: 122 33% 80%; /* #C8E6C9 */
+
+    /* Professional Neutrals */
+    --gray-900: 0 0% 13%; /* #212121 */
+    --gray-700: 0 0% 38%; /* #616161 */
+    --gray-500: 0 0% 62%; /* #9E9E9E */
+    --gray-300: 0 0% 88%; /* #E0E0E0 */
+    --gray-100: 0 0% 96%; /* #F5F5F5 */
+    --white: 0 0% 100%; /* #FFFFFF */
     
     /* System colors using WFD brand */
     --background: 0 0% 100%;
@@ -275,8 +293,112 @@
     50% { transform: translateY(-4px); }
   }
   
+  /* ENTERPRISE INTERACTION PATTERNS */
+  
+  /* Hover Effects */
+  .hover-lift {
+    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -4px hsl(var(--wfd-purple) / 0.15);
+  }
+  
+  /* Loading States */
+  .skeleton {
+    background: linear-gradient(90deg, 
+      hsl(var(--gray-300)) 25%, 
+      hsl(var(--gray-100)) 50%, 
+      hsl(var(--gray-300)) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes skeleton-pulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* Smooth Page Transitions */
+  .page-transition {
+    animation: fade-slide-in 300ms ease-out;
+  }
+  
+  @keyframes fade-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Professional Data Tables */
+  .data-table {
+    @apply border-separate;
+    border-spacing: 0;
+  }
+  
+  .data-table th {
+    @apply bg-gray-100 text-gray-700 font-medium text-label p-sm border-b border-gray-300;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .data-table td {
+    @apply p-sm border-b border-gray-300/50 text-body-base;
+    transition: background-color 150ms ease-in-out;
+  }
+  
+  .data-table tbody tr:nth-child(even) {
+    @apply bg-gray-100/30;
+  }
+  
+  .data-table tbody tr:hover {
+    @apply bg-gray-100;
+  }
+  
+  /* Alert Components */
+  .alert-critical {
+    @apply border-l-4 border-danger bg-danger-light/20 p-md rounded-r-lg;
+  }
+  
+  .alert-warning {
+    @apply border-l-4 border-warning bg-warning-light/20 p-md rounded-r-lg;
+  }
+  
+  .alert-success {
+    @apply border-l-4 border-success bg-success-light/20 p-md rounded-r-lg;
+  }
+  
   /* Compliance Progress Animation */
   .compliance-fill {
     transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Professional Progress Bars */
+  .progress-enterprise {
+    @apply w-full bg-gray-300 rounded-full overflow-hidden;
+    height: 8px;
+  }
+  
+  .progress-enterprise .progress-fill {
+    @apply h-full rounded-full transition-all duration-500 ease-out;
+  }
+  
+  .progress-enterprise .progress-critical {
+    @apply bg-gradient-to-r from-danger to-danger-light;
+  }
+  
+  .progress-enterprise .progress-warning {
+    @apply bg-gradient-to-r from-warning to-warning-light;
+  }
+  
+  .progress-enterprise .progress-success {
+    @apply bg-gradient-to-r from-success to-success-light;
   }
 }
