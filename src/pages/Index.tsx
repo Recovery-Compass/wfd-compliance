@@ -69,51 +69,16 @@ const Index = () => {
         </div>
       </div>
       
-      <main className="max-w-dashboard mx-auto px-xl py-xl page-transition">
-        {/* Hero Section - Compliance Gauge with Critical Alerts */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-lg mb-xl">
-          {/* Left Alert Card */}
-          <div className="lg:col-span-3">
-            <div className="card-enterprise hover-lift h-full">
-              <div className="alert-critical">
-                <div className="flex items-start space-x-sm">
-                  <div className="w-8 h-8 bg-danger rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-body-base font-bold">15</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-h3-card text-danger font-semibold mb-micro">Critical Timeline</h3>
-                    <p className="text-body-base text-gray-700">Clients at 90-day limit requiring immediate housing placement</p>
-                    <div className="mt-sm text-label text-gray-500">Last updated: 2 hours ago</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Center Compliance Gauge */}
-          <div className="lg:col-span-6">
-            <ComplianceGauge 
-              currentCompliance={65} 
-              targetCompliance={95}
-              className="h-gauge"
-            />
-          </div>
-
-          {/* Right Alert Card */}
-          <div className="lg:col-span-3">
-            <div className="card-enterprise hover-lift h-full">
-              <div className="alert-warning">
-                <div className="flex items-start space-x-sm">
-                  <div className="w-8 h-8 bg-warning rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-body-base font-bold">7</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-h3-card text-warning font-semibold mb-micro">5x5 Assessments</h3>
-                    <p className="text-body-base text-gray-700">Overdue assessments requiring completion this week</p>
-                    <div className="mt-sm text-label text-gray-500">Due: This Friday</div>
-                  </div>
-                </div>
-              </div>
+      {/* SECTION A: COMPLIANCE GAUGE - 12-Column Grid */}
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        <section className="grid grid-cols-12 gap-4 mb-8">
+          {/* Compliance Gauge - Spans 6 columns, max-width 400px, center aligned */}
+          <div className="col-span-12 lg:col-span-6 lg:col-start-4 flex justify-center">
+            <div className="w-full max-w-[400px]">
+              <ComplianceGauge 
+                currentCompliance={65} 
+                targetCompliance={95}
+              />
             </div>
           </div>
         </section>
