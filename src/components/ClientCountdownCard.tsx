@@ -38,42 +38,42 @@ export const ClientCountdownCard = ({ clients, className = "" }: ClientCountdown
   const warningClients = clients.filter(c => c.status === 'warning').length;
 
   return (
-    <Card className={`border-wfd-purple/20 ${className}`}>
-      <CardHeader className="bg-gradient-to-r from-wfd-purple to-wfd-purple-light text-white">
-        <CardTitle className="flex items-center space-x-2">
+    <Card className={`card-enterprise ${className}`}>
+      <CardHeader className="bg-gradient-to-r from-wfd-purple to-wfd-purple-light text-white p-xl">
+        <CardTitle className="text-h3-card flex items-center space-x-xs">
           <Home className="h-5 w-5" />
           <span>90-Day Housing Timeline</span>
         </CardTitle>
-        <div className="flex space-x-4 text-sm">
-          <div className="flex items-center space-x-1">
+        <div className="flex space-x-md text-body-base mt-xs">
+          <div className="flex items-center space-x-micro">
             <AlertTriangle className="h-4 w-4" />
             <span>{criticalClients} Critical</span>
           </div>
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-micro">
             <Clock className="h-4 w-4" />
             <span>{warningClients} Warning</span>
           </div>
         </div>
       </CardHeader>
       
-      <CardContent className="p-6">
-        <div className="space-y-4 max-h-64 overflow-y-auto">
+      <CardContent className="p-xl">
+        <div className="space-y-sm max-h-64 overflow-y-auto">
           {clients.map((client) => (
-            <div key={client.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <div className="flex items-center space-x-3">
+            <div key={client.id} className="flex items-center justify-between p-sm bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+              <div className="flex items-center space-x-sm">
                 <Home className={`h-4 w-4 house-bounce ${getStatusColor(client.status)}`} />
                 <div>
-                  <div className="font-medium text-sm">{client.name}</div>
-                  <div className="text-xs text-muted-foreground">Last update: {client.lastUpdate}</div>
+                  <div className="text-body-base font-medium">{client.name}</div>
+                  <div className="text-label text-muted-foreground">Last update: {client.lastUpdate}</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-xs">
                 <div className="text-right">
-                  <div className={`font-bold ${getStatusColor(client.status)}`}>
-                    {client.daysRemaining} days
+                  <div className={`text-data-large ${getStatusColor(client.status)}`}>
+                    {client.daysRemaining}
                   </div>
-                  <div className="text-xs text-muted-foreground">remaining</div>
+                  <div className="text-label text-muted-foreground">days remaining</div>
                 </div>
                 <Badge className={getStatusBadge(client.status)}>
                   {client.status}
@@ -84,9 +84,9 @@ export const ClientCountdownCard = ({ clients, className = "" }: ClientCountdown
         </div>
         
         {clients.length === 0 && (
-          <div className="text-center py-8 text-muted-foreground">
-            <Home className="h-12 w-12 mx-auto mb-2 opacity-50" />
-            <p>No clients in housing timeline</p>
+          <div className="text-center py-xl text-muted-foreground">
+            <Home className="h-12 w-12 mx-auto mb-xs opacity-50" />
+            <p className="text-body-base">No clients in housing timeline</p>
           </div>
         )}
       </CardContent>

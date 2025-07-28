@@ -18,6 +18,30 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
+			},
+			spacing: {
+				'micro': 'var(--spacing-micro)',
+				'xs': 'var(--spacing-xs)', 
+				'sm': 'var(--spacing-sm)',
+				'md': 'var(--spacing-md)',
+				'lg': 'var(--spacing-lg)',
+				'xl': 'var(--spacing-xl)',
+				'2xl': 'var(--spacing-2xl)',
+			},
+			fontSize: {
+				'h1-hero': ['3rem', { lineHeight: '1.2', fontWeight: '700' }],
+				'h1-page': ['2.5rem', { lineHeight: '1.3', fontWeight: '700' }],
+				'h2-section': ['1.75rem', { lineHeight: '1.4', fontWeight: '600' }],
+				'h3-card': ['1.25rem', { lineHeight: '1.5', fontWeight: '500' }],
+				'body-large': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],
+				'body-base': ['1rem', { lineHeight: '1.5', fontWeight: '400' }],
+				'label': ['0.75rem', { lineHeight: '1', fontWeight: '500', textTransform: 'uppercase' }],
+				'data-xl': ['4rem', { lineHeight: '1', fontWeight: '700' }],
+				'data-large': ['2.25rem', { lineHeight: '1.2', fontWeight: '600' }],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

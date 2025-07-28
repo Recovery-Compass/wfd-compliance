@@ -1,20 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* WFD ENTERPRISE DESIGN SYSTEM
+ * Professional compliance dashboard with strict design standards
+ * All colors MUST be HSL. All spacing follows 8px grid system.
+ */
 
 @layer base {
   :root {
-    /* WFD Brand Colors - Based on logo design */
-    --wfd-purple: 276 100% 27%; /* Deep purple from "First" */
-    --wfd-purple-light: 293 69% 49%; /* Lighter purple */
-    --wfd-blue: 207 90% 42%; /* Bright blue from "Day" */
-    --wfd-blue-light: 207 73% 63%; /* Lighter blue */
-    --wfd-gold: 45 100% 50%; /* Warm gold from sun */
-    --wfd-gold-light: 45 100% 70%; /* Lighter gold */
+    /* ENTERPRISE SPACING SYSTEM - 8px Grid */
+    --spacing-micro: 0.25rem;   /* 4px - tight elements */
+    --spacing-xs: 0.5rem;       /* 8px - within components */
+    --spacing-sm: 1rem;         /* 16px - between related elements */
+    --spacing-md: 1.5rem;       /* 24px - between sections */
+    --spacing-lg: 2rem;         /* 32px - major sections */
+    --spacing-xl: 3rem;         /* 48px - page margins */
+    --spacing-2xl: 4rem;        /* 64px - hero sections */
+    
+    /* WFD BRAND COLORS - Enterprise Grade */
+    --wfd-purple: 276 100% 27%; /* Deep purple #4A148C */
+    --wfd-purple-light: 293 69% 49%; /* Light purple #7B1FA2 */
+    --wfd-blue: 207 90% 42%; /* Bright blue #1976D2 */
+    --wfd-blue-light: 207 73% 63%; /* Light blue #42A5F5 */
+    --wfd-gold: 45 100% 50%; /* Warm gold #FFB300 */
+    --wfd-gold-light: 45 100% 70%; /* Light gold #FFD54F */
     --wfd-sunrise: 30 100% 60%; /* Orange sunrise */
     
     /* System colors using WFD brand */
@@ -133,19 +145,114 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer components {
-  /* WFD Progress Arc Component */
+  /* ENTERPRISE TYPOGRAPHY HIERARCHY */
+  .text-h1-hero {
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-h1-page {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    line-height: 1.3;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  
+  .text-h2-section {
+    font-size: 1.75rem; /* 28px */
+    font-weight: 600;
+    line-height: 1.4;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-h3-card {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-body-large {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 400;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-body-base {
+    font-size: 1rem; /* 16px */
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-label {
+    font-size: 0.75rem; /* 12px */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-data-xl {
+    font-size: 4rem; /* 64px */
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+  }
+  
+  .text-data-large {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+  }
+  
+  /* ENTERPRISE SPACING UTILITIES */
+  .spacing-micro { margin: var(--spacing-micro); }
+  .spacing-xs { margin: var(--spacing-xs); }
+  .spacing-sm { margin: var(--spacing-sm); }
+  .spacing-md { margin: var(--spacing-md); }
+  .spacing-lg { margin: var(--spacing-lg); }
+  .spacing-xl { margin: var(--spacing-xl); }
+  
+  /* PROFESSIONAL CARD STYLING */
+  .card-enterprise {
+    @apply bg-card border border-border/20 rounded-lg shadow-sm;
+    box-shadow: 0 1px 3px 0 hsl(var(--wfd-purple) / 0.1), 
+                0 1px 2px -1px hsl(var(--wfd-purple) / 0.1);
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-enterprise:hover {
+    box-shadow: 0 4px 6px -1px hsl(var(--wfd-purple) / 0.1), 
+                0 2px 4px -2px hsl(var(--wfd-purple) / 0.1);
+  }
+  
+  /* WFD SUNRISE ARC - REDESIGNED FOR ENTERPRISE */
   .sunrise-arc {
-    @apply relative w-48 h-24 mx-auto;
+    @apply relative mx-auto;
+    width: 16rem; /* 256px */
+    height: 8rem; /* 128px */
     background: conic-gradient(from 180deg at 50% 100%, 
       hsl(var(--wfd-purple)) 0deg, 
       hsl(var(--wfd-gold)) 90deg, 
       hsl(var(--wfd-blue)) 180deg);
-    border-radius: 100px 100px 0 0;
-    mask: radial-gradient(at 50% 100%, transparent 60px, black 62px);
+    border-radius: 8rem 8rem 0 0;
+    mask: radial-gradient(at 50% 100%, transparent 4.5rem, black 4.75rem);
+    filter: drop-shadow(0 4px 6px hsl(var(--wfd-purple) / 0.1));
   }
   
   /* Sun Ray Animation */

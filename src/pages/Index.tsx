@@ -60,12 +60,12 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-wfd-gold/5 via-background to-wfd-blue/5">
       <WFDHeader />
       
-      <main className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+      <main className="max-w-7xl mx-auto px-xl py-xl space-y-xl">
         {/* Hero Section with Compliance Gauge */}
-        <section className="text-center space-y-6">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold text-primary">From Sunset to Sunrise</h1>
-            <p className="text-lg text-muted-foreground">
+        <section className="text-center space-y-lg">
+          <div className="space-y-xs">
+            <h1 className="text-h1-hero text-primary">From Sunset to Sunrise</h1>
+            <p className="text-body-large text-muted-foreground max-w-3xl mx-auto">
               Journey from 65% to 95% compliance - saving county funding, changing lives
             </p>
           </div>
@@ -78,44 +78,44 @@ const Index = () => {
         </section>
 
         {/* Key Metrics Grid */}
-        <section>
-          <h2 className="text-2xl font-semibold text-primary mb-6">Key Performance Indicators</h2>
+        <section className="space-y-lg">
+          <h2 className="text-h2-section text-primary">Key Performance Indicators</h2>
           <KPIMetricsGrid metrics={sampleMetrics} />
         </section>
 
         {/* Client Timeline */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-xl">
           <ClientCountdownCard clients={sampleClients} />
           
           {/* Recovery Timeline */}
-          <div className="bg-card border border-wfd-purple/20 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center space-x-2">
+          <div className="card-enterprise p-xl">
+            <h3 className="text-h3-card text-primary mb-lg flex items-center space-x-xs">
               <Mountain className="h-5 w-5 text-wfd-blue" />
               <span>5x5 Audit Recovery Timeline</span>
             </h3>
             
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3 p-3 bg-wfd-blue/10 rounded">
+            <div className="space-y-sm">
+              <div className="flex items-center space-x-sm p-sm bg-wfd-blue/10 rounded-lg">
                 <div className="w-3 h-3 bg-wfd-blue rounded-full"></div>
-                <span className="font-medium">Phase 1: Crisis Assessment</span>
-                <span className="text-sm text-muted-foreground ml-auto">Complete</span>
+                <span className="text-body-base font-medium">Phase 1: Crisis Assessment</span>
+                <span className="text-label text-muted-foreground ml-auto">Complete</span>
               </div>
               
-              <div className="flex items-center space-x-3 p-3 bg-wfd-gold/10 rounded">
+              <div className="flex items-center space-x-sm p-sm bg-wfd-gold/10 rounded-lg">
                 <div className="w-3 h-3 bg-wfd-gold rounded-full animate-pulse"></div>
-                <span className="font-medium">Phase 2: Process Improvement</span>
-                <span className="text-sm text-muted-foreground ml-auto">In Progress</span>
+                <span className="text-body-base font-medium">Phase 2: Process Improvement</span>
+                <span className="text-label text-muted-foreground ml-auto">In Progress</span>
               </div>
               
-              <div className="flex items-center space-x-3 p-3 bg-gray-100 rounded">
-                <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-                <span className="font-medium text-muted-foreground">Phase 3: Full Compliance</span>
-                <span className="text-sm text-muted-foreground ml-auto">Planned</span>
+              <div className="flex items-center space-x-sm p-sm bg-muted rounded-lg">
+                <div className="w-3 h-3 bg-muted-foreground/50 rounded-full"></div>
+                <span className="text-body-base font-medium text-muted-foreground">Phase 3: Full Compliance</span>
+                <span className="text-label text-muted-foreground ml-auto">Planned</span>
               </div>
             </div>
             
-            <div className="mt-6 p-4 bg-gradient-to-r from-wfd-purple/10 to-wfd-blue/10 rounded-lg">
-              <p className="text-sm text-center text-muted-foreground">
+            <div className="mt-lg p-sm bg-gradient-to-r from-wfd-purple/10 to-wfd-blue/10 rounded-lg">
+              <p className="text-body-base text-center text-muted-foreground">
                 <strong>Goal:</strong> Achieve 95% compliance within 90 days to maintain county funding
               </p>
             </div>
@@ -123,25 +123,25 @@ const Index = () => {
         </section>
 
         {/* Success Story Preview */}
-        <section className="bg-gradient-to-r from-wfd-purple/5 via-wfd-gold/5 to-wfd-blue/5 rounded-lg p-8 text-center">
-          <h3 className="text-xl font-semibold text-primary mb-4">Success Story Mode for Funders</h3>
-          <p className="text-muted-foreground mb-6">
+        <section className="bg-gradient-to-r from-wfd-purple/5 via-wfd-gold/5 to-wfd-blue/5 rounded-lg p-xl text-center">
+          <h3 className="text-h3-card text-primary mb-sm">Success Story Mode for Funders</h3>
+          <p className="text-body-large text-muted-foreground mb-lg max-w-2xl mx-auto">
             Transform compliance data into compelling narratives that demonstrate impact and accountability
           </p>
-          <div className="flex items-center justify-center space-x-6">
+          <div className="flex items-center justify-center space-x-xl">
             <div className="text-center">
-              <div className="text-2xl font-bold text-wfd-purple">65%</div>
-              <div className="text-sm text-muted-foreground">Starting Point</div>
+              <div className="text-data-large text-wfd-purple">65%</div>
+              <div className="text-label text-muted-foreground">Starting Point</div>
             </div>
-            <div className="text-wfd-gold text-2xl">→</div>
+            <div className="text-wfd-gold text-h3-card">→</div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-wfd-gold">80%</div>
-              <div className="text-sm text-muted-foreground">Current Progress</div>
+              <div className="text-data-large text-wfd-gold">80%</div>
+              <div className="text-label text-muted-foreground">Current Progress</div>
             </div>
-            <div className="text-wfd-gold text-2xl">→</div>
+            <div className="text-wfd-gold text-h3-card">→</div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-wfd-blue">95%</div>
-              <div className="text-sm text-muted-foreground">Target Goal</div>
+              <div className="text-data-large text-wfd-blue">95%</div>
+              <div className="text-label text-muted-foreground">Target Goal</div>
             </div>
           </div>
         </section>

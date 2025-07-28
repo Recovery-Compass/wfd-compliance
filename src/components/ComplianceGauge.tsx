@@ -23,10 +23,10 @@ export const ComplianceGauge = ({ currentCompliance, targetCompliance, className
   const progressPercentage = (currentCompliance / 100) * 180; // 180 degrees for semicircle
 
   return (
-    <Card className={`p-8 bg-gradient-to-br from-wfd-gold/5 to-wfd-blue/5 border-wfd-purple/20 ${className}`}>
-      <div className="text-center space-y-6">
+    <Card className={`card-enterprise p-xl bg-gradient-to-br from-wfd-gold/5 to-wfd-blue/5 ${className}`}>
+      <div className="text-center space-y-lg">
         {/* Logo Area */}
-        <div className="flex items-center justify-center space-x-2 mb-4">
+        <div className="flex items-center justify-center space-x-sm mb-sm">
           <Sun className="h-8 w-8 text-wfd-gold sun-rays" />
           <Home className="h-6 w-6 text-wfd-purple" />
           <Mountain className="h-6 w-6 text-wfd-blue" />
@@ -49,47 +49,47 @@ export const ComplianceGauge = ({ currentCompliance, targetCompliance, className
           </div>
           
           {/* Current compliance percentage */}
-          <div className="absolute inset-0 flex items-end justify-center pb-4">
+          <div className="absolute inset-0 flex items-end justify-center pb-sm">
             <div className="text-center">
-              <div className={`text-4xl font-bold ${getComplianceColor(currentCompliance)}`}>
+              <div className={`text-data-xl ${getComplianceColor(currentCompliance)}`}>
                 {currentCompliance}%
               </div>
-              <div className="text-sm text-muted-foreground">Current Compliance</div>
+              <div className="text-label text-muted-foreground">Current Compliance</div>
             </div>
           </div>
         </div>
 
         {/* Progress Indicators */}
-        <div className="grid grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-3 gap-sm mt-lg">
           <div className="text-center">
-            <div className="h-3 w-full bg-gray-200 rounded-full mb-2">
+            <div className="h-3 w-full bg-muted rounded-full mb-xs">
               <div className="h-3 bg-wfd-purple rounded-full" style={{ width: '65%' }}></div>
             </div>
-            <div className="text-sm text-wfd-purple font-semibold">Crisis Zone</div>
-            <div className="text-xs text-muted-foreground">&lt; 70%</div>
+            <div className="text-body-base text-wfd-purple font-semibold">Crisis Zone</div>
+            <div className="text-label text-muted-foreground">&lt; 70%</div>
           </div>
           
           <div className="text-center">
-            <div className="h-3 w-full bg-gray-200 rounded-full mb-2">
+            <div className="h-3 w-full bg-muted rounded-full mb-xs">
               <div className="h-3 bg-wfd-gold rounded-full" style={{ width: '80%' }}></div>
             </div>
-            <div className="text-sm text-wfd-gold font-semibold">Dawn Zone</div>
-            <div className="text-xs text-muted-foreground">70-90%</div>
+            <div className="text-body-base text-wfd-gold font-semibold">Dawn Zone</div>
+            <div className="text-label text-muted-foreground">70-90%</div>
           </div>
           
           <div className="text-center">
-            <div className="h-3 w-full bg-gray-200 rounded-full mb-2">
+            <div className="h-3 w-full bg-muted rounded-full mb-xs">
               <div className="h-3 bg-wfd-blue rounded-full" style={{ width: '95%' }}></div>
             </div>
-            <div className="text-sm text-wfd-blue font-semibold">Sunrise Zone</div>
-            <div className="text-xs text-muted-foreground">&gt; 90%</div>
+            <div className="text-body-base text-wfd-blue font-semibold">Sunrise Zone</div>
+            <div className="text-label text-muted-foreground">&gt; 90%</div>
           </div>
         </div>
 
         {/* Target Message */}
-        <div className="bg-gradient-to-r from-wfd-purple/10 via-wfd-gold/10 to-wfd-blue/10 p-4 rounded-lg">
-          <h3 className="font-semibold text-primary">Journey to {targetCompliance}%</h3>
-          <p className="text-sm text-muted-foreground">
+        <div className="bg-gradient-to-r from-wfd-purple/10 via-wfd-gold/10 to-wfd-blue/10 p-sm rounded-lg">
+          <h3 className="text-h3-card font-semibold text-primary">Journey to {targetCompliance}%</h3>
+          <p className="text-body-base text-muted-foreground">
             Every day is a first day - from sunset to sunrise
           </p>
         </div>

@@ -6,19 +6,19 @@ interface WFDHeaderProps {
 
 export const WFDHeader = ({ className = "" }: WFDHeaderProps) => {
   return (
-    <header className={`bg-gradient-to-r from-wfd-purple to-wfd-purple-light text-white py-6 px-8 ${className}`}>
+    <header className={`bg-gradient-to-r from-wfd-purple to-wfd-purple-light text-white py-lg px-xl ${className}`}>
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo Section */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-md">
+            <div className="flex items-center space-x-xs">
               <Sun className="h-8 w-8 text-wfd-gold sun-rays" />
-              <div className="text-2xl font-bold">
+              <div className="text-h2-section font-poppins">
                 <span className="text-white">First</span>{" "}
                 <span className="text-wfd-blue">Day</span>
               </div>
             </div>
-            <div className="hidden md:flex items-center space-x-2 ml-4">
+            <div className="hidden md:flex items-center space-x-xs ml-sm">
               <Home className="h-5 w-5 text-wfd-gold" />
               <Mountain className="h-5 w-5 text-white" />
               <Palmtree className="h-5 w-5 text-wfd-blue" />
@@ -27,17 +27,17 @@ export const WFDHeader = ({ className = "" }: WFDHeaderProps) => {
 
           {/* Tagline */}
           <div className="hidden lg:block text-right">
-            <h1 className="text-xl font-semibold">Compliance Dashboard</h1>
-            <p className="text-wfd-gold text-sm italic">Every day is a first day</p>
+            <h1 className="text-h3-card font-semibold">Compliance Dashboard</h1>
+            <p className="text-wfd-gold text-body-base italic">Every day is a first day</p>
           </div>
         </div>
 
         {/* Subtitle */}
-        <div className="mt-4 text-center">
-          <h2 className="text-lg font-medium text-wfd-gold">
+        <div className="mt-sm text-center">
+          <h2 className="text-body-large font-medium text-wfd-gold">
             Whittier First Day - Building Homes, Building Hope
           </h2>
-          <p className="text-wfd-blue-light text-sm">
+          <p className="text-wfd-blue-light text-body-base">
             California's pathway to compliance excellence
           </p>
         </div>

@@ -58,7 +58,7 @@ export const KPIMetricsGrid = ({ metrics, className = "" }: KPIMetricsGridProps)
   };
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ${className}`}>
+    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg ${className}`}>
       {metrics.map((metric) => {
         const IconComponent = getIcon(metric.icon);
         const TrendComponent = getTrendIcon(metric.trend);
@@ -66,53 +66,51 @@ export const KPIMetricsGrid = ({ metrics, className = "" }: KPIMetricsGridProps)
         const progressColorClass = getProgressColor(metric.current, metric.target);
 
         return (
-          <Card key={metric.id} className="border-wfd-purple/20 hover:shadow-lg transition-shadow">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">
+          <Card key={metric.id} className="card-enterprise">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-xs">
+              <CardTitle className="text-label text-muted-foreground">
                 {metric.title}
               </CardTitle>
               <IconComponent className="h-4 w-4 text-wfd-purple" />
             </CardHeader>
             
-            <CardContent>
-              <div className="space-y-3">
-                {/* Current Value */}
-                <div className="flex items-baseline space-x-1">
-                  <div className="text-2xl font-bold text-primary">
-                    {metric.current}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {metric.unit}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    / {metric.target}{metric.unit}
-                  </div>
+            <CardContent className="space-y-sm">
+              {/* Current Value */}
+              <div className="flex items-baseline space-x-micro">
+                <div className="text-data-large text-primary">
+                  {metric.current}
                 </div>
-
-                {/* Progress Bar */}
-                <div className="space-y-1">
-                  <Progress 
-                    value={progressValue} 
-                    className="h-2"
-                  />
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>Current</span>
-                    <span>Target: {metric.target}{metric.unit}</span>
-                  </div>
+                <div className="text-body-base text-muted-foreground">
+                  {metric.unit}
                 </div>
+                <div className="text-body-base text-muted-foreground">
+                  / {metric.target}{metric.unit}
+                </div>
+              </div>
 
-                {/* Trend and Description */}
-                <div className="flex items-center justify-between">
-                  <p className="text-xs text-muted-foreground">
-                    {metric.description}
-                  </p>
-                  <div className={`flex items-center space-x-1 ${getTrendColor(metric.trend)}`}>
-                    <TrendComponent className="h-3 w-3" />
-                    <span className="text-xs font-medium">
-                      {metric.trend === 'up' ? 'Improving' : 
-                       metric.trend === 'down' ? 'Declining' : 'Stable'}
-                    </span>
-                  </div>
+              {/* Progress Bar */}
+              <div className="space-y-micro">
+                <Progress 
+                  value={progressValue} 
+                  className="h-2"
+                />
+                <div className="flex justify-between text-label text-muted-foreground">
+                  <span>Current</span>
+                  <span>Target: {metric.target}{metric.unit}</span>
+                </div>
+              </div>
+
+              {/* Trend and Description */}
+              <div className="flex items-center justify-between">
+                <p className="text-body-base text-muted-foreground">
+                  {metric.description}
+                </p>
+                <div className={`flex items-center space-x-micro ${getTrendColor(metric.trend)}`}>
+                  <TrendComponent className="h-3 w-3" />
+                  <span className="text-label font-medium">
+                    {metric.trend === 'up' ? 'Improving' : 
+                     metric.trend === 'down' ? 'Declining' : 'Stable'}
+                  </span>
                 </div>
               </div>
             </CardContent>
