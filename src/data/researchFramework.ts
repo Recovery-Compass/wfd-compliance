@@ -25,7 +25,7 @@ export interface PreAssessmentData {
     trackingMethods: string[];
     confidenceLevels: number[]; // array of 1-5 ratings
     kpiAwareness: string;
-    shelterTracking: string;
+    interimHousingTracking: string;
     acuityProcess: string;
   };
   barriers: string[];

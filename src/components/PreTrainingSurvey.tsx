@@ -31,7 +31,7 @@ export const PreTrainingSurvey = ({ participantId, onSurveyComplete }: PreTraini
       trackingMethods: [],
       confidenceLevels: [3, 3, 3, 3],
       kpiAwareness: "",
-      shelterTracking: "",
+      interimHousingTracking: "",
       acuityProcess: ""
     },
     barriers: [],
@@ -326,11 +326,11 @@ export const PreTrainingSurvey = ({ participantId, onSurveyComplete }: PreTraini
 
               <div>
                 <Label className="text-body font-medium mb-4 block">
-                  The 90-day shelter limit - how do you currently track it?
+                  The 90-day interim housing limit - how do you currently track it?
                 </Label>
                 <RadioGroup 
-                  value={surveyData.currentPractices?.shelterTracking} 
-                  onValueChange={(value) => updateCurrentPractices('shelterTracking', value)}
+                  value={surveyData.currentPractices?.interimHousingTracking} 
+                  onValueChange={(value) => updateCurrentPractices('interimHousingTracking', value)}
                   className="space-y-3"
                 >
                   {[
