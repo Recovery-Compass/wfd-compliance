@@ -48,30 +48,30 @@ const ManagerSurvey = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container-dashboard py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl shadow-lg">
           {/* Header */}
-          <div className="bg-primary px-8 py-8 rounded-t-xl text-center force-white-text">
-            <h1 className="text-hero mb-3 force-white-text">
+          <div className="bg-primary px-4 sm:px-8 py-6 sm:py-8 rounded-t-xl text-center force-white-text">
+            <h1 className="text-2xl sm:text-3xl lg:text-hero mb-3 force-white-text">
               Building Better Together
             </h1>
-            <p className="text-body force-white-text" style={{ opacity: 0.9 }}>
+            <p className="text-sm sm:text-body force-white-text" style={{ opacity: 0.9 }}>
               Your Input Shapes Our Future
             </p>
           </div>
 
           {/* Introduction */}
-          <div className="bg-muted/30 px-8 py-6 border-b border-border">
-            <p className="text-body leading-relaxed">
-              <strong className="block mb-4 text-title">Dear WFD Manager,</strong>
+          <div className="bg-muted/30 px-4 sm:px-8 py-4 sm:py-6 border-b border-border">
+            <p className="text-sm sm:text-body leading-relaxed">
+              <strong className="block mb-3 sm:mb-4 text-base sm:text-title">Dear WFD Manager,</strong>
               As we implement our new compliance dashboard, we need your honest feedback about current data practices and challenges. This 5-minute survey will help us build tools that actually support your daily work.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
             {/* Section 1: Current Reality */}
-            <div className="px-8 py-8 border-b border-border">
-              <h2 className="text-headline text-primary mb-6">
+            <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
+              <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
                 Section 1: Your Current Reality
               </h2>
               
@@ -173,28 +173,28 @@ const ManagerSurvey = () => {
             </div>
 
             {/* Section 2: Understanding Requirements */}
-            <div className="px-8 py-8 border-b border-border">
-              <h2 className="text-headline text-primary mb-6">
+            <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
+              <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
                 Section 2: Understanding Requirements
               </h2>
               
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     4. Can you list your program's top 3 KPIs without looking them up?
                   </Label>
                   <Textarea 
-                    className="min-h-[100px]" 
+                    className="min-h-[80px] sm:min-h-[100px] text-sm sm:text-base" 
                     placeholder="1.&#10;2.&#10;3."
                     name="top-kpis"
                   />
                 </div>
 
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     5. The 90-day shelter limit - how do you currently track it?
                   </Label>
-                  <RadioGroup name="shelter-tracking" className="space-y-3">
+                  <RadioGroup name="shelter-tracking" className="space-y-2 sm:space-y-3">
                     {[
                       { value: "system", label: "I have a system that alerts me before limits" },
                       { value: "periodic", label: "I check periodically but not systematically" },
@@ -202,19 +202,19 @@ const ManagerSurvey = () => {
                       { value: "aware", label: "I'm aware but don't actively track" },
                       { value: "unaware", label: "I wasn't fully aware of this requirement" }
                     ].map((item, index) => (
-                      <div key={index} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                      <div key={index} className="flex items-center space-x-3 p-3 sm:p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
                         <RadioGroupItem value={item.value} id={`shelter${index + 1}`} />
-                        <Label htmlFor={`shelter${index + 1}`} className="flex-1 cursor-pointer">{item.label}</Label>
+                        <Label htmlFor={`shelter${index + 1}`} className="flex-1 cursor-pointer text-sm sm:text-base">{item.label}</Label>
                       </div>
                     ))}
                   </RadioGroup>
                 </div>
 
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     6. 5×5 Acuity Assessments - what's your current process?
                   </Label>
-                  <RadioGroup name="acuity-process" className="space-y-3">
+                  <RadioGroup name="acuity-process" className="space-y-2 sm:space-y-3">
                     {[
                       { value: "scheduled", label: "I complete them on schedule with reminders" },
                       { value: "sometimes", label: "I do them but sometimes miss deadlines" },
@@ -222,9 +222,9 @@ const ManagerSurvey = () => {
                       { value: "training", label: "I need more training on these" },
                       { value: "unaware", label: "I wasn't aware these were required" }
                     ].map((item, index) => (
-                      <div key={index} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                      <div key={index} className="flex items-center space-x-3 p-3 sm:p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
                         <RadioGroupItem value={item.value} id={`acuity${index + 1}`} />
-                        <Label htmlFor={`acuity${index + 1}`} className="flex-1 cursor-pointer">{item.label}</Label>
+                        <Label htmlFor={`acuity${index + 1}`} className="flex-1 cursor-pointer text-sm sm:text-base">{item.label}</Label>
                       </div>
                     ))}
                   </RadioGroup>
@@ -233,17 +233,17 @@ const ManagerSurvey = () => {
             </div>
 
             {/* Section 3: Barriers & Pain Points */}
-            <div className="px-8 py-8 border-b border-border">
-              <h2 className="text-headline text-primary mb-6">
+            <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
+              <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
                 Section 3: Barriers & Pain Points
               </h2>
               
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     7. What stops you from using data more effectively? <em>(Check top 3)</em>
                   </Label>
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     {[
                       "Too time-consuming to collect/enter",
                       "Don't have the right tools",
@@ -254,35 +254,35 @@ const ManagerSurvey = () => {
                       "Not enough training",
                       "Other priorities take precedence"
                     ].map((barrier, index) => (
-                      <div key={index} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                      <div key={index} className="flex items-center space-x-3 p-3 sm:p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
                         <Checkbox id={`barrier${index + 1}`} name="barriers" value={barrier} />
-                        <Label htmlFor={`barrier${index + 1}`} className="flex-1 cursor-pointer">{barrier}</Label>
+                        <Label htmlFor={`barrier${index + 1}`} className="flex-1 cursor-pointer text-sm sm:text-base">{barrier}</Label>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     8. Describe your biggest data-related frustration in one sentence:
                   </Label>
-                  <Input placeholder="My biggest frustration is..." name="biggest-frustration" />
+                  <Input className="text-sm sm:text-base" placeholder="My biggest frustration is..." name="biggest-frustration" />
                 </div>
               </div>
             </div>
 
             {/* Section 4: Looking Forward */}
-            <div className="px-8 py-8 border-b border-border">
-              <h2 className="text-headline text-primary mb-6">
+            <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
+              <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
                 Section 4: Looking Forward
               </h2>
               
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     9. If you had a magic dashboard, what would you see first each morning? <em>(Rank top 3)</em>
                   </Label>
-                  <div className="bg-muted/20 p-6 rounded-lg space-y-3">
+                  <div className="bg-muted/20 p-4 sm:p-6 rounded-lg space-y-3">
                     {[
                       "Clients approaching 90-day limit",
                       "Overdue assessments",
@@ -293,23 +293,23 @@ const ManagerSurvey = () => {
                       "Available beds/resources"
                     ].map((item, index) => (
                       <div key={index} className="flex items-center gap-3 py-2">
-                        <Input className="w-12 text-center font-medium" placeholder="#" name={`dashboard-rank-${index}`} />
-                        <Label className="flex-1">{item}</Label>
+                        <Input className="w-10 sm:w-12 text-center font-medium text-sm sm:text-base" placeholder="#" name={`dashboard-rank-${index}`} />
+                        <Label className="flex-1 text-sm sm:text-base">{item}</Label>
                       </div>
                     ))}
                     <div className="flex items-center gap-3 py-2">
-                      <Input className="w-12 text-center font-medium" placeholder="#" name="dashboard-rank-other-num" />
-                      <Label>Other:</Label>
-                      <Input className="max-w-xs" name="dashboard-rank-other" />
+                      <Input className="w-10 sm:w-12 text-center font-medium text-sm sm:text-base" placeholder="#" name="dashboard-rank-other-num" />
+                      <Label className="text-sm sm:text-base">Other:</Label>
+                      <Input className="flex-1 sm:max-w-xs text-sm sm:text-base" name="dashboard-rank-other" />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     10. How could better data access change your work?
                   </Label>
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     {[
                       "Help me prevent problems before they happen",
                       "Show me where to focus my limited time",
@@ -318,24 +318,24 @@ const ManagerSurvey = () => {
                       "Reduce my stress/uncertainty",
                       "Improve client outcomes"
                     ].map((change, index) => (
-                      <div key={index} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                      <div key={index} className="flex items-center space-x-3 p-3 sm:p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
                         <Checkbox id={`change${index + 1}`} name="data-benefits" value={change} />
-                        <Label htmlFor={`change${index + 1}`} className="flex-1 cursor-pointer">{change}</Label>
+                        <Label htmlFor={`change${index + 1}`} className="flex-1 cursor-pointer text-sm sm:text-base">{change}</Label>
                       </div>
                     ))}
-                    <div className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                    <div className="flex items-center space-x-3 p-3 sm:p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
                       <Checkbox id="change-other" name="data-benefits" value="other" />
-                      <Label htmlFor="change-other" className="cursor-pointer">Other:</Label>
-                      <Input className="ml-3 max-w-xs" placeholder="Please specify" name="data-benefits-other" />
+                      <Label htmlFor="change-other" className="cursor-pointer text-sm sm:text-base">Other:</Label>
+                      <Input className="ml-3 flex-1 sm:max-w-xs text-sm sm:text-base" placeholder="Please specify" name="data-benefits-other" />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     11. What's the best way to train you on a new system?
                   </Label>
-                  <RadioGroup name="training-preference" className="space-y-3">
+                  <RadioGroup name="training-preference" className="space-y-2 sm:space-y-3">
                     {[
                       { value: "live-group", label: "Live group training session" },
                       { value: "live-one-on-one", label: "One-on-one coaching" },
@@ -343,20 +343,20 @@ const ManagerSurvey = () => {
                       { value: "manual", label: "A detailed written manual" },
                       { value: "explore", label: "Let me explore on my own" }
                     ].map((item, index) => (
-                      <div key={index} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                      <div key={index} className="flex items-center space-x-3 p-3 sm:p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
                         <RadioGroupItem value={item.value} id={`train${index + 1}`} />
-                        <Label htmlFor={`train${index + 1}`} className="flex-1 cursor-pointer">{item.label}</Label>
+                        <Label htmlFor={`train${index + 1}`} className="flex-1 cursor-pointer text-sm sm:text-base">{item.label}</Label>
                       </div>
                     ))}
                   </RadioGroup>
                 </div>
 
                 <div>
-                  <Label className="text-body font-medium mb-4 block">
+                  <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
                     12. Any other ideas for making data useful for you?
                   </Label>
                   <Textarea 
-                    className="min-h-[100px]" 
+                    className="min-h-[80px] sm:min-h-[100px] text-sm sm:text-base" 
                     placeholder="I wish we could..."
                     name="other-ideas"
                   />
@@ -365,68 +365,68 @@ const ManagerSurvey = () => {
             </div>
 
             {/* Baseline Metrics */}
-            <div className="px-8 py-8 border-b border-border">
-              <div className="bg-warning/10 border border-warning/20 rounded-lg p-6 mb-6">
-                <p className="font-medium mb-4 text-body">
+            <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
+              <div className="bg-warning/10 border border-warning/20 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+                <p className="font-medium mb-3 sm:mb-4 text-sm sm:text-body">
                   Before you submit, please provide some baseline numbers. This is not a test! Your honest estimate helps us understand the starting point.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-3 sm:gap-4">
                   <div className="flex items-center gap-3">
-                    <Label htmlFor="metric-caseload" className="flex-1">Your current caseload:</Label>
-                    <Input type="number" id="metric-caseload" name="metric-caseload" className="w-20 text-center font-medium" />
+                    <Label htmlFor="metric-caseload" className="flex-1 text-sm sm:text-base">Your current caseload:</Label>
+                    <Input type="number" id="metric-caseload" name="metric-caseload" className="w-16 sm:w-20 text-center font-medium text-sm sm:text-base" />
                   </div>
                   <div className="flex items-center gap-3">
-                    <Label htmlFor="metric-housed" className="flex-1">Clients housed this month:</Label>
-                    <Input type="number" id="metric-housed" name="metric-housed" className="w-20 text-center font-medium" />
+                    <Label htmlFor="metric-housed" className="flex-1 text-sm sm:text-base">Clients housed this month:</Label>
+                    <Input type="number" id="metric-housed" name="metric-housed" className="w-16 sm:w-20 text-center font-medium text-sm sm:text-base" />
                   </div>
                   <div className="flex items-center gap-3">
-                    <Label htmlFor="metric-90day" className="flex-1">Clients near 90-day limit:</Label>
-                    <Input type="number" id="metric-90day" name="metric-90day" className="w-20 text-center font-medium" />
+                    <Label htmlFor="metric-90day" className="flex-1 text-sm sm:text-base">Clients near 90-day limit:</Label>
+                    <Input type="number" id="metric-90day" name="metric-90day" className="w-16 sm:w-20 text-center font-medium text-sm sm:text-base" />
                   </div>
                   <div className="flex items-center gap-3">
-                    <Label htmlFor="metric-overdue" className="flex-1">Overdue assessments:</Label>
-                    <Input type="number" id="metric-overdue" name="metric-overdue" className="w-20 text-center font-medium" />
+                    <Label htmlFor="metric-overdue" className="flex-1 text-sm sm:text-base">Overdue assessments:</Label>
+                    <Input type="number" id="metric-overdue" name="metric-overdue" className="w-16 sm:w-20 text-center font-medium text-sm sm:text-base" />
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Optional Contact */}
-            <div className="px-8 py-8">
-              <h3 className="text-title mb-4">Optional: Follow-up Contact</h3>
-              <p className="text-body text-muted-foreground mb-6">
+            <div className="px-4 sm:px-8 py-6 sm:py-8">
+              <h3 className="text-base sm:text-title mb-3 sm:mb-4">Optional: Follow-up Contact</h3>
+              <p className="text-sm sm:text-body text-muted-foreground mb-4 sm:mb-6">
                 If you're willing to participate in a brief follow-up interview (15 minutes) to help us refine the dashboard design, please provide your contact information.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-3 sm:gap-4">
                 <div>
-                  <Label htmlFor="contact-name" className="text-body font-medium mb-2 block">Name (optional):</Label>
-                  <Input id="contact-name" name="contact-name" placeholder="Your name" />
+                  <Label htmlFor="contact-name" className="text-sm sm:text-body font-medium mb-2 block">Name (optional):</Label>
+                  <Input id="contact-name" name="contact-name" placeholder="Your name" className="text-sm sm:text-base" />
                 </div>
                 <div>
-                  <Label htmlFor="contact-email" className="text-body font-medium mb-2 block">Email (optional):</Label>
-                  <Input type="email" id="contact-email" name="contact-email" placeholder="your.email@example.com" />
+                  <Label htmlFor="contact-email" className="text-sm sm:text-body font-medium mb-2 block">Email (optional):</Label>
+                  <Input type="email" id="contact-email" name="contact-email" placeholder="your.email@example.com" className="text-sm sm:text-base" />
                 </div>
                 <div>
-                  <Label htmlFor="contact-phone" className="text-body font-medium mb-2 block">Phone (optional):</Label>
-                  <Input type="tel" id="contact-phone" name="contact-phone" placeholder="(555) 123-4567" />
+                  <Label htmlFor="contact-phone" className="text-sm sm:text-body font-medium mb-2 block">Phone (optional):</Label>
+                  <Input type="tel" id="contact-phone" name="contact-phone" placeholder="(555) 123-4567" className="text-sm sm:text-base" />
                 </div>
                 <div>
-                  <Label htmlFor="contact-program" className="text-body font-medium mb-2 block">Your program:</Label>
-                  <Input id="contact-program" name="contact-program" placeholder="Program name" />
+                  <Label htmlFor="contact-program" className="text-sm sm:text-body font-medium mb-2 block">Your program:</Label>
+                  <Input id="contact-program" name="contact-program" placeholder="Program name" className="text-sm sm:text-base" />
                 </div>
               </div>
             </div>
 
             {/* Submit Button */}
-            <div className="px-8 py-8 bg-muted/10 rounded-b-xl">
+            <div className="px-4 sm:px-8 py-6 sm:py-8 bg-muted/10 rounded-b-xl">
               <div className="text-center">
                 <Button 
                   type="submit" 
-                  className="bg-primary hover:bg-primary-light text-white px-8 py-3 text-body font-medium"
+                  className="bg-primary hover:bg-primary-light text-white px-6 sm:px-8 py-3 text-sm sm:text-body font-medium w-full sm:w-auto"
                 >
                   Send Survey Response
                 </Button>
-                <p className="text-caption text-muted-foreground mt-3">
+                <p className="text-xs sm:text-caption text-muted-foreground mt-3">
                   This will open your email client with the completed survey
                 </p>
               </div>
