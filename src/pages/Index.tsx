@@ -17,7 +17,7 @@ const Index = () => {
             <nav className="flex gap-6">
               <a href="#" className="text-body text-primary border-b-2 border-primary pb-1">Dashboard</a>
               <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Programs</a>
-              <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Managers</a>
+              <a href="/survey" className="text-body text-muted-foreground hover:text-primary transition-colors">Manager Survey</a>
               <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Story Mode</a>
             </nav>
             
