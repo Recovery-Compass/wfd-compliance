@@ -1,4 +1,35 @@
+import { SiteTypeSelector } from "@/components/SiteTypeSelector";
+import { DynamicComplianceMetrics } from "@/components/DynamicComplianceMetrics";
+import { useSiteType } from "@/hooks/useSiteType";
+import { getProgramsBySiteType, getComplianceStatsBySiteType } from "@/data/programs";
+
 const Index = () => {
+  const { selectedSiteType, currentSiteType } = useSiteType();
+  const filteredPrograms = getProgramsBySiteType(selectedSiteType);
+  const complianceStats = getComplianceStatsBySiteType(selectedSiteType);
+
+  const getBadgeVariant = (compliance: number) => {
+    if (compliance >= 85) return "badge-success";
+    if (compliance >= 70) return "badge-warning";
+    return "badge-danger";
+  };
+
+  const getTrendIcon = (trend: string) => {
+    switch (trend) {
+      case "improving": return "↑ Improving";
+      case "declining": return "↓ Declining";
+      default: return "→ Stable";
+    }
+  };
+
+  const getTrendColor = (trend: string) => {
+    switch (trend) {
+      case "improving": return "text-green-600";
+      case "declining": return "text-red-600";
+      default: return "text-yellow-600";
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Fixed Header */}
@@ -36,110 +67,89 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="pt-20 container-dashboard py-8 fade-in">
+        {/* Site Type Selector */}
+        <SiteTypeSelector />
+        
         {/* Hero Section */}
         <section className="mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Critical Alert */}
+            {/* Critical Alert - Dynamic based on site type */}
             <div className="card-minimal">
-              <h3 className="text-title font-semibold mb-2">Critical Timeline</h3>
+              <h3 className="text-title font-semibold mb-2">
+                {currentSiteType.id === "DHS" ? "90-Day Timeline Critical" : 
+                 currentSiteType.id === "NONHDS" ? "Contract Deadlines" : "Critical Issues"}
+              </h3>
               <p className="text-body text-muted-foreground mb-3">
-                Clients approaching the 90‑day limit requiring placement
+                {currentSiteType.id === "DHS" 
+                  ? "Clients approaching the 90‑day limit requiring placement"
+                  : currentSiteType.id === "NONHDS"
+                  ? "Contract compliance deadlines and program requirements"
+                  : "Cross-program critical items requiring attention"}
               </p>
               <p className="text-caption text-muted-foreground">Last updated 2 hours ago</p>
             </div>
 
-            {/* Compliance Progress */}
+            {/* Compliance Progress - Dynamic */}
             <div className="card-minimal text-center">
-              <p className="text-caption text-muted-foreground mb-2">Current compliance</p>
+              <p className="text-caption text-muted-foreground mb-2">
+                {currentSiteType.name} Compliance
+              </p>
               <div className="progress-minimal mb-3">
-                <div className="progress-fill" style={{ width: '65%' }}></div>
+                <div className="progress-fill" style={{ width: `${complianceStats.average}%` }}></div>
               </div>
-              <div className="text-5xl font-bold text-primary mb-1">65%</div>
-              <p className="text-caption text-red-600 font-semibold mb-3">Target: 95%</p>
+              <div className="text-5xl font-bold text-primary mb-1">{complianceStats.average}%</div>
+              <p className="text-caption text-red-600 font-semibold mb-3">
+                Target: {currentSiteType.complianceTarget}%
+              </p>
               <h2 className="text-headline font-semibold mb-2">Journey to Excellence</h2>
               <p className="text-body text-muted-foreground">
                 From sunset crisis to sunrise – every day is a first day.
               </p>
             </div>
 
-            {/* 5x5 Alert */}
+            {/* Assessment Alert - Dynamic */}
             <div className="card-minimal">
-              <h3 className="text-title font-semibold mb-2">5×5 Assessments</h3>
+              <h3 className="text-title font-semibold mb-2">
+                {currentSiteType.requirements.assessmentType}
+              </h3>
               <p className="text-body text-muted-foreground mb-3">
-                Overdue assessments requiring completion this week
+                {currentSiteType.id === "DHS" 
+                  ? "Overdue assessments requiring completion this week"
+                  : currentSiteType.id === "NONHDS"
+                  ? "Program assessments per contract requirements"
+                  : "Mixed assessment requirements across programs"}
               </p>
-              <p className="text-caption text-muted-foreground">Due: Friday</p>
+              <p className="text-caption text-muted-foreground">
+                {currentSiteType.requirements.timingRequirement}
+              </p>
             </div>
           </div>
         </section>
 
-        {/* KPI Section */}
+        {/* KPI Section - Dynamic Metrics */}
         <section className="mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Housing Placement Rate */}
-            <div className="card-minimal">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-caption text-muted-foreground">Housing placement rate</p>
-                <span className="text-xs text-green-600 font-medium">↑ Improving</span>
-              </div>
-              <div className="text-kpi-value text-primary mb-2">65%</div>
-              <div className="progress-minimal mb-2">
-                <div className="progress-fill" style={{ width: '65%' }}></div>
-              </div>
-              <p className="text-xs text-muted-foreground">Target: 95%</p>
-            </div>
-
-            {/* Documentation Complete */}
-            <div className="card-minimal">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-caption text-muted-foreground">Documentation complete</p>
-                <span className="text-xs text-green-600 font-medium">↑ Improving</span>
-              </div>
-              <div className="text-kpi-value text-primary mb-2">78%</div>
-              <div className="progress-minimal mb-2">
-                <div className="progress-fill" style={{ width: '78%' }}></div>
-              </div>
-              <p className="text-xs text-muted-foreground">Target: 100%</p>
-            </div>
-
-            {/* Average Days to Housing */}
-            <div className="card-minimal">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-caption text-muted-foreground">Avg days to housing</p>
-                <span className="text-xs text-red-600 font-medium">↓ Declining</span>
-              </div>
-              <div className="text-kpi-value text-primary mb-2">45</div>
-              <div className="progress-minimal mb-2">
-                <div className="progress-fill" style={{ width: '50%' }}></div>
-              </div>
-              <p className="text-xs text-muted-foreground">Target: 30 days</p>
-            </div>
-
-            {/* Service Compliance */}
-            <div className="card-minimal">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-caption text-muted-foreground">Service compliance</p>
-                <span className="text-xs text-green-600 font-medium">↑ Improving</span>
-              </div>
-              <div className="text-kpi-value text-primary mb-2">82%</div>
-              <div className="progress-minimal mb-2">
-                <div className="progress-fill" style={{ width: '82%' }}></div>
-              </div>
-              <p className="text-xs text-muted-foreground">Target: 95%</p>
-            </div>
-          </div>
+          <h2 className="text-headline font-semibold mb-6 text-primary">
+            {currentSiteType.name} Performance Metrics
+          </h2>
+          <DynamicComplianceMetrics />
         </section>
 
         {/* Data Section */}
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Program Performance Table */}
+          {/* Program Performance Table - Dynamic */}
           <div className="lg:col-span-2 card-minimal">
-            <h3 className="text-title font-semibold mb-4">Program performance overview</h3>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-title font-semibold">Program Performance Overview</h3>
+              <span className="text-caption text-muted-foreground">
+                {selectedSiteType === "ALL" ? "All Programs" : `${currentSiteType.name} Only`}
+              </span>
+            </div>
             <div className="overflow-x-auto">
               <table className="table-minimal">
                 <thead>
                   <tr>
                     <th>Program</th>
+                    <th>Type</th>
                     <th>Clients</th>
                     <th>Compliance</th>
                     <th>Trend</th>
@@ -147,34 +157,32 @@ const Index = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><span className="font-semibold">Ted's Place</span></td>
-                    <td>37</td>
-                    <td><span className="badge-minimal badge-danger">58%</span></td>
-                    <td><span className="text-xs text-yellow-600">↑ Improving</span></td>
-                    <td><button className="btn-minimal">View</button></td>
-                  </tr>
-                  <tr>
-                    <td><span className="font-semibold">Hondo</span></td>
-                    <td>122</td>
-                    <td><span className="badge-minimal badge-warning">72%</span></td>
-                    <td><span className="text-xs text-green-600">↑ Improving</span></td>
-                    <td><button className="btn-minimal">View</button></td>
-                  </tr>
-                  <tr>
-                    <td><span className="font-semibold">Pathway Home</span></td>
-                    <td>108</td>
-                    <td><span className="badge-minimal badge-success">85%</span></td>
-                    <td><span className="text-xs text-green-600">↑ Stable</span></td>
-                    <td><button className="btn-minimal">View</button></td>
-                  </tr>
-                  <tr>
-                    <td><span className="font-semibold">A2C</span></td>
-                    <td>9</td>
-                    <td><span className="badge-minimal badge-success">92%</span></td>
-                    <td><span className="text-xs text-green-600">↑ Excellent</span></td>
-                    <td><button className="btn-minimal">View</button></td>
-                  </tr>
+                  {filteredPrograms.map((program) => (
+                    <tr key={program.id}>
+                      <td><span className="font-semibold">{program.name}</span></td>
+                      <td>
+                        <span className={`text-xs px-2 py-1 rounded-full ${
+                          program.siteType === "DHS" 
+                            ? "bg-primary/10 text-primary" 
+                            : "bg-wfd-blue/10 text-wfd-blue"
+                        }`}>
+                          {program.siteType}
+                        </span>
+                      </td>
+                      <td>{program.clients}</td>
+                      <td>
+                        <span className={`badge-minimal ${getBadgeVariant(program.compliance)}`}>
+                          {program.compliance}%
+                        </span>
+                      </td>
+                      <td>
+                        <span className={`text-xs ${getTrendColor(program.trend)}`}>
+                          {getTrendIcon(program.trend)}
+                        </span>
+                      </td>
+                      <td><button className="btn-minimal">View</button></td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -182,10 +190,13 @@ const Index = () => {
 
           {/* Sidebar with Timeline Cards */}
           <div className="space-y-6">
-            {/* Housing Timeline */}
+            {/* Timeline Card - Dynamic based on site type */}
             <div className="card-minimal">
               <div className="pb-4 border-b border-border mb-4">
-                <h3 className="text-title font-semibold">90‑day housing timeline</h3>
+                <h3 className="text-title font-semibold">
+                  {currentSiteType.id === "DHS" ? "90‑day Housing Timeline" : 
+                   currentSiteType.id === "NONHDS" ? "Contract Timeline" : "Multi-Program Timeline"}
+                </h3>
                 <p className="text-xs text-muted-foreground mt-1">
                   <span className="text-red-600">⚠</span> 2 critical  
                   <span className="text-yellow-600 ml-2">⚠</span> 1 warning
@@ -193,18 +204,18 @@ const Index = () => {
               </div>
               
               <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 bg-wfd-gold rounded-full flex items-center justify-center text-primary">
-                        🏠
-                      </div>
+                <div className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 bg-wfd-gold rounded-full flex items-center justify-center text-primary">
+                      🏠
+                    </div>
                     <div>
                       <div className="text-body font-semibold">Maria Rodriguez</div>
                       <div className="text-xs text-muted-foreground">Last update: 2h ago</div>
                     </div>
                   </div>
                   <div className="px-2 py-1 bg-red-600 text-white rounded-full text-xs font-semibold">
-                    15 days
+                    {currentSiteType.id === "DHS" ? "15 days" : "Due Soon"}
                   </div>
                 </div>
 
@@ -219,7 +230,7 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="px-2 py-1 bg-yellow-600 text-white rounded-full text-xs font-semibold">
-                    45 days
+                    {currentSiteType.id === "DHS" ? "45 days" : "Review"}
                   </div>
                 </div>
 
@@ -234,20 +245,27 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="px-2 py-1 bg-green-600 text-white rounded-full text-xs font-semibold">
-                    72 days
+                    {currentSiteType.id === "DHS" ? "72 days" : "On Track"}
                   </div>
                 </div>
 
                 <div className="text-center mt-4">
-                  <button className="btn-minimal w-full">Schedule 5×5 reviews</button>
+                  <button className="btn-minimal w-full">
+                    {currentSiteType.id === "DHS" ? "Schedule 5×5 reviews" : "Review Contracts"}
+                  </button>
                 </div>
               </div>
             </div>
 
-            {/* Audit Recovery Timeline */}
+            {/* Recovery Timeline */}
             <div className="card-minimal">
-              <h3 className="text-title font-semibold mb-1">5×5 audit recovery timeline</h3>
-              <p className="text-xs text-muted-foreground mb-4">90 days to full compliance</p>
+              <h3 className="text-title font-semibold mb-1">
+                {currentSiteType.id === "DHS" ? "5×5 Audit Recovery" : 
+                 currentSiteType.id === "NONHDS" ? "Contract Compliance" : "System Recovery"}
+              </h3>
+              <p className="text-xs text-muted-foreground mb-4">
+                {currentSiteType.id === "DHS" ? "90 days to full compliance" : "Contract timeline"}
+              </p>
               
               <div className="space-y-4">
                 <div className="text-center">
@@ -256,7 +274,9 @@ const Index = () => {
                   </div>
                   <div className="font-semibold text-body">Phase 1</div>
                   <div className="text-xs text-green-600 font-medium">Complete</div>
-                  <div className="text-xs text-muted-foreground">Crisis assessment & actions</div>
+                  <div className="text-xs text-muted-foreground">
+                    {currentSiteType.id === "DHS" ? "Crisis assessment & actions" : "Initial compliance review"}
+                  </div>
                   <div className="text-xs text-muted-foreground">Completed Jul 15, 2024</div>
                 </div>
 
@@ -266,7 +286,9 @@ const Index = () => {
                   </div>
                   <div className="font-semibold text-body">Phase 2</div>
                   <div className="text-xs text-yellow-600 font-medium">In progress</div>
-                  <div className="text-xs text-muted-foreground">Process improvement & training</div>
+                  <div className="text-xs text-muted-foreground">
+                    {currentSiteType.id === "DHS" ? "Process improvement & training" : "Contract adjustments"}
+                  </div>
                   <div className="text-xs text-muted-foreground">Target Aug 30, 2024</div>
                 </div>
 
@@ -276,14 +298,16 @@ const Index = () => {
                   </div>
                   <div className="font-semibold text-body">Phase 3</div>
                   <div className="text-xs text-muted-foreground font-medium">Planned</div>
-                  <div className="text-xs text-muted-foreground">Full compliance achievement</div>
+                  <div className="text-xs text-muted-foreground">
+                    {currentSiteType.id === "DHS" ? "Full compliance achievement" : "Full contract compliance"}
+                  </div>
                   <div className="text-xs text-muted-foreground">Target Oct 15, 2024</div>
                 </div>
               </div>
 
               <div className="mt-4 p-3 bg-primary/10 rounded-lg text-center">
                 <div className="text-body text-primary font-medium">
-                  Goal: achieve 95% compliance within 90 days
+                  Goal: achieve {currentSiteType.complianceTarget}% compliance within 90 days
                 </div>
               </div>
             </div>

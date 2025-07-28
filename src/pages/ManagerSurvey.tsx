@@ -80,6 +80,11 @@ const ManagerSurvey = () => {
               <strong className="block mb-3 sm:mb-4 text-base sm:text-title">Dear WFD Manager,</strong>
               As we implement our new compliance dashboard, we need your honest feedback about current data practices and challenges. This 5-minute survey will help us build tools that actually support your daily work.
             </p>
+            <div className="mt-4 p-3 bg-wfd-blue/10 border border-wfd-blue/20 rounded-lg">
+              <p className="text-xs sm:text-caption text-wfd-blue font-medium">
+                📋 Note: Survey questions will be customized by site type (DHS vs Non-DHS) in our final Qualtrics version to maintain data consistency.
+              </p>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
