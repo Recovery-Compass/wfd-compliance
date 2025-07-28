@@ -52,10 +52,10 @@ const ManagerSurvey = () => {
         <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl shadow-lg">
           {/* Header */}
           <div className="bg-primary text-white px-8 py-8 rounded-t-xl text-center">
-            <h1 className="text-hero mb-3">
+            <h1 className="text-hero mb-3 text-white">
               Building Better Together
             </h1>
-            <p className="text-body opacity-90">
+            <p className="text-body text-white/90">
               Your Input Shapes Our Future
             </p>
           </div>
