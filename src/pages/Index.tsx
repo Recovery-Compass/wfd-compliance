@@ -50,7 +50,8 @@ const Index = () => {
             <nav className="flex gap-6">
               <a href="#" className="text-body text-primary border-b-2 border-primary pb-1">Dashboard</a>
               <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Programs</a>
-              <a href="/survey" className="text-body text-muted-foreground hover:text-primary transition-colors">Manager Survey</a>
+              <a href="/survey" className="text-body text-muted-foreground hover:text-primary transition-colors">Pre-Training Survey</a>
+              <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Research Export</a>
               <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Story Mode</a>
             </nav>
             
@@ -70,29 +71,29 @@ const Index = () => {
         {/* Site Type Selector */}
         <SiteTypeSelector />
         
-        {/* Hero Section */}
+        {/* Hero Section - Research Study Frame */}
         <section className="mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Critical Alert - Dynamic based on site type */}
-            <div className="card-minimal">
-              <h3 className="text-title font-semibold mb-2">
-                {currentSiteType.id === "DHS" ? "90-Day Timeline Critical" : 
-                 currentSiteType.id === "NONHDS" ? "Contract Deadlines" : "Critical Issues"}
-              </h3>
-              <p className="text-body text-muted-foreground mb-3">
-                {currentSiteType.id === "DHS" 
-                  ? "Clients approaching the 90‑day limit requiring placement"
-                  : currentSiteType.id === "NONHDS"
-                  ? "Contract compliance deadlines and program requirements"
-                  : "Cross-program critical items requiring attention"}
+            {/* Research Study Banner */}
+            <div className="card-minimal bg-primary/10 border-primary/20">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2 h-2 bg-primary rounded-full"></span>
+                <h3 className="text-title font-semibold text-primary">Research Study</h3>
+              </div>
+              <p className="text-body font-medium mb-2">Digital Transformation in Homeless Services</p>
+              <p className="text-caption text-muted-foreground">
+                Gates Foundation validated framework tracking compliance improvement from crisis to excellence
               </p>
-              <p className="text-caption text-muted-foreground">Last updated 2 hours ago</p>
+              <div className="mt-3 flex gap-2">
+                <span className="badge-minimal badge-success text-xs">IRB Approved</span>
+                <span className="badge-minimal badge-warning text-xs">Active Study</span>
+              </div>
             </div>
 
-            {/* Compliance Progress - Dynamic */}
+            {/* Compliance Progress - Dynamic with Research Context */}
             <div className="card-minimal text-center">
               <p className="text-caption text-muted-foreground mb-2">
-                {currentSiteType.name} Compliance
+                Research Study: {currentSiteType.name} Compliance Journey
               </p>
               <div className="progress-minimal mb-3">
                 <div className="progress-fill" style={{ width: `${complianceStats.average}%` }}></div>
@@ -101,27 +102,38 @@ const Index = () => {
               <p className="text-caption text-red-600 font-semibold mb-3">
                 Target: {currentSiteType.complianceTarget}%
               </p>
-              <h2 className="text-headline font-semibold mb-2">Journey to Excellence</h2>
+              <h2 className="text-headline font-semibold mb-2">65% → 95% Journey</h2>
               <p className="text-body text-muted-foreground">
-                From sunset crisis to sunrise – every day is a first day.
+                Evidence-based transformation measuring impact through validated research tools
               </p>
+              <div className="mt-3 text-caption text-primary font-medium">
+                📊 PSSUQ Usability: Post-60 days | 📈 Longitudinal: 6 months
+              </div>
             </div>
 
-            {/* Assessment Alert - Dynamic */}
+            {/* Assessment Alert - Dynamic with Research Components */}
             <div className="card-minimal">
-              <h3 className="text-title font-semibold mb-2">
-                {currentSiteType.requirements.assessmentType}
-              </h3>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-title font-semibold">
+                  {currentSiteType.requirements.assessmentType}
+                </h3>
+                <span className="text-xs bg-wfd-blue/10 text-wfd-blue px-2 py-1 rounded-full">
+                  Research Data
+                </span>
+              </div>
               <p className="text-body text-muted-foreground mb-3">
                 {currentSiteType.id === "DHS" 
-                  ? "Overdue assessments requiring completion this week"
+                  ? "Pre/Post assessments measuring dashboard impact on compliance tracking"
                   : currentSiteType.id === "NONHDS"
-                  ? "Program assessments per contract requirements"
-                  : "Mixed assessment requirements across programs"}
+                  ? "Research framework adapted for non-DHS contract requirements"
+                  : "Multi-site research design capturing diverse program impacts"}
               </p>
               <p className="text-caption text-muted-foreground">
                 {currentSiteType.requirements.timingRequirement}
               </p>
+              <div className="mt-3 text-caption text-green-600 font-medium">
+                ✓ Baseline captured | ⏳ Implementation phase | 📋 PSSUQ pending
+              </div>
             </div>
           </div>
         </section>

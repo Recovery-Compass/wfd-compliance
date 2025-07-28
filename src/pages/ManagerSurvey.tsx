@@ -67,22 +67,27 @@ const ManagerSurvey = () => {
           {/* Header */}
           <div className="bg-primary px-4 sm:px-8 py-6 sm:py-8 rounded-t-xl text-center force-white-text">
             <h1 className="text-2xl sm:text-3xl lg:text-hero mb-3 force-white-text">
-              Building Better Together
+              Gates Foundation Research Study
             </h1>
             <p className="text-sm sm:text-body force-white-text" style={{ opacity: 0.9 }}>
-              Your Input Shapes Our Future
+              Pre-Training Baseline Assessment - Digital Transformation in Homeless Services
             </p>
           </div>
 
           {/* Introduction */}
           <div className="bg-muted/30 px-4 sm:px-8 py-4 sm:py-6 border-b border-border">
             <p className="text-sm sm:text-body leading-relaxed">
-              <strong className="block mb-3 sm:mb-4 text-base sm:text-title">Dear WFD Manager,</strong>
-              As we implement our new compliance dashboard, we need your honest feedback about current data practices and challenges. This 5-minute survey will help us build tools that actually support your daily work.
+              <strong className="block mb-3 sm:mb-4 text-base sm:text-title">Research Participant,</strong>
+              This pre-training assessment establishes baseline data using Gates Foundation validated methodology. Your responses will be anonymized and contribute to academic research on digital transformation in homeless services.
             </p>
-            <div className="mt-4 p-3 bg-wfd-blue/10 border border-wfd-blue/20 rounded-lg">
-              <p className="text-xs sm:text-caption text-wfd-blue font-medium">
-                📋 Note: Survey questions will be customized by site type (DHS vs Non-DHS) in our final Qualtrics version to maintain data consistency.
+            <div className="mt-4 p-3 bg-primary/10 border border-primary/20 rounded-lg">
+              <p className="text-xs sm:text-caption text-primary font-medium">
+                🔬 Research Framework: Pre/Post assessment design with PSSUQ usability evaluation at 60 days
+              </p>
+            </div>
+            <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg">
+              <p className="text-xs sm:text-caption text-green-700 font-medium">
+                ✓ IRB Approved Study | ✓ Informed Consent Given | ✓ Data Anonymized for Publication
               </p>
             </div>
           </div>
