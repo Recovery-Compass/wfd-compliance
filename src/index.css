@@ -1,86 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* WFD ENTERPRISE DESIGN SYSTEM
- * Professional compliance dashboard with strict design standards
- * All colors MUST be HSL. All spacing follows 8px grid system.
+/* RECOVERY COMPASS DESIGN SYSTEM
+ * Clean, systematic design with unified color palette and 8px grid
  */
 
 @layer base {
   :root {
-    /* ENTERPRISE SPACING SYSTEM - 8px Grid */
-    --spacing-micro: 0.25rem;   /* 4px - tight elements */
-    --spacing-xs: 0.5rem;       /* 8px - within components */
-    --spacing-sm: 1rem;         /* 16px - between related elements */
-    --spacing-md: 1.5rem;       /* 24px - between sections */
-    --spacing-lg: 2rem;         /* 32px - major sections */
-    --spacing-xl: 3rem;         /* 48px - page margins */
-    --spacing-2xl: 4rem;        /* 64px - hero sections */
+    /* 8px Grid System */
+    --spacing-1: 0.5rem;    /* 8px */
+    --spacing-2: 1rem;      /* 16px */
+    --spacing-3: 1.5rem;    /* 24px */
+    --spacing-4: 2rem;      /* 32px */
+    --spacing-6: 3rem;      /* 48px */
+    --spacing-8: 4rem;      /* 64px */
     
-    /* WFD BRAND COLORS - Refined Professional Palette */
-    --wfd-purple-dark: 251 40% 35%; /* #311B92 */
-    --wfd-purple: 276 100% 27%; /* #4A148C */
-    --wfd-purple-light: 293 69% 49%; /* #7B1FA2 */
-    --wfd-blue-dark: 220 100% 34%; /* #0D47A1 */
-    --wfd-blue: 207 90% 42%; /* #1976D2 */
-    --wfd-blue-light: 207 73% 63%; /* #42A5F5 */
-    --wfd-gold-dark: 33 100% 48%; /* #F57C00 */
-    --wfd-gold: 45 100% 50%; /* #FFB300 */
-    --wfd-gold-light: 45 100% 70%; /* #FFD54F */
-
-    /* Semantic Enterprise Colors */
-    --danger: 4 90% 58%; /* #D32F2F */
-    --danger-light: 354 70% 87%; /* #FFCDD2 */
-    --warning: 33 100% 48%; /* #F57C00 */
-    --warning-light: 35 100% 85%; /* #FFE0B2 */
-    --success: 122 39% 49%; /* #388E3C */
-    --success-light: 122 33% 80%; /* #C8E6C9 */
-
-    /* Professional Neutrals */
-    --gray-900: 0 0% 13%; /* #212121 */
-    --gray-700: 0 0% 38%; /* #616161 */
-    --gray-500: 0 0% 62%; /* #9E9E9E */
-    --gray-300: 0 0% 88%; /* #E0E0E0 */
-    --gray-100: 0 0% 96%; /* #F5F5F5 */
-    --white: 0 0% 100%; /* #FFFFFF */
+    /* Core Color Palette */
+    --primary-purple: 257 40% 62%;     /* #6C5DD3 */
+    --secondary-grey-bg: 0 0% 96%;     /* #F5F5F5 */
+    --text-dark: 0 0% 20%;             /* #333333 */
+    --alert-red: 354 70% 58%;          /* #E63946 */
+    --warning-yellow: 43 100% 48%;     /* #F4B400 */
     
-    /* System colors using WFD brand */
-    --background: 0 0% 100%;
-    --foreground: 276 100% 27%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 276 100% 27%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 276 100% 27%;
-
-    --primary: 276 100% 27%; /* WFD Purple */
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 207 90% 42%; /* WFD Blue */
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 45 30% 95%;
-    --muted-foreground: 276 40% 40%;
-
-    --accent: 45 100% 50%; /* WFD Gold */
-    --accent-foreground: 276 100% 27%;
-
-    --destructive: 276 100% 27%; /* Purple for danger with dignity */
-    --destructive-foreground: 0 0% 100%;
-
-    --success: 207 90% 42%; /* Blue for success */
-    --success-foreground: 0 0% 100%;
-
-    --warning: 45 100% 50%; /* Gold for warning */
-    --warning-foreground: 276 100% 27%;
-
-    --border: 276 20% 90%;
-    --input: 276 20% 90%;
-    --ring: 276 100% 27%;
+    /* Extended Neutrals */
+    --white: 0 0% 100%;                /* #FFFFFF */
+    --grey-50: 210 20% 98%;            /* #F8FAFC */
+    --grey-100: 220 14% 96%;           /* #F1F5F9 */
+    --grey-200: 220 13% 91%;           /* #E2E8F0 */
+    --grey-300: 215 20% 83%;           /* #CBD5E1 */
+    --grey-400: 215 16% 65%;           /* #94A3B8 */
+    --grey-500: 215 19% 46%;           /* #64748B */
+    --grey-600: 215 25% 35%;           /* #475569 */
+    --grey-700: 215 25% 27%;           /* #334155 */
+    --grey-800: 217 33% 17%;           /* #1E293B */
+    --grey-900: 222 84% 5%;            /* #0F172A */
+    
+    /* System Integration */
+    --background: var(--secondary-grey-bg);
+    --foreground: var(--text-dark);
+    --card: var(--white);
+    --card-foreground: var(--text-dark);
+    --primary: var(--primary-purple);
+    --primary-foreground: var(--white);
+    --secondary: var(--grey-100);
+    --secondary-foreground: var(--text-dark);
+    --muted: var(--grey-100);
+    --muted-foreground: var(--grey-600);
+    --accent: var(--primary-purple);
+    --accent-foreground: var(--white);
+    --destructive: var(--alert-red);
+    --destructive-foreground: var(--white);
+    --border: var(--grey-200);
+    --input: var(--white);
+    --ring: var(--primary-purple);
 
     --radius: 0.5rem;
 
@@ -169,45 +144,22 @@
 }
 
 @layer components {
-  /* ENTERPRISE TYPOGRAPHY HIERARCHY */
-  .text-h1-hero {
-    font-size: 3rem; /* 48px */
-    font-weight: 700;
-    line-height: 1.2;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: -0.02em;
-  }
-  
-  .text-h1-page {
-    font-size: 2.5rem; /* 40px */
+  /* RECOVERY COMPASS TYPOGRAPHY - Inter Font Family */
+  .text-h2 {
+    font-size: 1.75rem; /* 28px */
     font-weight: 700;
     line-height: 1.3;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: -0.01em;
+    font-family: 'Inter', sans-serif;
   }
   
-  .text-h2-section {
-    font-size: 1.75rem; /* 28px */
-    font-weight: 600;
-    line-height: 1.4;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .text-h3-card {
+  .text-h3 {
     font-size: 1.25rem; /* 20px */
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.4;
     font-family: 'Inter', sans-serif;
   }
   
-  .text-body-large {
-    font-size: 1.125rem; /* 18px */
-    font-weight: 400;
-    line-height: 1.6;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .text-body-base {
+  .text-body {
     font-size: 1rem; /* 16px */
     font-weight: 400;
     line-height: 1.5;
@@ -222,7 +174,7 @@
     font-family: 'Inter', sans-serif;
   }
   
-  .text-data-xl {
+  .text-data-large {
     font-size: 4rem; /* 64px */
     font-weight: 700;
     font-variant-numeric: tabular-nums;
@@ -230,28 +182,63 @@
     line-height: 1;
   }
   
-  .text-data-large {
-    font-size: 2.25rem; /* 36px */
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.2;
+  /* CARD STYLING - 8px border radius, 0.1em shadows */
+  .card-system {
+    @apply bg-card border border-border;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all 200ms ease-in-out;
   }
   
-  /* ENTERPRISE SPACING UTILITIES */
-  .spacing-micro { margin: var(--spacing-micro); }
-  .spacing-xs { margin: var(--spacing-xs); }
-  .spacing-sm { margin: var(--spacing-sm); }
-  .spacing-md { margin: var(--spacing-md); }
-  .spacing-lg { margin: var(--spacing-lg); }
-  .spacing-xl { margin: var(--spacing-xl); }
+  .card-system:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
   
-  /* PROFESSIONAL CARD STYLING */
-  .card-enterprise {
-    @apply bg-card border border-border/20 rounded-lg shadow-sm;
-    box-shadow: 0 1px 3px 0 hsl(var(--wfd-purple) / 0.1), 
-                0 1px 2px -1px hsl(var(--wfd-purple) / 0.1);
-    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* COMPLIANCE GAUGE STYLING */
+  .compliance-gauge-container {
+    position: relative;
+    width: 20rem; /* 320px */
+    height: 10rem; /* 160px */
+    margin: 0 auto;
+  }
+  
+  .compliance-arc-background {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    border: 12px solid hsl(var(--grey-300));
+    border-bottom: 12px solid transparent;
+    border-radius: 50%;
+    transform: rotate(0deg);
+  }
+  
+  .compliance-arc-progress {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    border: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-radius: 50%;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .compliance-arc-crisis {
+    border-top-color: hsl(var(--alert-red));
+    border-left-color: hsl(var(--alert-red));
+    border-right-color: hsl(var(--alert-red));
+  }
+  
+  .compliance-arc-dawn {
+    border-top-color: hsl(var(--warning-yellow));
+    border-left-color: hsl(var(--warning-yellow));
+    border-right-color: hsl(var(--warning-yellow));
+  }
+  
+  .compliance-arc-sunrise {
+    border-top-color: hsl(var(--primary-purple));
+    border-left-color: hsl(var(--primary-purple));
+    border-right-color: hsl(var(--primary-purple));
   }
   
   .card-enterprise:hover {

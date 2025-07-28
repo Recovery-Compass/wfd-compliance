@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { Sun, Home, Mountain } from "lucide-react";
 
 interface ComplianceGaugeProps {
   currentCompliance: number;
@@ -7,110 +6,133 @@ interface ComplianceGaugeProps {
   className?: string;
 }
 
-export const ComplianceGauge = ({ currentCompliance, targetCompliance, className = "" }: ComplianceGaugeProps) => {
-  const getComplianceColor = (compliance: number) => {
-    if (compliance < 70) return "text-wfd-purple";
-    if (compliance < 90) return "text-wfd-gold";
-    return "text-wfd-blue";
+export const ComplianceGauge = ({ 
+  currentCompliance, 
+  targetCompliance, 
+  className = "" 
+}: ComplianceGaugeProps) => {
+  // Determine zone based on compliance percentage
+  const getZone = (compliance: number) => {
+    if (compliance < 70) return 'crisis';
+    if (compliance < 90) return 'dawn';
+    return 'sunrise';
   };
 
-  const getComplianceGradient = (compliance: number) => {
-    if (compliance < 70) return "from-wfd-purple to-wfd-purple-light";
-    if (compliance < 90) return "from-wfd-purple via-wfd-gold to-wfd-gold-light";
-    return "from-wfd-purple via-wfd-gold to-wfd-blue";
+  const getZoneColor = (compliance: number) => {
+    if (compliance < 70) return 'hsl(var(--alert-red))';
+    if (compliance < 90) return 'hsl(var(--warning-yellow))';
+    return 'hsl(var(--primary-purple))';
   };
 
-  const progressPercentage = (currentCompliance / 100) * 180; // 180 degrees for semicircle
+  const getZoneLabel = (compliance: number) => {
+    if (compliance < 70) return 'Crisis Zone';
+    if (compliance < 90) return 'Dawn Zone';
+    return 'Sunrise Zone';
+  };
+
+  // Calculate rotation for the progress arc (180 degrees = semicircle)
+  const progressRotation = (currentCompliance / 100) * 180;
 
   return (
-    <Card className={`card-enterprise hover-lift bg-white ${className}`}>
-      <div className="h-gauge flex flex-col justify-center p-xl">
+    <div className={`w-full max-w-md mx-auto ${className}`}>
+      <Card className="card-system p-8">
         {/* Header */}
-        <div className="text-center mb-lg">
-          <div className="flex items-center justify-center space-x-sm mb-sm">
-            <Sun className="h-8 w-8 text-wfd-gold sun-rays" />
-            <Home className="h-6 w-6 text-wfd-purple" />
-            <Mountain className="h-6 w-6 text-wfd-blue" />
-          </div>
-          <h2 className="text-h3-card text-gray-900 font-semibold">Compliance Gauge</h2>
-          <p className="text-label text-gray-500">CURRENT STATUS</p>
+        <div className="text-center mb-8">
+          <h2 className="text-h2 mb-2" style={{ color: 'hsl(var(--text-dark))' }}>
+            Compliance Gauge
+          </h2>
+          <p className="text-label" style={{ color: 'hsl(var(--grey-500))' }}>
+            CURRENT STATUS
+          </p>
         </div>
 
-        {/* Main Gauge */}
-        <div className="relative flex-1 flex items-center justify-center">
-          <div className="relative">
-            {/* Background arc */}
-            <div className="w-80 h-40 relative">
+        {/* Gauge Container */}
+        <div className="compliance-gauge-container mb-8">
+          {/* Background Arc */}
+          <div className="compliance-arc-background"></div>
+          
+          {/* Progress Arc */}
+          <div 
+            className="compliance-arc-progress"
+            style={{
+              borderTopColor: getZoneColor(currentCompliance),
+              borderLeftColor: getZoneColor(currentCompliance),
+              borderRightColor: getZoneColor(currentCompliance),
+              transform: `rotate(${-90 + progressRotation}deg)`,
+              transformOrigin: '50% 100%'
+            }}
+          ></div>
+          
+          {/* Center Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-end pb-4">
+            <div className="text-center">
               <div 
-                className="absolute inset-0 rounded-t-full border-[16px] border-gray-300"
-                style={{ borderBottomColor: 'transparent' }}
-              />
-              
-              {/* Progress arc */}
-              <div 
-                className="absolute inset-0 rounded-t-full border-[16px] border-transparent compliance-fill"
-                style={{
-                  borderTopColor: currentCompliance < 70 ? 'hsl(var(--danger))' : 
-                                  currentCompliance < 90 ? 'hsl(var(--warning))' : 'hsl(var(--success))',
-                  borderLeftColor: currentCompliance < 70 ? 'hsl(var(--danger))' : 
-                                   currentCompliance < 90 ? 'hsl(var(--warning))' : 'hsl(var(--success))',
-                  borderRightColor: currentCompliance < 70 ? 'hsl(var(--danger))' : 
-                                    currentCompliance < 90 ? 'hsl(var(--warning))' : 'hsl(var(--success))',
-                  borderBottomColor: 'transparent',
-                  transform: `rotate(${-90 + (currentCompliance / 100) * 180}deg)`,
-                  transformOrigin: '50% 100%'
-                }}
-              />
-            </div>
-            
-            {/* Center content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-end pb-lg">
-              <div className="text-center">
-                <div className={`text-data-xl font-bold mb-micro ${getComplianceColor(currentCompliance)}`}>
-                  {currentCompliance}%
-                </div>
-                <div className="text-body-base text-gray-700 font-medium">Current Compliance</div>
-                <div className="text-label text-gray-500 mt-micro">Target: {targetCompliance}%</div>
+                className="text-data-large mb-1"
+                style={{ color: getZoneColor(currentCompliance) }}
+              >
+                {currentCompliance}%
+              </div>
+              <div className="text-body" style={{ color: 'hsl(var(--text-dark))' }}>
+                Current Compliance
+              </div>
+              <div className="text-label mt-1" style={{ color: 'hsl(var(--grey-500))' }}>
+                Target: {targetCompliance}%
               </div>
             </div>
           </div>
         </div>
 
-        {/* Status Indicators */}
-        <div className="grid grid-cols-3 gap-md mt-lg">
+        {/* Zone Indicators */}
+        <div className="grid grid-cols-3 gap-4 mb-6">
           <div className="text-center">
-            <div className="progress-enterprise mb-sm">
-              <div className="progress-fill progress-critical" style={{ width: '65%' }}></div>
+            <div className="h-2 rounded-full mb-2" style={{ backgroundColor: 'hsl(var(--alert-red))' }}></div>
+            <div className="text-body font-medium" style={{ color: 'hsl(var(--alert-red))' }}>
+              Crisis Zone
             </div>
-            <div className="text-body-base text-danger font-semibold mb-micro">Crisis Zone</div>
-            <div className="text-label text-gray-500">&lt; 70%</div>
+            <div className="text-label" style={{ color: 'hsl(var(--grey-500))' }}>
+              &lt; 70%
+            </div>
           </div>
           
           <div className="text-center">
-            <div className="progress-enterprise mb-sm">
-              <div className="progress-fill progress-warning" style={{ width: '80%' }}></div>
+            <div className="h-2 rounded-full mb-2" style={{ backgroundColor: 'hsl(var(--warning-yellow))' }}></div>
+            <div className="text-body font-medium" style={{ color: 'hsl(var(--warning-yellow))' }}>
+              Dawn Zone
             </div>
-            <div className="text-body-base text-warning font-semibold mb-micro">Dawn Zone</div>
-            <div className="text-label text-gray-500">70-90%</div>
+            <div className="text-label" style={{ color: 'hsl(var(--grey-500))' }}>
+              70-90%
+            </div>
           </div>
           
           <div className="text-center">
-            <div className="progress-enterprise mb-sm">
-              <div className="progress-fill progress-success" style={{ width: '95%' }}></div>
+            <div className="h-2 rounded-full mb-2" style={{ backgroundColor: 'hsl(var(--primary-purple))' }}></div>
+            <div className="text-body font-medium" style={{ color: 'hsl(var(--primary-purple))' }}>
+              Sunrise Zone
             </div>
-            <div className="text-body-base text-success font-semibold mb-micro">Sunrise Zone</div>
-            <div className="text-label text-gray-500">&gt; 90%</div>
+            <div className="text-label" style={{ color: 'hsl(var(--grey-500))' }}>
+              &gt; 90%
+            </div>
           </div>
         </div>
 
-        {/* Journey Message */}
-        <div className="mt-lg text-center bg-gradient-to-r from-wfd-purple/5 via-wfd-gold/5 to-wfd-blue/5 p-md rounded-lg">
-          <h3 className="text-h3-card font-semibold text-gray-900 mb-micro">Journey to Excellence</h3>
-          <p className="text-body-base text-gray-700">
-            From sunset crisis to sunrise success - every day is a first day
+        {/* Current Zone Status */}
+        <div 
+          className="text-center p-4 rounded"
+          style={{ backgroundColor: 'hsl(var(--grey-100))' }}
+        >
+          <div className="text-h3 mb-1" style={{ color: 'hsl(var(--text-dark))' }}>
+            Current Zone: {getZoneLabel(currentCompliance)}
+          </div>
+          <p className="text-body" style={{ color: 'hsl(var(--grey-600))' }}>
+            {currentCompliance < 70 
+              ? "Critical action needed to reach compliance targets"
+              : currentCompliance < 90 
+              ? "Making progress - continue improvement efforts" 
+              : "Excellent compliance - maintain current standards"
+            }
           </p>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 };
