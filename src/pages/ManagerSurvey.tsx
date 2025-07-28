@@ -12,8 +12,38 @@ const ManagerSurvey = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Survey submitted:", formData);
-    // Handle form submission
+    
+    // Collect all form data
+    const form = e.target as HTMLFormElement;
+    const formDataObj = new FormData(form);
+    const responses: Record<string, any> = {};
+    
+    // Convert FormData to object
+    for (const [key, value] of formDataObj.entries()) {
+      if (responses[key]) {
+        // Handle multiple values (checkboxes)
+        if (Array.isArray(responses[key])) {
+          responses[key].push(value);
+        } else {
+          responses[key] = [responses[key], value];
+        }
+      } else {
+        responses[key] = value;
+      }
+    }
+    
+    // Format email body
+    const emailBody = Object.entries(responses)
+      .map(([key, value]) => `${key}: ${Array.isArray(value) ? value.join(', ') : value}`)
+      .join('\n');
+    
+    // Create mailto link
+    const subject = encodeURIComponent('WFD Manager Survey Response');
+    const body = encodeURIComponent(`WFD Manager Survey Response:\n\n${emailBody}`);
+    const mailtoLink = `mailto:eric@recovery-compass.org?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
   };
 
   return (
