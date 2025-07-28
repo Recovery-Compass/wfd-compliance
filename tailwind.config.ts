@@ -50,6 +50,7 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
+					light: 'hsl(var(--primary-light))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
@@ -76,19 +77,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// WFD Brand Colors - Refined Professional Palette
+				// WFD Brand Colors - From Logo
 				wfd: {
-					'purple-dark': 'hsl(var(--wfd-purple-dark))',
-					purple: 'hsl(var(--wfd-purple))',
-					'purple-light': 'hsl(var(--wfd-purple-light))',
-					'blue-dark': 'hsl(var(--wfd-blue-dark))',
-					blue: 'hsl(var(--wfd-blue))',
-					'blue-light': 'hsl(var(--wfd-blue-light))',
-					'gold-dark': 'hsl(var(--wfd-gold-dark))',
+					purple: 'hsl(var(--primary))',
+					'purple-light': 'hsl(var(--primary-light))',
 					gold: 'hsl(var(--wfd-gold))',
-					'gold-light': 'hsl(var(--wfd-gold-light))'
+					'gold-light': 'hsl(var(--wfd-gold-light))',
+					blue: 'hsl(var(--wfd-blue))',
+					'blue-light': 'hsl(var(--wfd-blue-light))'
 				},
-				// Semantic Enterprise Colors
+				// Status Colors aligned with brand
 				danger: {
 					DEFAULT: 'hsl(var(--danger))',
 					light: 'hsl(var(--danger-light))'
@@ -101,15 +99,6 @@ export default {
 					DEFAULT: 'hsl(var(--success))',
 					light: 'hsl(var(--success-light))'
 				},
-				// Professional Neutrals
-				gray: {
-					900: 'hsl(var(--gray-900))',
-					700: 'hsl(var(--gray-700))',
-					500: 'hsl(var(--gray-500))',
-					300: 'hsl(var(--gray-300))',
-					100: 'hsl(var(--gray-100))'
-				},
-				white: 'hsl(var(--white))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

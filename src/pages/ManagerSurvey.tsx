@@ -48,6 +48,20 @@ const ManagerSurvey = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Header with Logo */}
+      <header className="bg-card border-b border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center gap-3">
+            <img 
+              src="/lovable-uploads/99d2ad22-59f8-4c35-8f1b-8947ccf5657e.png" 
+              alt="Whittier First Day Logo" 
+              className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+            />
+            <span className="text-lg sm:text-headline font-bold text-primary">Whittier First Day</span>
+          </div>
+        </div>
+      </header>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl shadow-lg">
           {/* Header */}

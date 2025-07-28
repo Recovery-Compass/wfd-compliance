@@ -7,10 +7,12 @@ const Index = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center text-white text-xl">
-                ☀
-              </div>
-              <span className="text-headline font-bold text-primary">Whittier First Day</span>
+              <img 
+                src="/lovable-uploads/99d2ad22-59f8-4c35-8f1b-8947ccf5657e.png" 
+                alt="Whittier First Day Logo" 
+                className="w-10 h-10 object-contain"
+              />
+              <span className="text-headline font-bold text-primary hidden sm:inline">Whittier First Day</span>
             </div>
             
             {/* Navigation */}
@@ -191,11 +193,11 @@ const Index = () => {
               </div>
               
               <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 bg-primary-light rounded-full flex items-center justify-center text-white">
-                      🏠
-                    </div>
+                  <div className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 bg-wfd-gold rounded-full flex items-center justify-center text-primary">
+                        🏠
+                      </div>
                     <div>
                       <div className="text-body font-semibold">Maria Rodriguez</div>
                       <div className="text-xs text-muted-foreground">Last update: 2h ago</div>
