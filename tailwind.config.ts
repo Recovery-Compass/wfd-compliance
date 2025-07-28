@@ -52,6 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// WFD Brand Colors
+				wfd: {
+					purple: 'hsl(var(--wfd-purple))',
+					'purple-light': 'hsl(var(--wfd-purple-light))',
+					blue: 'hsl(var(--wfd-blue))',
+					'blue-light': 'hsl(var(--wfd-blue-light))',
+					gold: 'hsl(var(--wfd-gold))',
+					'gold-light': 'hsl(var(--wfd-gold-light))',
+					sunrise: 'hsl(var(--wfd-sunrise))'
+				},
+				success: 'hsl(var(--success))',
+				warning: 'hsl(var(--warning))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

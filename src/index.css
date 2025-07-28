@@ -8,33 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* WFD Brand Colors - Based on logo design */
+    --wfd-purple: 276 100% 27%; /* Deep purple from "First" */
+    --wfd-purple-light: 293 69% 49%; /* Lighter purple */
+    --wfd-blue: 207 90% 42%; /* Bright blue from "Day" */
+    --wfd-blue-light: 207 73% 63%; /* Lighter blue */
+    --wfd-gold: 45 100% 50%; /* Warm gold from sun */
+    --wfd-gold-light: 45 100% 70%; /* Lighter gold */
+    --wfd-sunrise: 30 100% 60%; /* Orange sunrise */
+    
+    /* System colors using WFD brand */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 276 100% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 276 100% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 276 100% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 276 100% 27%; /* WFD Purple */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 207 90% 42%; /* WFD Blue */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 30% 95%;
+    --muted-foreground: 276 40% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 100% 50%; /* WFD Gold */
+    --accent-foreground: 276 100% 27%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 276 100% 27%; /* Purple for danger with dignity */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 207 90% 42%; /* Blue for success */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 100% 50%; /* Gold for warning */
+    --warning-foreground: 276 100% 27%;
+
+    --border: 276 20% 90%;
+    --input: 276 20% 90%;
+    --ring: 276 100% 27%;
 
     --radius: 0.5rem;
 
@@ -94,12 +110,66 @@ All colors MUST be HSL.
   }
 }
 
+/* WFD Custom Gradients and Animations */
 @layer base {
+  :root {
+    /* Sunrise Journey Gradients */
+    --gradient-sunrise: linear-gradient(135deg, hsl(var(--wfd-purple)), hsl(var(--wfd-gold)), hsl(var(--wfd-blue)));
+    --gradient-progress: linear-gradient(90deg, hsl(var(--wfd-purple)), hsl(var(--wfd-gold)) 50%, hsl(var(--wfd-blue)));
+    --gradient-dawn: linear-gradient(180deg, hsl(var(--wfd-purple) / 0.1), hsl(var(--wfd-gold) / 0.1));
+    
+    /* Shadows with WFD colors */
+    --shadow-purple: 0 10px 30px -10px hsl(var(--wfd-purple) / 0.3);
+    --shadow-gold: 0 0 40px hsl(var(--wfd-gold) / 0.4);
+    --shadow-blue: 0 10px 25px -5px hsl(var(--wfd-blue) / 0.3);
+    
+    /* Smooth transitions */
+    --transition-sunrise: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* WFD Progress Arc Component */
+  .sunrise-arc {
+    @apply relative w-48 h-24 mx-auto;
+    background: conic-gradient(from 180deg at 50% 100%, 
+      hsl(var(--wfd-purple)) 0deg, 
+      hsl(var(--wfd-gold)) 90deg, 
+      hsl(var(--wfd-blue)) 180deg);
+    border-radius: 100px 100px 0 0;
+    mask: radial-gradient(at 50% 100%, transparent 60px, black 62px);
+  }
+  
+  /* Sun Ray Animation */
+  .sun-rays {
+    animation: rays-rotate 8s linear infinite;
+  }
+  
+  @keyframes rays-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* House Icon Bounce */
+  .house-bounce {
+    animation: house-bounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes house-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  
+  /* Compliance Progress Animation */
+  .compliance-fill {
+    transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
