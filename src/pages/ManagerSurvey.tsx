@@ -51,11 +51,11 @@ const ManagerSurvey = () => {
       <div className="container-dashboard py-12">
         <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl shadow-lg">
           {/* Header */}
-          <div className="bg-primary text-white px-8 py-8 rounded-t-xl text-center">
-            <h1 className="text-hero mb-3" style={{ color: '#FFFFFF !important' }}>
+          <div className="bg-primary px-8 py-8 rounded-t-xl text-center force-white-text">
+            <h1 className="text-hero mb-3 force-white-text">
               Building Better Together
             </h1>
-            <p className="text-body" style={{ color: '#FFFFFF !important', opacity: 0.9 }}>
+            <p className="text-body force-white-text" style={{ opacity: 0.9 }}>
               Your Input Shapes Our Future
             </p>
           </div>
