@@ -1,63 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* RECOVERY COMPASS DESIGN SYSTEM
- * Clean, systematic design with unified color palette and 8px grid
+/* MINIMALIST DESIGN SYSTEM
+ * Single accent color, clean typography, generous whitespace
  */
 
 @layer base {
   :root {
-    /* 8px Grid System */
-    --spacing-1: 0.5rem;    /* 8px */
-    --spacing-2: 1rem;      /* 16px */
-    --spacing-3: 1.5rem;    /* 24px */
-    --spacing-4: 2rem;      /* 32px */
-    --spacing-6: 3rem;      /* 48px */
-    --spacing-8: 4rem;      /* 64px */
+    /* Minimalist Color Palette - Single Accent Approach */
+    --primary: 262 81% 28%;              /* #4A148C - Deep Purple */
+    --primary-light: 262 81% 38%;        /* #6A1B9A - Light Purple */
     
-    /* Core Color Palette */
-    --primary-purple: 257 40% 62%;     /* #6C5DD3 */
-    --secondary-grey-bg: 0 0% 96%;     /* #F5F5F5 */
-    --text-dark: 0 0% 20%;             /* #333333 */
-    --alert-red: 354 70% 58%;          /* #E63946 */
-    --warning-yellow: 43 100% 48%;     /* #F4B400 */
+    /* Neutral Foundation */
+    --background: 217 33% 97%;           /* #F7F9FC - Soft off-white */
+    --foreground: 240 24% 12%;           /* #1E1E2F - Dark charcoal */
+    --card: 0 0% 100%;                   /* #FFFFFF - Pure white */
+    --card-foreground: 240 24% 12%;      /* #1E1E2F - Dark text */
+    --border: 220 13% 91%;               /* #E2E8F0 - Light gray */
+    --muted: 215 20% 65%;                /* #6B7280 - Medium gray */
+    --muted-foreground: 215 20% 65%;     /* #6B7280 - Muted text */
     
-    /* Extended Neutrals */
-    --white: 0 0% 100%;                /* #FFFFFF */
-    --grey-50: 210 20% 98%;            /* #F8FAFC */
-    --grey-100: 220 14% 96%;           /* #F1F5F9 */
-    --grey-200: 220 13% 91%;           /* #E2E8F0 */
-    --grey-300: 215 20% 83%;           /* #CBD5E1 */
-    --grey-400: 215 16% 65%;           /* #94A3B8 */
-    --grey-500: 215 19% 46%;           /* #64748B */
-    --grey-600: 215 25% 35%;           /* #475569 */
-    --grey-700: 215 25% 27%;           /* #334155 */
-    --grey-800: 217 33% 17%;           /* #1E293B */
-    --grey-900: 222 84% 5%;            /* #0F172A */
+    /* Status Colors - Minimal set */
+    --success: 142 76% 36%;              /* #0F9D58 - Success green */
+    --warning: 45 96% 49%;               /* #F4B400 - Warning yellow */
+    --danger: 4 90% 58%;                 /* #D93025 - Danger red */
     
-    /* System Integration */
-    --background: var(--secondary-grey-bg);
-    --foreground: var(--text-dark);
-    --card: var(--white);
-    --card-foreground: var(--text-dark);
-    --primary: var(--primary-purple);
-    --primary-foreground: var(--white);
-    --secondary: var(--grey-100);
-    --secondary-foreground: var(--text-dark);
-    --muted: var(--grey-100);
-    --muted-foreground: var(--grey-600);
-    --accent: var(--primary-purple);
-    --accent-foreground: var(--white);
-    --destructive: var(--alert-red);
-    --destructive-foreground: var(--white);
-    --border: var(--grey-200);
-    --input: var(--white);
-    --ring: var(--primary-purple);
+    /* System Mappings */
+    --secondary: var(--background);
+    --secondary-foreground: var(--foreground);
+    --accent: var(--primary);
+    --accent-foreground: var(--card);
+    --destructive: var(--danger);
+    --destructive-foreground: var(--card);
+    --input: var(--card);
+    --ring: var(--primary);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;                   /* 12px - Consistent border radius */
 
     --sidebar-background: 0 0% 98%;
 
@@ -115,23 +96,9 @@
   }
 }
 
-/* WFD Custom Gradients and Animations */
+}
+
 @layer base {
-  :root {
-    /* Sunrise Journey Gradients */
-    --gradient-sunrise: linear-gradient(135deg, hsl(var(--wfd-purple)), hsl(var(--wfd-gold)), hsl(var(--wfd-blue)));
-    --gradient-progress: linear-gradient(90deg, hsl(var(--wfd-purple)), hsl(var(--wfd-gold)) 50%, hsl(var(--wfd-blue)));
-    --gradient-dawn: linear-gradient(180deg, hsl(var(--wfd-purple) / 0.1), hsl(var(--wfd-gold) / 0.1));
-    
-    /* Shadows with WFD colors */
-    --shadow-purple: 0 10px 30px -10px hsl(var(--wfd-purple) / 0.3);
-    --shadow-gold: 0 0 40px hsl(var(--wfd-gold) / 0.4);
-    --shadow-blue: 0 10px 25px -5px hsl(var(--wfd-blue) / 0.3);
-    
-    /* Smooth transitions */
-    --transition-sunrise: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
   * {
     @apply border-border;
   }
@@ -140,252 +107,130 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
   }
 }
 
 @layer components {
-  /* RECOVERY COMPASS TYPOGRAPHY - Inter Font Family */
-  .text-h2 {
-    font-size: 1.75rem; /* 28px */
-    font-weight: 700;
-    line-height: 1.3;
-    font-family: 'Inter', sans-serif;
+  /* MINIMALIST TYPOGRAPHY - Clean hierarchy */
+  .text-display {
+    @apply text-5xl font-bold leading-tight; /* 48px */
   }
   
-  .text-h3 {
-    font-size: 1.25rem; /* 20px */
-    font-weight: 500;
-    line-height: 1.4;
-    font-family: 'Inter', sans-serif;
+  .text-hero {
+    @apply text-3xl font-bold leading-tight; /* 32px */
+  }
+  
+  .text-headline {
+    @apply text-xl font-semibold leading-snug; /* 20px */
+  }
+  
+  .text-title {
+    @apply text-lg font-semibold leading-normal; /* 18px */
   }
   
   .text-body {
-    font-size: 1rem; /* 16px */
-    font-weight: 400;
-    line-height: 1.5;
-    font-family: 'Inter', sans-serif;
+    @apply text-sm leading-relaxed; /* 14px */
   }
   
-  .text-label {
-    font-size: 0.75rem; /* 12px */
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-family: 'Inter', sans-serif;
+  .text-caption {
+    @apply text-xs font-medium uppercase tracking-wider; /* 12px */
   }
   
-  .text-data-large {
-    font-size: 4rem; /* 64px */
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-    font-family: 'Inter', sans-serif;
-    line-height: 1;
+  .text-kpi-value {
+    @apply text-4xl font-bold tabular-nums leading-none; /* 36px */
   }
   
-  /* CARD STYLING - 8px border radius, 0.1em shadows */
-  .card-system {
-    @apply bg-card border border-border;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    transition: all 200ms ease-in-out;
+  /* MINIMAL CARD SYSTEM */
+  .card-minimal {
+    @apply bg-card border border-border rounded-xl p-6 shadow-sm transition-all duration-200;
   }
   
-  .card-system:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  .card-minimal:hover {
+    @apply shadow-md;
   }
   
-  /* COMPLIANCE GAUGE STYLING */
-  .compliance-gauge-container {
-    position: relative;
-    width: 20rem; /* 320px */
-    height: 10rem; /* 160px */
-    margin: 0 auto;
+  /* BADGES - Light borders instead of fills */
+  .badge-minimal {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold border;
   }
   
-  .compliance-arc-background {
-    position: absolute;
-    width: 100%;
-    height: 200%;
-    border: 12px solid hsl(var(--grey-300));
-    border-bottom: 12px solid transparent;
-    border-radius: 50%;
-    transform: rotate(0deg);
+  .badge-success {
+    @apply text-green-700 border-green-200 bg-green-50;
   }
   
-  .compliance-arc-progress {
-    position: absolute;
-    width: 100%;
-    height: 200%;
-    border: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    border-radius: 50%;
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  .badge-warning {
+    @apply text-yellow-700 border-yellow-200 bg-yellow-50;
   }
   
-  .compliance-arc-crisis {
-    border-top-color: hsl(var(--alert-red));
-    border-left-color: hsl(var(--alert-red));
-    border-right-color: hsl(var(--alert-red));
+  .badge-danger {
+    @apply text-red-700 border-red-200 bg-red-50;
   }
   
-  .compliance-arc-dawn {
-    border-top-color: hsl(var(--warning-yellow));
-    border-left-color: hsl(var(--warning-yellow));
-    border-right-color: hsl(var(--warning-yellow));
+  /* PROGRESS BARS - Simple and clean */
+  .progress-minimal {
+    @apply w-full h-4 bg-muted rounded-lg overflow-hidden;
   }
   
-  .compliance-arc-sunrise {
-    border-top-color: hsl(var(--primary-purple));
-    border-left-color: hsl(var(--primary-purple));
-    border-right-color: hsl(var(--primary-purple));
+  .progress-fill {
+    @apply h-full bg-primary transition-all duration-300 ease-out rounded-lg;
   }
   
-  .card-enterprise:hover {
-    box-shadow: 0 4px 6px -1px hsl(var(--wfd-purple) / 0.1), 
-                0 2px 4px -2px hsl(var(--wfd-purple) / 0.1);
+  /* TABLE STYLING - Clean and scannable */
+  .table-minimal {
+    @apply w-full border-separate border-spacing-0;
   }
   
-  /* WFD SUNRISE ARC - REDESIGNED FOR ENTERPRISE */
-  .sunrise-arc {
-    @apply relative mx-auto;
-    width: 16rem; /* 256px */
-    height: 8rem; /* 128px */
-    background: conic-gradient(from 180deg at 50% 100%, 
-      hsl(var(--wfd-purple)) 0deg, 
-      hsl(var(--wfd-gold)) 90deg, 
-      hsl(var(--wfd-blue)) 180deg);
-    border-radius: 8rem 8rem 0 0;
-    mask: radial-gradient(at 50% 100%, transparent 4.5rem, black 4.75rem);
-    filter: drop-shadow(0 4px 6px hsl(var(--wfd-purple) / 0.1));
+  .table-minimal th {
+    @apply text-left font-semibold text-muted-foreground text-caption p-3 border-b border-border bg-muted/30;
   }
   
-  /* Sun Ray Animation */
-  .sun-rays {
-    animation: rays-rotate 8s linear infinite;
+  .table-minimal td {
+    @apply p-3 border-b border-border/50 text-body;
   }
   
-  @keyframes rays-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  .table-minimal tbody tr:nth-child(even) {
+    @apply bg-muted/20;
   }
   
-  /* House Icon Bounce */
-  .house-bounce {
-    animation: house-bounce 2s ease-in-out infinite;
+  .table-minimal tbody tr:hover {
+    @apply bg-muted/40;
   }
   
-  @keyframes house-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+  /* BUTTONS - Minimal styling */
+  .btn-minimal {
+    @apply px-3 py-2 border border-border rounded-lg text-body font-medium transition-colors duration-200;
   }
   
-  /* ENTERPRISE INTERACTION PATTERNS */
-  
-  /* Hover Effects */
-  .hover-lift {
-    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  .btn-minimal:hover {
+    @apply bg-muted/50;
   }
   
-  .hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px -4px hsl(var(--wfd-purple) / 0.15);
+  .btn-primary {
+    @apply bg-primary text-white border-primary;
   }
   
-  /* Loading States */
-  .skeleton {
-    background: linear-gradient(90deg, 
-      hsl(var(--gray-300)) 25%, 
-      hsl(var(--gray-100)) 50%, 
-      hsl(var(--gray-300)) 75%);
-    background-size: 200% 100%;
-    animation: skeleton-pulse 1.5s ease-in-out infinite;
+  .btn-primary:hover {
+    @apply bg-primary-light;
   }
   
-  @keyframes skeleton-pulse {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+  /* LAYOUT UTILITIES */
+  .container-dashboard {
+    @apply max-w-7xl mx-auto px-6;
   }
   
-  /* Smooth Page Transitions */
-  .page-transition {
-    animation: fade-slide-in 300ms ease-out;
+  /* ANIMATIONS - Subtle and smooth */
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
   }
   
-  @keyframes fade-slide-in {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  /* Professional Data Tables */
-  .data-table {
-    @apply border-separate;
-    border-spacing: 0;
-  }
-  
-  .data-table th {
-    @apply bg-gray-100 text-gray-700 font-medium text-label p-sm border-b border-gray-300;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  
-  .data-table td {
-    @apply p-sm border-b border-gray-300/50 text-body-base;
-    transition: background-color 150ms ease-in-out;
-  }
-  
-  .data-table tbody tr:nth-child(even) {
-    @apply bg-gray-100/30;
-  }
-  
-  .data-table tbody tr:hover {
-    @apply bg-gray-100;
-  }
-  
-  /* Alert Components */
-  .alert-critical {
-    @apply border-l-4 border-danger bg-danger-light/20 p-md rounded-r-lg;
-  }
-  
-  .alert-warning {
-    @apply border-l-4 border-warning bg-warning-light/20 p-md rounded-r-lg;
-  }
-  
-  .alert-success {
-    @apply border-l-4 border-success bg-success-light/20 p-md rounded-r-lg;
-  }
-  
-  /* Compliance Progress Animation */
-  .compliance-fill {
-    transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* Professional Progress Bars */
-  .progress-enterprise {
-    @apply w-full bg-gray-300 rounded-full overflow-hidden;
-    height: 8px;
-  }
-  
-  .progress-enterprise .progress-fill {
-    @apply h-full rounded-full transition-all duration-500 ease-out;
-  }
-  
-  .progress-enterprise .progress-critical {
-    @apply bg-gradient-to-r from-danger to-danger-light;
-  }
-  
-  .progress-enterprise .progress-warning {
-    @apply bg-gradient-to-r from-warning to-warning-light;
-  }
-  
-  .progress-enterprise .progress-success {
-    @apply bg-gradient-to-r from-success to-success-light;
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }

@@ -1,257 +1,287 @@
-import { WFDHeader } from "@/components/WFDHeader";
-import { ComplianceGauge } from "@/components/ComplianceGauge";
-import { ClientCountdownCard } from "@/components/ClientCountdownCard";
-import { KPIMetricsGrid } from "@/components/KPIMetricsGrid";
-import { Mountain } from "lucide-react";
-
-// Sample data for demo
-const sampleClients = [
-  { id: '1', name: 'Maria Rodriguez', daysRemaining: 15, status: 'critical' as const, lastUpdate: '2 hours ago' },
-  { id: '2', name: 'James Thompson', daysRemaining: 45, status: 'warning' as const, lastUpdate: '1 day ago' },
-  { id: '3', name: 'Sarah Chen', daysRemaining: 72, status: 'stable' as const, lastUpdate: '3 hours ago' },
-  { id: '4', name: 'Michael Brown', daysRemaining: 8, status: 'critical' as const, lastUpdate: '30 minutes ago' },
-];
-
-const sampleMetrics = [
-  {
-    id: '1',
-    title: 'Housing Placement Rate',
-    current: 65,
-    target: 95,
-    unit: '%' as const,
-    trend: 'up' as const,
-    icon: 'users' as const,
-    description: 'Client housing success'
-  },
-  {
-    id: '2',
-    title: 'Documentation Complete',
-    current: 78,
-    target: 100,
-    unit: '%' as const,
-    trend: 'up' as const,
-    icon: 'files' as const,
-    description: 'Required paperwork'
-  },
-  {
-    id: '3',
-    title: 'Average Days to Housing',
-    current: 45,
-    target: 30,
-    unit: 'days' as const,
-    trend: 'down' as const,
-    icon: 'calendar' as const,
-    description: 'Time to placement'
-  },
-  {
-    id: '4',
-    title: 'Service Compliance',
-    current: 82,
-    target: 95,
-    unit: '%' as const,
-    trend: 'up' as const,
-    icon: 'check' as const,
-    description: 'County requirements'
-  }
-];
-
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <WFDHeader />
-      
-      {/* Breadcrumb Navigation */}
-      <div className="bg-white border-b border-gray-300">
-        <div className="max-w-dashboard mx-auto px-xl py-sm">
-          <nav className="text-label text-gray-700">
-            Dashboard / <span className="text-wfd-purple font-medium">Executive Overview</span>
-          </nav>
-        </div>
-      </div>
-      
-      {/* SECTION A: COMPLIANCE GAUGE - 12-Column Grid */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <section className="grid grid-cols-12 gap-4 mb-8">
-          {/* Compliance Gauge - Spans 6 columns, max-width 400px, center aligned */}
-          <div className="col-span-12 lg:col-span-6 lg:col-start-4 flex justify-center">
-            <div className="w-full max-w-[400px]">
-              <ComplianceGauge 
-                currentCompliance={65} 
-                targetCompliance={95}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Key Performance Indicators Grid */}
-        <section className="mb-xl">
-          <div className="flex items-center justify-between mb-lg">
-            <h2 className="text-h2-section text-gray-900">Key Performance Indicators</h2>
-            <div className="text-body-base text-gray-500">Updated every 4 hours</div>
-          </div>
-          <KPIMetricsGrid metrics={sampleMetrics} />
-        </section>
-
-        {/* Data Section - 70/30 Split */}
-        <section className="grid grid-cols-1 lg:grid-cols-10 gap-xl mb-xl">
-          {/* Left: Program Performance Table (70%) */}
-          <div className="lg:col-span-7">
-            <div className="card-enterprise hover-lift">
-              <div className="p-xl">
-                <h3 className="text-h3-card text-gray-900 mb-lg">Program Performance Overview</h3>
-                <div className="overflow-x-auto">
-                  <table className="data-table w-full">
-                    <thead>
-                      <tr>
-                        <th className="text-left">Program</th>
-                        <th className="text-center">Clients</th>
-                        <th className="text-center">Compliance</th>
-                        <th className="text-center">Trend</th>
-                        <th className="text-right">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="font-medium">Ted's Place</td>
-                        <td className="text-center">37</td>
-                        <td className="text-center">
-                          <span className="text-danger font-semibold">58%</span>
-                        </td>
-                        <td className="text-center">
-                          <span className="text-warning">↗ Improving</span>
-                        </td>
-                        <td className="text-right">
-                          <button className="text-wfd-blue hover:text-wfd-blue-dark text-body-base font-medium">View Details</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="font-medium">Hondo</td>
-                        <td className="text-center">122</td>
-                        <td className="text-center">
-                          <span className="text-warning font-semibold">72%</span>
-                        </td>
-                        <td className="text-center">
-                          <span className="text-success">↗ Improving</span>
-                        </td>
-                        <td className="text-right">
-                          <button className="text-wfd-blue hover:text-wfd-blue-dark text-body-base font-medium">View Details</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="font-medium">Pathway Home</td>
-                        <td className="text-center">108</td>
-                        <td className="text-center">
-                          <span className="text-success font-semibold">94%</span>
-                        </td>
-                        <td className="text-center">
-                          <span className="text-success">↗ Excellent</span>
-                        </td>
-                        <td className="text-right">
-                          <button className="text-wfd-blue hover:text-wfd-blue-dark text-body-base font-medium">View Details</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+    <div className="min-h-screen bg-background">
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 w-full bg-card border-b border-border z-50">
+        <div className="container-dashboard py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center text-white text-xl">
+                ☀
               </div>
+              <span className="text-headline font-bold text-primary">Whittier First Day</span>
             </div>
-          </div>
-
-          {/* Right: Timeline & Alerts (30%) */}
-          <div className="lg:col-span-3 space-y-lg">
-            <ClientCountdownCard clients={sampleClients} />
             
-            {/* Quick Actions */}
-            <div className="card-enterprise hover-lift">
-              <div className="p-lg">
-                <h4 className="text-h3-card text-gray-900 mb-md">Quick Actions</h4>
-                <div className="space-y-sm">
-                  <button className="w-full text-left p-sm rounded-lg bg-wfd-blue/10 hover:bg-wfd-blue/20 transition-colors text-body-base text-wfd-blue font-medium">
-                    Generate Weekly Report
-                  </button>
-                  <button className="w-full text-left p-sm rounded-lg bg-wfd-gold/10 hover:bg-wfd-gold/20 transition-colors text-body-base text-wfd-gold-dark font-medium">
-                    Schedule 5x5 Reviews
-                  </button>
-                  <button className="w-full text-left p-sm rounded-lg bg-success/10 hover:bg-success/20 transition-colors text-body-base text-success font-medium">
-                    Export Dashboard
-                  </button>
-                </div>
+            {/* Navigation */}
+            <nav className="flex gap-6">
+              <a href="#" className="text-body text-primary border-b-2 border-primary pb-1">Dashboard</a>
+              <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Programs</a>
+              <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Managers</a>
+              <a href="#" className="text-body text-muted-foreground hover:text-primary transition-colors">Story Mode</a>
+            </nav>
+            
+            {/* User Menu */}
+            <div className="flex items-center gap-3">
+              <span className="text-body text-muted-foreground">Donna Gallup</span>
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-body font-semibold">
+                DG
               </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="pt-20 container-dashboard py-8 fade-in">
+        {/* Hero Section */}
+        <section className="mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Critical Alert */}
+            <div className="card-minimal">
+              <h3 className="text-title font-semibold mb-2">Critical Timeline</h3>
+              <p className="text-body text-muted-foreground mb-3">
+                Clients approaching the 90‑day limit requiring placement
+              </p>
+              <p className="text-caption text-muted-foreground">Last updated 2 hours ago</p>
+            </div>
+
+            {/* Compliance Progress */}
+            <div className="card-minimal text-center">
+              <p className="text-caption text-muted-foreground mb-2">Current compliance</p>
+              <div className="progress-minimal mb-3">
+                <div className="progress-fill" style={{ width: '65%' }}></div>
+              </div>
+              <div className="text-5xl font-bold text-primary mb-1">65%</div>
+              <p className="text-caption text-red-600 font-semibold mb-3">Target: 95%</p>
+              <h2 className="text-headline font-semibold mb-2">Journey to Excellence</h2>
+              <p className="text-body text-muted-foreground">
+                From sunset crisis to sunrise – every day is a first day.
+              </p>
+            </div>
+
+            {/* 5x5 Alert */}
+            <div className="card-minimal">
+              <h3 className="text-title font-semibold mb-2">5×5 Assessments</h3>
+              <p className="text-body text-muted-foreground mb-3">
+                Overdue assessments requiring completion this week
+              </p>
+              <p className="text-caption text-muted-foreground">Due: Friday</p>
             </div>
           </div>
         </section>
 
-        {/* Recovery Timeline */}
-        <section className="mb-xl">
-          <div className="card-enterprise hover-lift">
-            <div className="p-xl">
-              <h3 className="text-h3-card text-gray-900 mb-lg flex items-center space-x-sm">
-                <Mountain className="h-6 w-6 text-wfd-blue" />
-                <span>5x5 Audit Recovery Timeline</span>
-                <div className="ml-auto text-label text-gray-500">90 days to full compliance</div>
-              </h3>
+        {/* KPI Section */}
+        <section className="mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Housing Placement Rate */}
+            <div className="card-minimal">
+              <div className="flex justify-between items-start mb-4">
+                <p className="text-caption text-muted-foreground">Housing placement rate</p>
+                <span className="text-xs text-green-600 font-medium">↑ Improving</span>
+              </div>
+              <div className="text-kpi-value text-primary mb-2">65%</div>
+              <div className="progress-minimal mb-2">
+                <div className="progress-fill" style={{ width: '65%' }}></div>
+              </div>
+              <p className="text-xs text-muted-foreground">Target: 95%</p>
+            </div>
+
+            {/* Documentation Complete */}
+            <div className="card-minimal">
+              <div className="flex justify-between items-start mb-4">
+                <p className="text-caption text-muted-foreground">Documentation complete</p>
+                <span className="text-xs text-green-600 font-medium">↑ Improving</span>
+              </div>
+              <div className="text-kpi-value text-primary mb-2">78%</div>
+              <div className="progress-minimal mb-2">
+                <div className="progress-fill" style={{ width: '78%' }}></div>
+              </div>
+              <p className="text-xs text-muted-foreground">Target: 100%</p>
+            </div>
+
+            {/* Average Days to Housing */}
+            <div className="card-minimal">
+              <div className="flex justify-between items-start mb-4">
+                <p className="text-caption text-muted-foreground">Avg days to housing</p>
+                <span className="text-xs text-red-600 font-medium">↓ Declining</span>
+              </div>
+              <div className="text-kpi-value text-primary mb-2">45</div>
+              <div className="progress-minimal mb-2">
+                <div className="progress-fill" style={{ width: '50%' }}></div>
+              </div>
+              <p className="text-xs text-muted-foreground">Target: 30 days</p>
+            </div>
+
+            {/* Service Compliance */}
+            <div className="card-minimal">
+              <div className="flex justify-between items-start mb-4">
+                <p className="text-caption text-muted-foreground">Service compliance</p>
+                <span className="text-xs text-green-600 font-medium">↑ Improving</span>
+              </div>
+              <div className="text-kpi-value text-primary mb-2">82%</div>
+              <div className="progress-minimal mb-2">
+                <div className="progress-fill" style={{ width: '82%' }}></div>
+              </div>
+              <p className="text-xs text-muted-foreground">Target: 95%</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Data Section */}
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Program Performance Table */}
+          <div className="lg:col-span-2 card-minimal">
+            <h3 className="text-title font-semibold mb-4">Program performance overview</h3>
+            <div className="overflow-x-auto">
+              <table className="table-minimal">
+                <thead>
+                  <tr>
+                    <th>Program</th>
+                    <th>Clients</th>
+                    <th>Compliance</th>
+                    <th>Trend</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span className="font-semibold">Ted's Place</span></td>
+                    <td>37</td>
+                    <td><span className="badge-minimal badge-danger">58%</span></td>
+                    <td><span className="text-xs text-yellow-600">↑ Improving</span></td>
+                    <td><button className="btn-minimal">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><span className="font-semibold">Hondo</span></td>
+                    <td>122</td>
+                    <td><span className="badge-minimal badge-warning">72%</span></td>
+                    <td><span className="text-xs text-green-600">↑ Improving</span></td>
+                    <td><button className="btn-minimal">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><span className="font-semibold">Pathway Home</span></td>
+                    <td>108</td>
+                    <td><span className="badge-minimal badge-success">85%</span></td>
+                    <td><span className="text-xs text-green-600">↑ Stable</span></td>
+                    <td><button className="btn-minimal">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><span className="font-semibold">A2C</span></td>
+                    <td>9</td>
+                    <td><span className="badge-minimal badge-success">92%</span></td>
+                    <td><span className="text-xs text-green-600">↑ Excellent</span></td>
+                    <td><button className="btn-minimal">View</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Sidebar with Timeline Cards */}
+          <div className="space-y-6">
+            {/* Housing Timeline */}
+            <div className="card-minimal">
+              <div className="pb-4 border-b border-border mb-4">
+                <h3 className="text-title font-semibold">90‑day housing timeline</h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  <span className="text-red-600">⚠</span> 2 critical  
+                  <span className="text-yellow-600 ml-2">⚠</span> 1 warning
+                </p>
+              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
-                <div className="relative">
-                  <div className="alert-success">
-                    <div className="flex items-center space-x-sm mb-sm">
-                      <div className="w-4 h-4 bg-success rounded-full"></div>
-                      <span className="text-h3-card font-semibold text-success">Phase 1 Complete</span>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 bg-primary-light rounded-full flex items-center justify-center text-white">
+                      🏠
                     </div>
-                    <p className="text-body-base text-gray-700">Crisis Assessment & Immediate Actions</p>
-                    <div className="mt-sm text-label text-gray-500">Completed July 15, 2024</div>
+                    <div>
+                      <div className="text-body font-semibold">Maria Rodriguez</div>
+                      <div className="text-xs text-muted-foreground">Last update: 2h ago</div>
+                    </div>
+                  </div>
+                  <div className="px-2 py-1 bg-red-600 text-white rounded-full text-xs font-semibold">
+                    15 days
                   </div>
                 </div>
-                
-                <div className="relative">
-                  <div className="alert-warning">
-                    <div className="flex items-center space-x-sm mb-sm">
-                      <div className="w-4 h-4 bg-warning rounded-full animate-pulse"></div>
-                      <span className="text-h3-card font-semibold text-warning">Phase 2 Active</span>
+
+                <div className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 bg-primary-light rounded-full flex items-center justify-center text-white">
+                      🏠
                     </div>
-                    <p className="text-body-base text-gray-700">Process Improvement & Training</p>
-                    <div className="mt-sm text-label text-gray-500">Target: August 30, 2024</div>
+                    <div>
+                      <div className="text-body font-semibold">James Thompson</div>
+                      <div className="text-xs text-muted-foreground">Last update: 1 day ago</div>
+                    </div>
+                  </div>
+                  <div className="px-2 py-1 bg-yellow-600 text-white rounded-full text-xs font-semibold">
+                    45 days
                   </div>
                 </div>
-                
-                <div className="relative">
-                  <div className="border border-gray-300 p-md rounded-lg bg-gray-100/50">
-                    <div className="flex items-center space-x-sm mb-sm">
-                      <div className="w-4 h-4 bg-gray-500 rounded-full"></div>
-                      <span className="text-h3-card font-semibold text-gray-500">Phase 3 Planned</span>
+
+                <div className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 bg-primary-light rounded-full flex items-center justify-center text-white">
+                      🏠
                     </div>
-                    <p className="text-body-base text-gray-500">Full Compliance Achievement</p>
-                    <div className="mt-sm text-label text-gray-500">Target: October 15, 2024</div>
+                    <div>
+                      <div className="text-body font-semibold">Sarah Chen</div>
+                      <div className="text-xs text-muted-foreground">Last update: 3h ago</div>
+                    </div>
                   </div>
+                  <div className="px-2 py-1 bg-green-600 text-white rounded-full text-xs font-semibold">
+                    72 days
+                  </div>
+                </div>
+
+                <div className="text-center mt-4">
+                  <button className="btn-minimal w-full">Schedule 5×5 reviews</button>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Executive Summary for Funders */}
-        <section>
-          <div className="card-enterprise hover-lift">
-            <div className="bg-gradient-to-r from-wfd-purple to-wfd-blue text-white p-xl rounded-t-lg">
-              <h3 className="text-h2-section font-semibold mb-sm">Executive Summary</h3>
-              <p className="text-body-large opacity-90">Transforming compliance crisis into sustainable success</p>
-            </div>
-            <div className="p-xl">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-xl text-center">
-                <div>
-                  <div className="text-data-xl text-danger mb-xs">65%</div>
-                  <div className="text-h3-card text-gray-700 mb-micro">Crisis Point</div>
-                  <div className="text-body-base text-gray-500">Failed county audit</div>
+            {/* Audit Recovery Timeline */}
+            <div className="card-minimal">
+              <h3 className="text-title font-semibold mb-1">5×5 audit recovery timeline</h3>
+              <p className="text-xs text-muted-foreground mb-4">90 days to full compliance</p>
+              
+              <div className="space-y-4">
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-body font-bold mx-auto mb-2">
+                    ✓
+                  </div>
+                  <div className="font-semibold text-body">Phase 1</div>
+                  <div className="text-xs text-green-600 font-medium">Complete</div>
+                  <div className="text-xs text-muted-foreground">Crisis assessment & actions</div>
+                  <div className="text-xs text-muted-foreground">Completed Jul 15, 2024</div>
                 </div>
-                <div>
-                  <div className="text-data-xl text-warning mb-xs">80%</div>
-                  <div className="text-h3-card text-gray-700 mb-micro">Current Progress</div>
-                  <div className="text-body-base text-gray-500">Steady improvement</div>
+
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center text-white text-body font-bold mx-auto mb-2">
+                    2
+                  </div>
+                  <div className="font-semibold text-body">Phase 2</div>
+                  <div className="text-xs text-yellow-600 font-medium">In progress</div>
+                  <div className="text-xs text-muted-foreground">Process improvement & training</div>
+                  <div className="text-xs text-muted-foreground">Target Aug 30, 2024</div>
                 </div>
-                <div>
-                  <div className="text-data-xl text-success mb-xs">95%</div>
-                  <div className="text-h3-card text-gray-700 mb-micro">Target Achievement</div>
-                  <div className="text-body-base text-gray-500">Funding secured</div>
+
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-border rounded-full flex items-center justify-center text-muted-foreground text-body font-bold mx-auto mb-2">
+                    3
+                  </div>
+                  <div className="font-semibold text-body">Phase 3</div>
+                  <div className="text-xs text-muted-foreground font-medium">Planned</div>
+                  <div className="text-xs text-muted-foreground">Full compliance achievement</div>
+                  <div className="text-xs text-muted-foreground">Target Oct 15, 2024</div>
+                </div>
+              </div>
+
+              <div className="mt-4 p-3 bg-primary/10 rounded-lg text-center">
+                <div className="text-body text-primary font-medium">
+                  Goal: achieve 95% compliance within 90 days
                 </div>
               </div>
             </div>
