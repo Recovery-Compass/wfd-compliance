@@ -321,7 +321,7 @@ export const ResearchExportDashboard = () => {
             </div>
 
             <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-              <h4 className="text-body font-semibold text-green-800 mb-2">IRB Compliance Note</h4>
+              <h4 className="text-body font-semibold text-green-800 mb-2">Data Privacy Note</h4>
               <p className="text-caption text-green-700">
                 All exported data is automatically anonymized. Personal identifiers are removed before export. 
                 This study has been conducted in accordance with ethical research standards and Gates Foundation methodology.

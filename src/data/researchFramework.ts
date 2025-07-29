@@ -98,7 +98,7 @@ export const gatesResearchFramework = {
     }
   ],
   ethicalConsiderations: {
-    irb_approval: true,
+    ethical_review: true,
     informed_consent: true,
     data_anonymization: true,
     participant_withdrawal: true,

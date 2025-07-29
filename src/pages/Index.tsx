@@ -85,7 +85,7 @@ const Index = () => {
                 Gates Foundation validated framework tracking compliance improvement from crisis to excellence
               </p>
               <div className="mt-3 flex gap-2">
-                <span className="badge-minimal badge-success text-xs">IRB Approved</span>
+                <span className="badge-minimal badge-success text-xs">Pilot Study</span>
                 <span className="badge-minimal badge-warning text-xs">Active Study</span>
               </div>
             </div>
