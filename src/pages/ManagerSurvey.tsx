@@ -94,7 +94,7 @@ const ManagerSurvey = () => {
               Manager Readiness Assessment
             </h1>
             <p className="text-sm sm:text-body force-white-text" style={{ opacity: 0.9 }}>
-              6-Month Research Study on Organizational Change Through Data Utilization
+              6-Month Pilot Study on Organizational Change Through Data Utilization
             </p>
           </div>
 
@@ -102,7 +102,7 @@ const ManagerSurvey = () => {
           <div className="bg-muted/30 px-4 sm:px-8 py-4 sm:py-6 border-b border-border">
             <p className="text-sm sm:text-body leading-relaxed">
               <strong className="block mb-3 sm:mb-4 text-base sm:text-title">Dear WFD Manager,</strong>
-              This baseline assessment uses the validated ORIC-12 (Organizational Readiness for Implementing Change) instrument plus custom questions specific to WFD's data transformation journey. Your responses will contribute to academic research on digital transformation in homeless services.
+              This baseline assessment uses the validated ORIC-12 (Organizational Readiness for Implementing Change) instrument plus custom questions specific to WFD's data transformation journey. Your responses will help us understand current practices and design a dashboard that actually supports your daily work.
             </p>
             <div className="mt-4 p-3 bg-primary/10 border border-primary/20 rounded-lg">
               <p className="text-xs sm:text-caption text-primary font-medium">
@@ -111,7 +111,7 @@ const ManagerSurvey = () => {
             </div>
             <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg">
               <p className="text-xs sm:text-caption text-green-700 font-medium">
-                ✓ IRB Approved | ✓ 5-minute completion | ✓ Anonymous option available
+                ✓ 5-minute completion time | ✓ Responses will be aggregated | ✓ Optional contact info for follow-up
               </p>
             </div>
           </div>
