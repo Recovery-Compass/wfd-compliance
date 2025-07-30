@@ -423,8 +423,9 @@ const ManagerSurvey = () => {
                   </Label>
                   <div className="bg-muted/20 p-4 sm:p-6 rounded-lg space-y-3">
                     {programType === "interim-housing" ? [
-                      "Clients approaching 90-day limit",
+                      "Clients approaching 90-day goal",
                       "Overdue 5×5 assessments",
+                      "Pending biopsychosocial assessments",
                       "My performance vs. goals",
                       "Available beds/resources",
                       "Housing placement opportunities",
