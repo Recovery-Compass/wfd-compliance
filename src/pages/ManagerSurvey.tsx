@@ -430,7 +430,12 @@ const ManagerSurvey = () => {
                       "Available beds/resources",
                       "Housing placement opportunities",
                       "Today's priority tasks"
-                    ] : [
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-center gap-3 py-2">
+                        <Input className="w-10 sm:w-12 text-center font-medium text-sm sm:text-base" placeholder="#" name={`dashboard-rank-${index}`} />
+                        <Label className="flex-1 text-sm sm:text-base">{item}</Label>
+                      </div>
+                    )) : [
                       "Service touches this week",
                       "Referral outcomes",
                       "My performance vs. goals",
