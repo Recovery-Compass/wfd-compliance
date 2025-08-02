@@ -458,9 +458,9 @@ export const PreTrainingSurvey = ({ participantId, onSurveyComplete }: PreTraini
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-3">
             <img 
-              src="/lovable-uploads/99d2ad22-59f8-4c35-8f1b-8947ccf5657e.png" 
-              alt="WFD Logo" 
-              className="w-10 h-10 object-contain"
+              src="/lovable-uploads/afbdd2d6-a84b-471a-a0cb-05b4a50829ee.png" 
+              alt="First Day Logo" 
+              className="w-12 h-12 object-contain"
             />
             <div>
               <h1 className="text-headline font-bold text-primary">Gates Foundation Research Study</h1>
