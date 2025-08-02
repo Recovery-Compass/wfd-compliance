@@ -77,14 +77,21 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// WFD Brand Colors - From Logo
+				// WFD Brand Colors - Warm sunset/sunrise palette
 				wfd: {
 					purple: 'hsl(var(--primary))',
 					'purple-light': 'hsl(var(--primary-light))',
 					gold: 'hsl(var(--wfd-gold))',
 					'gold-light': 'hsl(var(--wfd-gold-light))',
+					orange: 'hsl(var(--wfd-orange))',
+					'orange-light': 'hsl(var(--wfd-orange-light))',
 					blue: 'hsl(var(--wfd-blue))',
 					'blue-light': 'hsl(var(--wfd-blue-light))'
+				},
+				// Survey specific colors
+				survey: {
+					'bg-start': 'hsl(var(--survey-bg-start))',
+					'bg-end': 'hsl(var(--survey-bg-end))'
 				},
 				// Status Colors aligned with brand
 				danger: {

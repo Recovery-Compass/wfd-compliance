@@ -10,22 +10,28 @@
 
 @layer base {
   :root {
-    /* WFD Brand Colors - From Logo */
+    /* WFD Brand Colors - Warm sunset/sunrise palette from logo */
     --primary: 262 81% 28%;              /* #4A148C - Deep Purple (matches "First") */
     --primary-light: 262 81% 38%;        /* #6A1B9A - Light Purple */
-    --wfd-gold: 45 96% 49%;              /* #FFB300 - Warm Gold (sun) */
-    --wfd-gold-light: 45 96% 65%;        /* #FFD54F - Light Gold */
+    --wfd-gold: 35 95% 60%;              /* #FFB547 - Warm sunset gold */
+    --wfd-gold-light: 35 95% 75%;        /* #FFCB7A - Light sunset gold */
+    --wfd-orange: 25 95% 65%;            /* #FF8A47 - Warm orange */
+    --wfd-orange-light: 25 95% 80%;      /* #FFB894 - Light orange */
     --wfd-blue: 207 90% 54%;             /* #1976D2 - Bright Blue (matches "Day") */
     --wfd-blue-light: 207 90% 70%;       /* #42A5F5 - Light Blue */
     
-    /* Neutral Foundation */
-    --background: 217 33% 97%;           /* #F7F9FC - Soft off-white */
+    /* Warm gradient background inspired by logo */
+    --survey-bg-start: 35 100% 96%;      /* #FFF8F0 - Very light orange */
+    --survey-bg-end: 262 100% 98%;       /* #F9F5FF - Very light purple */
+    
+    /* Neutral Foundation with warmth */
+    --background: 35 50% 98%;            /* #FEF9F5 - Warm off-white */
     --foreground: 240 24% 12%;           /* #1E1E2F - Dark charcoal */
     --card: 0 0% 100%;                   /* #FFFFFF - Pure white */
     --card-foreground: 240 24% 12%;      /* #1E1E2F - Dark text */
-    --border: 220 13% 91%;               /* #E2E8F0 - Light gray */
-    --muted: 215 20% 65%;                /* #6B7280 - Medium gray */
-    --muted-foreground: 215 20% 65%;     /* #6B7280 - Muted text */
+    --border: 35 30% 88%;                /* #E8DDD5 - Warm light gray */
+    --muted: 35 15% 65%;                 /* #A69A8F - Warm medium gray */
+    --muted-foreground: 35 15% 45%;      /* #7A6F64 - Warm muted text */
     
     /* Status Colors - Aligned with WFD brand */
     --success: 142 76% 36%;              /* #0F9D58 - Success green */

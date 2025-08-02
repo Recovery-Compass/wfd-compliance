@@ -452,19 +452,21 @@ export const PreTrainingSurvey = ({ participantId, onSurveyComplete }: PreTraini
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-card border-b border-border">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/afbdd2d6-a84b-471a-a0cb-05b4a50829ee.png" 
-              alt="First Day Logo" 
-              className="w-12 h-12 object-contain"
-            />
-            <div>
-              <h1 className="text-headline font-bold text-primary">Gates Foundation Research Study</h1>
-              <p className="text-body text-muted-foreground">Pre-Training Baseline Assessment</p>
+    <div className="min-h-screen bg-gradient-to-br from-survey-bg-start via-white to-survey-bg-end">
+      {/* Header with warm gradient */}
+      <header className="bg-gradient-to-r from-wfd-orange to-wfd-gold shadow-lg border-b border-wfd-orange/20">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex items-center gap-4">
+            <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+              <img 
+                src="/lovable-uploads/afbdd2d6-a84b-471a-a0cb-05b4a50829ee.png" 
+                alt="First Day Logo" 
+                className="w-14 h-14 object-contain"
+              />
+            </div>
+            <div className="text-white">
+              <h1 className="text-2xl font-bold mb-1">Gates Foundation Research Study</h1>
+              <p className="text-white/90 text-lg">Pre-Training Baseline Assessment</p>
             </div>
           </div>
         </div>
@@ -472,31 +474,35 @@ export const PreTrainingSurvey = ({ participantId, onSurveyComplete }: PreTraini
 
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          {/* Progress Bar */}
-          <div className="mb-8">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-body font-medium">Section {currentSection + 1} of {sections.length}</span>
-              <span className="text-body text-muted-foreground">{Math.round(progress)}% Complete</span>
+          {/* Progress Bar with warm styling */}
+          <div className="mb-8 bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-white/40">
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-lg font-semibold text-wfd-purple">Section {currentSection + 1} of {sections.length}</span>
+              <span className="text-base text-wfd-orange font-medium">{Math.round(progress)}% Complete</span>
             </div>
-            <Progress value={progress} className="h-2" />
-            <p className="text-caption text-muted-foreground mt-2">{sections[currentSection]}</p>
+            <Progress value={progress} className="h-3 bg-wfd-gold-light/30" />
+            <p className="text-sm text-wfd-purple/80 mt-3 font-medium">{sections[currentSection]}</p>
           </div>
 
-          {/* Survey Content */}
-          <Card className="p-8 mb-6">
+          {/* Survey Content with enhanced card */}
+          <Card className="p-10 mb-8 shadow-xl bg-white/90 backdrop-blur-sm border-0 rounded-2xl">
             {renderSection()}
           </Card>
 
-          {/* Navigation */}
-          <div className="flex justify-between">
+          {/* Navigation with warm styling */}
+          <div className="flex justify-between gap-4">
             <Button 
               variant="outline" 
               onClick={handlePrevious}
               disabled={currentSection === 0}
+              className="px-8 py-3 text-base bg-white/80 border-wfd-orange/40 text-wfd-purple hover:bg-wfd-orange/10 hover:border-wfd-orange disabled:opacity-50"
             >
               Previous
             </Button>
-            <Button onClick={handleNext}>
+            <Button 
+              onClick={handleNext}
+              className="px-8 py-3 text-base bg-gradient-to-r from-wfd-orange to-wfd-gold text-white hover:from-wfd-orange/90 hover:to-wfd-gold/90 shadow-lg border-0"
+            >
               {currentSection === sections.length - 1 ? "Complete Assessment" : "Next Section"}
             </Button>
           </div>
