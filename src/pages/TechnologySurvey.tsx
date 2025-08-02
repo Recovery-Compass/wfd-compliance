@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
 
-const QUALTRICS_URL = 'https://qfreeaccountssjc1.az1.qualtrics.com/jfe/form/SV_9GH8KCnqcJYdVZA';
+const QUALTRICS_URL = 'https://qualtricsxmnl72x43l7.qualtrics.com/jfe/form/SV_9GH8KCnqcJYdVZA';
 
 export default function TechnologySurvey() {
   const [loadState, setLoadState] = useState<'loading' | 'ready' | 'error'>('loading');
