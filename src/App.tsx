@@ -7,6 +7,7 @@ import { SiteTypeProvider } from "@/hooks/useSiteType";
 import Index from "./pages/Index";
 import ManagerSurvey from "./pages/ManagerSurvey";
 import ResearchDashboard from "./pages/ResearchDashboard";
+import TechnologySurvey from "./pages/TechnologySurvey";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/survey" element={<ManagerSurvey />} />
             <Route path="/research" element={<ResearchDashboard />} />
+            <Route path="/technology-survey" element={<TechnologySurvey />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
