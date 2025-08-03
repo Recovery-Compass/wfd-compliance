@@ -11,9 +11,9 @@ export const ValueMetrics = () => {
       target: "90%",
       trend: "+12% this month",
       status: "STRONG",
-      statusColor: "text-green-600 bg-green-50",
+      statusColor: "text-success bg-success-light",
       detail: "$3.4M properly documented | $1.0M opportunity remaining",
-      color: "border-green-500"
+      color: "border-success"
     },
     {
       icon: <DollarSign className="w-6 h-6" />,
@@ -23,7 +23,7 @@ export const ValueMetrics = () => {
       unit: "services/week",
       detail: "Every service logged = $87 in funding secured",
       trend: "↗️ Accelerating",
-      color: "border-blue-500"
+      color: "border-wfd-blue"
     },
     {
       icon: <Users className="w-6 h-6" />,
@@ -34,7 +34,7 @@ export const ValueMetrics = () => {
         month: "$510,000",
         annual: "$4.4M Projected"
       },
-      color: "border-purple-500"
+      color: "border-wfd-purple"
     },
     {
       icon: <Trophy className="w-6 h-6" />,
@@ -42,7 +42,7 @@ export const ValueMetrics = () => {
       champions: ["A2C (92%)", "Pathway Homes (90%)"],
       rising: "Hondo Center (77% ↗️)",
       nextUp: "Ted's Place (targeting 80%)",
-      color: "border-amber-500"
+      color: "border-wfd-gold"
     }
   ];
 
@@ -52,7 +52,13 @@ export const ValueMetrics = () => {
         <Card key={idx} className={`border-t-4 ${metric.color} hover:shadow-lg transition-shadow`}>
           <CardContent className="p-6">
             <div className="flex items-start justify-between mb-4">
-              <div className={`p-2 rounded-lg ${metric.color.replace('border', 'bg').replace('500', '100')}`}>
+            <div className={`p-2 rounded-lg ${
+              metric.color === 'border-success' ? 'bg-success-light' :
+              metric.color === 'border-wfd-blue' ? 'bg-wfd-blue/10' :
+              metric.color === 'border-wfd-purple' ? 'bg-wfd-purple/10' :
+              metric.color === 'border-wfd-gold' ? 'bg-wfd-gold/10' :
+              'bg-muted'
+            }`}>
                 {metric.icon}
               </div>
               {metric.status && (
@@ -62,23 +68,23 @@ export const ValueMetrics = () => {
               )}
             </div>
             
-            <h3 className="font-semibold text-gray-700 mb-3">{metric.title}</h3>
+            <h3 className="font-semibold text-foreground mb-3">{metric.title}</h3>
             
             {metric.breakdown ? (
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-gray-900">{metric.current}</div>
+                <div className="text-3xl font-bold text-foreground">{metric.current}</div>
                 <div className="space-y-1 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">This Week:</span>
+                    <span className="text-muted-foreground">This Week:</span>
                     <span className="font-semibold">{metric.breakdown.week}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">This Month:</span>
+                    <span className="text-muted-foreground">This Month:</span>
                     <span className="font-semibold">{metric.breakdown.month}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Annual:</span>
-                    <span className="font-bold text-purple-600">{metric.breakdown.annual}</span>
+                    <span className="text-muted-foreground">Annual:</span>
+                    <span className="font-bold text-wfd-purple">{metric.breakdown.annual}</span>
                   </div>
                 </div>
               </div>
@@ -93,29 +99,29 @@ export const ValueMetrics = () => {
                   ))}
                 </div>
                 <div className="pt-2 border-t">
-                  <div className="text-sm text-gray-600">Rising Star:</div>
-                  <div className="font-semibold text-amber-600">{metric.rising}</div>
+                  <div className="text-sm text-muted-foreground">Rising Star:</div>
+                  <div className="font-semibold text-wfd-gold">{metric.rising}</div>
                 </div>
               </div>
             ) : (
               <>
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-3xl font-bold text-gray-900">{metric.current}</span>
-                  {metric.unit && <span className="text-sm text-gray-600">{metric.unit}</span>}
+                  <span className="text-3xl font-bold text-foreground">{metric.current}</span>
+                  {metric.unit && <span className="text-sm text-muted-foreground">{metric.unit}</span>}
                 </div>
                 {metric.target && (
-                  <div className="text-sm text-gray-600 mb-2">
+                  <div className="text-sm text-muted-foreground mb-2">
                     Target: <span className="font-semibold">{metric.target}</span>
                   </div>
                 )}
                 {metric.trend && (
-                  <div className="text-sm font-medium text-green-600">{metric.trend}</div>
+                  <div className="text-sm font-medium text-success">{metric.trend}</div>
                 )}
               </>
             )}
             
             {metric.detail && (
-              <div className="mt-4 pt-4 border-t text-xs text-gray-600">
+              <div className="mt-4 pt-4 border-t text-xs text-muted-foreground">
                 {metric.detail}
               </div>
             )}

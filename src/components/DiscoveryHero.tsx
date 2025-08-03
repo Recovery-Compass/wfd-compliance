@@ -19,7 +19,7 @@ export const DiscoveryHero = () => {
   const remainingPercentage = targetPercentage - progressPercentage;
 
   return (
-    <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-600 rounded-2xl p-8 text-white mb-8 shadow-2xl relative overflow-hidden">
+    <div className="bg-gradient-to-r from-wfd-purple via-wfd-blue to-wfd-gold rounded-2xl p-8 text-white mb-8 shadow-2xl relative overflow-hidden">
       <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
       
       <div className="relative z-10">
@@ -74,7 +74,7 @@ export const DiscoveryHero = () => {
           </div>
           <div className="bg-white/20 rounded-full h-8 overflow-hidden shadow-inner">
             <div 
-              className="h-full bg-gradient-to-r from-green-400 to-emerald-300 transition-all duration-1000 relative"
+              className="h-full bg-gradient-to-r from-wfd-gold to-wfd-blue transition-all duration-1000 relative"
               style={{ width: `${progressPercentage}%` }}
             >
               <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
@@ -88,7 +88,7 @@ export const DiscoveryHero = () => {
         
         <Button 
           size="lg" 
-          className="bg-white text-blue-600 hover:bg-gray-100 font-semibold shadow-lg transform hover:scale-105 transition-all"
+          className="bg-white text-wfd-purple hover:bg-gray-100 font-semibold shadow-lg transform hover:scale-105 transition-all"
           onClick={() => document.getElementById('discovery-story')?.scrollIntoView({ behavior: 'smooth' })}
         >
           See How We Found $4.4M 

@@ -9,19 +9,19 @@ export const EnhancedProgramTable = () => {
   const filteredPrograms = getEnhancedProgramsBySiteType(selectedSiteType);
   
   const getRowClassName = (program: typeof enhancedPrograms[0]) => {
-    if (program.status === 'critical') return 'bg-red-50 animate-pulse';
-    if (program.status === 'priority') return 'bg-yellow-50';
-    if (program.status === 'champion') return 'bg-green-50';
+    if (program.status === 'critical') return 'bg-danger-light animate-pulse';
+    if (program.status === 'priority') return 'bg-warning-light';
+    if (program.status === 'champion') return 'bg-success-light';
     return '';
   };
 
   const getStatusBadge = (status: string) => {
     const styles = {
-      champion: 'bg-green-100 text-green-800',
-      strong: 'bg-blue-100 text-blue-800',
-      improving: 'bg-amber-100 text-amber-800',
-      priority: 'bg-yellow-100 text-yellow-800',
-      critical: 'bg-red-100 text-red-800'
+      champion: 'bg-success-light text-success',
+      strong: 'bg-wfd-blue/10 text-wfd-blue',
+      improving: 'bg-wfd-gold/10 text-wfd-gold',
+      priority: 'bg-warning-light text-warning',
+      critical: 'bg-danger-light text-danger'
     };
     return styles[status as keyof typeof styles] || '';
   };
@@ -35,7 +35,7 @@ export const EnhancedProgramTable = () => {
     <Card className="mb-8">
       <CardHeader>
         <CardTitle>Program Documentation Performance</CardTitle>
-        <p className="text-sm text-gray-600">Services Delivered vs. Services Documented = Funding Opportunity</p>
+        <p className="text-sm text-muted-foreground">Services Delivered vs. Services Documented = Funding Opportunity</p>
       </CardHeader>
       <CardContent>
         <div className="overflow-x-auto">
@@ -65,19 +65,19 @@ export const EnhancedProgramTable = () => {
                   <td className="text-center p-3">{program.servicesDocumented.toLocaleString()}</td>
                   <td className="text-center p-3">
                     <div className="flex items-center justify-center gap-2">
-                      <span className={`font-bold ${program.documentationRate >= 80 ? 'text-green-600' : program.documentationRate >= 60 ? 'text-yellow-600' : 'text-red-600'}`}>
+                      <span className={`font-bold ${program.documentationRate >= 80 ? 'text-success' : program.documentationRate >= 60 ? 'text-warning' : 'text-danger'}`}>
                         {program.documentationRate}%
                       </span>
-                      {program.trend === 'up' && <TrendingUp className="w-4 h-4 text-green-500" />}
+                      {program.trend === 'up' && <TrendingUp className="w-4 h-4 text-success" />}
                     </div>
                   </td>
                   <td className="text-center p-3">
-                    <span className="font-bold text-red-600">{program.documentationGap}</span>
+                    <span className="font-bold text-danger">{program.documentationGap}</span>
                   </td>
                   <td className="p-3 text-sm">
                     <div className="flex items-center gap-2">
                       {(program.status === 'critical' || program.status === 'priority') && 
-                        <AlertCircle className="w-4 h-4 text-yellow-500" />
+                        <AlertCircle className="w-4 h-4 text-warning" />
                       }
                       {program.quickWin}
                     </div>
@@ -86,13 +86,13 @@ export const EnhancedProgramTable = () => {
               ))}
             </tbody>
             <tfoot>
-              <tr className="font-bold bg-gray-50">
+              <tr className="font-bold bg-muted">
                 <td className="p-3">TOTAL</td>
                 <td className="text-center p-3">{totalClients}</td>
                 <td className="text-center p-3">{totalDelivered.toLocaleString()}</td>
                 <td className="text-center p-3">{totalDocumented.toLocaleString()}</td>
-                <td className="text-center p-3 text-blue-600">{overallRate}%</td>
-                <td className="text-center p-3 text-red-600">$550,000</td>
+                <td className="text-center p-3 text-wfd-blue">{overallRate}%</td>
+                <td className="text-center p-3 text-danger">$550,000</td>
                 <td className="p-3 text-sm">System-wide opportunity</td>
               </tr>
             </tfoot>

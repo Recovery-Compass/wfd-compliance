@@ -10,45 +10,51 @@
 
 @layer base {
   :root {
-    /* WFD Brand Colors - Warm sunset/sunrise palette from logo */
-    --primary: 262 81% 28%;              /* #4A148C - Deep Purple (matches "First") */
-    --primary-light: 262 81% 38%;        /* #6A1B9A - Light Purple */
-    --wfd-gold: 35 95% 60%;              /* #FFB547 - Warm sunset gold */
-    --wfd-gold-light: 35 95% 75%;        /* #FFCB7A - Light sunset gold */
-    --wfd-orange: 25 95% 65%;            /* #FF8A47 - Warm orange */
-    --wfd-orange-light: 25 95% 80%;      /* #FFB894 - Light orange */
-    --wfd-blue: 207 90% 54%;             /* #1976D2 - Bright Blue (matches "Day") */
-    --wfd-blue-light: 207 90% 70%;       /* #42A5F5 - Light Blue */
+    /* EXACT WFD BRAND COLORS FROM LOGO */
+    --primary: 262 81% 25%;              /* Deep Purple - matches "First" */
+    --primary-light: 262 81% 35%;        /* Light Purple variation */
+    --primary-foreground: 0 0% 100%;     /* White text on purple */
     
-    /* Warm gradient background inspired by logo */
-    --survey-bg-start: 35 100% 96%;      /* #FFF8F0 - Very light orange */
-    --survey-bg-end: 262 100% 98%;       /* #F9F5FF - Very light purple */
+    --wfd-gold: 45 100% 65%;             /* Golden sun rays */
+    --wfd-gold-light: 45 100% 80%;       /* Light gold variation */
+    --wfd-blue: 207 90% 54%;             /* Bright blue - matches "Day" */
+    --wfd-blue-light: 207 90% 70%;       /* Light blue variation */
     
-    /* Neutral Foundation with warmth */
-    --background: 35 50% 98%;            /* #FEF9F5 - Warm off-white */
-    --foreground: 240 24% 12%;           /* #1E1E2F - Dark charcoal */
-    --card: 0 0% 100%;                   /* #FFFFFF - Pure white */
-    --card-foreground: 240 24% 12%;      /* #1E1E2F - Dark text */
-    --border: 35 30% 88%;                /* #E8DDD5 - Warm light gray */
-    --muted: 35 15% 65%;                 /* #A69A8F - Warm medium gray */
-    --muted-foreground: 35 15% 45%;      /* #7A6F64 - Warm muted text */
+    /* PROFESSIONAL GRADIENTS */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--wfd-blue)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--wfd-gold)), hsl(var(--wfd-orange)));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 50%));
     
-    /* Status Colors - Aligned with WFD brand */
-    --success: 142 76% 36%;              /* #0F9D58 - Success green */
-    --warning: var(--wfd-gold);          /* Use WFD gold for warnings */
-    --danger: 4 90% 58%;                 /* #D93025 - Danger red */
+    /* NEUTRAL FOUNDATION - Clean & Professional */
+    --background: 0 0% 98%;              /* Clean light gray */
+    --foreground: 0 0% 9%;               /* Deep charcoal text */
+    --card: 0 0% 100%;                   /* Pure white cards */
+    --card-foreground: 0 0% 9%;          /* Dark text on cards */
+    --border: 0 0% 90%;                  /* Light gray borders */
+    --muted: 0 0% 96%;                   /* Light gray backgrounds */
+    --muted-foreground: 0 0% 45%;        /* Medium gray text */
     
-    /* System Mappings */
-    --secondary: var(--background);
+    /* STATUS COLORS - Aligned with brand */
+    --success: 142 76% 36%;              /* Professional green */
+    --success-light: 142 76% 90%;        /* Light green backgrounds */
+    --warning: var(--wfd-gold);          /* Use brand gold */
+    --warning-light: 45 100% 92%;        /* Light gold backgrounds */
+    --danger: 4 90% 58%;                 /* Professional red */
+    --danger-light: 4 90% 92%;           /* Light red backgrounds */
+    
+    /* SYSTEM MAPPINGS */
+    --secondary: var(--muted);
     --secondary-foreground: var(--foreground);
-    --accent: var(--primary);
-    --accent-foreground: var(--card);
+    --accent: var(--wfd-blue);
+    --accent-foreground: 0 0% 100%;
     --destructive: var(--danger);
-    --destructive-foreground: var(--card);
+    --destructive-foreground: 0 0% 100%;
     --input: var(--card);
     --ring: var(--primary);
+    --popover: var(--card);
+    --popover-foreground: var(--card-foreground);
 
-    --radius: 0.75rem;                   /* 12px - Consistent border radius */
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 

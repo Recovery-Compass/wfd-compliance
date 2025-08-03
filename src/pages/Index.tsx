@@ -14,7 +14,7 @@ const Index = () => {
   const { selectedSiteType, currentSiteType } = useSiteType();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-wfd-blue/5 via-background to-wfd-gold/5">
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 w-full bg-card border-b border-border z-50">
         <div className="container-dashboard py-4">
@@ -81,7 +81,7 @@ const Index = () => {
       <div className="fixed bottom-6 right-6 z-50 md:hidden">
         <Button
           size="lg"
-          className="rounded-full w-16 h-16 shadow-2xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+          className="rounded-full w-16 h-16 shadow-2xl bg-gradient-to-r from-wfd-blue to-wfd-purple hover:from-wfd-blue-light hover:to-wfd-purple"
         >
           <Plus className="w-8 h-8" />
         </Button>
