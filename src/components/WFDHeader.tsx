@@ -37,17 +37,17 @@ export const WFDHeader = ({ className = "" }: WFDHeaderProps) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-lg">
-            <Link to="/executive-dashboard" className="text-body-base font-medium text-wfd-purple hover:text-wfd-purple-light transition-colors">
+          <nav className="hidden lg:flex items-center space-x-8">
+            <Link to="/executive-dashboard" className="text-body-base font-medium text-wfd-purple hover:text-wfd-purple-light transition-colors px-3 py-2 rounded-md">
               Executive Dashboard
             </Link>
-            <Link to="/programs" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
+            <Link to="/programs" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors px-3 py-2 rounded-md">
               Programs
             </Link>
-            <Link to="/research" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
+            <Link to="/research" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors px-3 py-2 rounded-md">
               Research Export
             </Link>
-            <Link to="/story-mode" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
+            <Link to="/story-mode" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors px-3 py-2 rounded-md">
               Story Mode
             </Link>
           </nav>
