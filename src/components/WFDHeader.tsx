@@ -1,4 +1,5 @@
 import { Sun, Home, Mountain, Palmtree } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface WFDHeaderProps {
   className?: string;
@@ -27,18 +28,18 @@ export const WFDHeader = ({ className = "" }: WFDHeaderProps) => {
 
           {/* Navigation Center */}
           <nav className="hidden lg:flex items-center space-x-lg">
-            <a href="/executive-dashboard" className="text-body-base font-medium text-wfd-purple hover:text-wfd-purple-light transition-colors">
+            <Link to="/executive-dashboard" className="text-body-base font-medium text-wfd-purple hover:text-wfd-purple-light transition-colors">
               Executive Dashboard
-            </a>
-            <a href="/programs" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
+            </Link>
+            <Link to="/programs" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
               Programs
-            </a>
-            <a href="/research" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
+            </Link>
+            <Link to="/research" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
               Research Export
-            </a>
-            <a href="/story-mode" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
+            </Link>
+            <Link to="/story-mode" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors">
               Story Mode
-            </a>
+            </Link>
           </nav>
 
           {/* User Menu Right */}
