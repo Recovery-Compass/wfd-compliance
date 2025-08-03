@@ -8,6 +8,11 @@ import Index from "./pages/Index";
 import ManagerSurvey from "./pages/ManagerSurvey";
 import ResearchDashboard from "./pages/ResearchDashboard";
 import TechnologySurvey from "./pages/TechnologySurvey";
+import Programs from "./pages/Programs";
+import ProgramDetail from "./pages/ProgramDetail";
+import StoryMode from "./pages/StoryMode";
+import ExecutiveDashboard from "./pages/ExecutiveDashboard";
+import FundingCalculator from "./pages/FundingCalculator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +29,11 @@ const App = () => (
             <Route path="/survey" element={<ManagerSurvey />} />
             <Route path="/research" element={<ResearchDashboard />} />
             <Route path="/technology-survey" element={<TechnologySurvey />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/programs/:programName" element={<ProgramDetail />} />
+            <Route path="/story-mode" element={<StoryMode />} />
+            <Route path="/executive-dashboard" element={<ExecutiveDashboard />} />
+            <Route path="/funding-calculator" element={<FundingCalculator />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
