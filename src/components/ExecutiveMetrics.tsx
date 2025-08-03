@@ -40,13 +40,13 @@ export const ExecutiveMetrics = () => {
         <CardTitle>Board Report Snapshot</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {metrics.map((metric, idx) => (
-            <div key={idx} className="text-center p-4 bg-success/10 border border-success/20 rounded-lg">
+            <div key={idx} className="text-center p-3 md:p-4 bg-success/10 border border-success/20 rounded-lg">
               <div className="flex justify-center mb-2 text-success">
                 {metric.icon}
               </div>
-              <div className="text-2xl font-bold text-success">{metric.value}</div>
+              <div className="text-lg md:text-2xl font-bold text-success">{metric.value}</div>
               <div className="text-sm text-success/80">{metric.subtitle}</div>
               <div className="text-xs text-muted-foreground mt-1">{metric.title}</div>
             </div>

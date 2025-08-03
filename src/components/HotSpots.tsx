@@ -41,7 +41,7 @@ export const HotSpots = () => {
           {hotspots.map((spot, idx) => (
             <div 
               key={idx} 
-              className={`flex items-center justify-between p-4 border rounded-lg ${
+              className={`flex items-center justify-between p-3 md:p-4 border rounded-lg ${
                 spot.color === 'destructive' ? 'bg-destructive/10 border-destructive/20' :
                 spot.color === 'warning' ? 'bg-warning/10 border-warning/20' :
                 'bg-success/10 border-success/20'

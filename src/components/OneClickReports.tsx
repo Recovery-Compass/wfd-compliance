@@ -38,7 +38,7 @@ export const OneClickReports = () => {
             <Button 
               key={idx} 
               variant="outline" 
-              className="w-full justify-start h-auto p-4"
+              className="w-full justify-start h-auto p-3 md:p-4 touch-manipulation"
             >
               <div className="flex items-start gap-3">
                 <div className="text-primary mt-1">{report.icon}</div>
