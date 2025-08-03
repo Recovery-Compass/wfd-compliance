@@ -14,7 +14,7 @@ const Index = () => {
   const { selectedSiteType, currentSiteType } = useSiteType();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-wfd-blue/5 via-background to-wfd-gold/2">
+    <div className="min-h-screen bg-gradient-to-br from-wfd-blue/5 via-background to-background">
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 w-full bg-card border-b border-border z-50">
         <div className="container-dashboard py-4">
