@@ -36,9 +36,9 @@ export default function TechnologySurvey() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-wfd-sunset-light via-wfd-gold-light to-wfd-primary-light">
+    <div className="min-h-screen bg-gradient-to-br from-background via-wfd-gold/5 to-wfd-purple/5">
       {/* Brand Header */}
-      <header className="bg-gradient-to-r from-wfd-primary via-wfd-sunset to-wfd-gold shadow-lg">
+      <header className="bg-gradient-to-r from-wfd-purple to-wfd-blue shadow-lg">
         <div className="container-dashboard py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -48,7 +48,7 @@ export default function TechnologySurvey() {
                 className="h-12 w-auto"
               />
               <div>
-                <h1 className="text-2xl font-bold text-white drop-shadow-md">Technology Perception Survey</h1>
+                <h1 className="text-2xl font-bold text-white drop-shadow-md force-white-text">Technology Perception Survey</h1>
                 <p className="text-white/90 mt-1 font-medium">Whittier First Day Assessment</p>
               </div>
             </div>
