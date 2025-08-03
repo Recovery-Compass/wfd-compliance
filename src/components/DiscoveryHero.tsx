@@ -27,7 +27,7 @@ export const DiscoveryHero = () => {
           <span className="bg-red-500 text-white px-4 py-1.5 rounded-full text-sm font-bold animate-pulse shadow-lg">
             BREAKING
           </span>
-          <span className="text-sm opacity-90 font-medium">Documentation Audit Results • Monday, August 5, 2025</span>
+          <span className="text-sm opacity-90 font-medium">Documentation Audit Results • Monday, August 4, 2025</span>
         </div>
         
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
