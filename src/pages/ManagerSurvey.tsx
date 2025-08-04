@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -12,6 +12,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const ManagerSurvey = () => {
   const [programType, setProgramType] = useState("");
   const [formData, setFormData] = useState({});
+  const [currentSection] = useState(1);
+  const [totalSections, setTotalSections] = useState(8);
+
+  useEffect(() => {
+    setTotalSections(8 + (programType ? 1 : 0));
+  }, [programType]);
+
+  const progressPercentage = (currentSection / totalSections) * 100;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -105,10 +113,10 @@ const ManagerSurvey = () => {
             <div className="mt-6 max-w-md mx-auto">
               <div className="flex justify-between text-xs force-white-text mb-2">
                 <span>Progress</span>
-                <span>Section 1 of 7</span>
+                <span>Section 1 of {totalSections}</span>
               </div>
-              <Progress value={14} className="h-2 bg-white/20">
-                <div className="h-full bg-white rounded-full transition-all" style={{ width: '14%' }} />
+              <Progress value={progressPercentage} className="h-2 bg-white/20">
+                <div className="h-full bg-white rounded-full transition-all" style={{ width: `${progressPercentage}%` }} />
               </Progress>
             </div>
           </div>
@@ -689,7 +697,7 @@ const ManagerSurvey = () => {
             {/* SECTION 7: Barriers & Looking Forward */}
             <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
               <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
-                Section 7: Barriers & Future Vision
+                Section 8: Barriers & Future Vision
               </h2>
               
               <div className="space-y-6 sm:space-y-8">
@@ -772,7 +780,7 @@ const ManagerSurvey = () => {
 
             {/* Demographics (Optional) */}
             <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
-              <h3 className="text-base sm:text-title mb-3 sm:mb-4">Demographics (Optional)</h3>
+              <h3 className="text-base sm:text-title mb-3 sm:mb-4">Section 9: Demographics (Optional)</h3>
               <p className="text-sm sm:text-body text-muted-foreground mb-4 sm:mb-6">
                 This information helps us understand patterns across different roles and experience levels.
               </p>
