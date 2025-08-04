@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Progress } from "@/components/ui/progress";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const ManagerSurvey = () => {
   const [programType, setProgramType] = useState("");
@@ -36,14 +38,16 @@ const ManagerSurvey = () => {
       }
     }
     
-    // Format email body
+    // Format email body - handle gracefully even with empty/partial data
     const emailBody = Object.entries(responses)
+      .filter(([key, value]) => value && value !== '') // Only include non-empty values
       .map(([key, value]) => `${key}: ${Array.isArray(value) ? value.join(', ') : value}`)
       .join('\n');
     
     // Create mailto link
     const subject = encodeURIComponent('WFD Manager Survey Response - ORIC-12 Baseline');
-    const body = encodeURIComponent(`WFD Manager Survey Response (ORIC-12 Baseline):\n\n${emailBody}`);
+    const completionStatus = Object.keys(responses).length > 1 ? 'Partial' : 'Partial';
+    const body = encodeURIComponent(`WFD Manager Survey Response (${completionStatus} Completion):\n\nProgram Type: ${programType || 'Not specified'}\n\n${emailBody}\n\nThank you for your participation in this research study.`);
     const mailtoLink = `mailto:eric@recovery-compass.org?subject=${subject}&body=${body}`;
     
     // Open email client
@@ -88,7 +92,7 @@ const ManagerSurvey = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl shadow-lg">
-          {/* Header */}
+          {/* Header with Progress */}
           <div className="bg-primary px-4 sm:px-8 py-6 sm:py-8 rounded-t-xl text-center force-white-text">
             <h1 className="text-2xl sm:text-3xl lg:text-hero mb-3 force-white-text">
               Manager Readiness Assessment
@@ -96,6 +100,17 @@ const ManagerSurvey = () => {
             <p className="text-sm sm:text-body force-white-text" style={{ opacity: 0.9 }}>
               6-Month Pilot Study on Organizational Change Through Data Utilization
             </p>
+            
+            {/* Progress Bar */}
+            <div className="mt-6 max-w-md mx-auto">
+              <div className="flex justify-between text-xs force-white-text mb-2">
+                <span>Progress</span>
+                <span>Section 1 of 7</span>
+              </div>
+              <Progress value={14} className="h-2 bg-white/20">
+                <div className="h-full bg-white rounded-full transition-all" style={{ width: '14%' }} />
+              </Progress>
+            </div>
           </div>
 
           {/* Introduction */}
@@ -111,27 +126,26 @@ const ManagerSurvey = () => {
             </div>
             <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg">
               <p className="text-xs sm:text-caption text-green-700 font-medium">
-                ✓ 5-minute completion time | ✓ Responses will be aggregated | ✓ Optional contact info for follow-up
+                ✓ All questions optional | ✓ Partial completion allowed | ✓ Responses aggregated for research
               </p>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-            {/* Program Type Selection - REQUIRED FOR SKIP LOGIC */}
+            {/* Program Type Selection */}
             <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
               <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
-                Program Type
+                Section 1: Program Type
               </h2>
               <div>
                 <Label className="text-body font-medium mb-4 block">
-                  Which type of program do you manage? <span className="text-red-500">*</span>
+                  Which type of program do you manage? (Optional - helps customize questions)
                 </Label>
                 <RadioGroup 
                   name="program-type" 
                   value={programType} 
                   onValueChange={setProgramType}
                   className="space-y-3"
-                  required
                 >
                   <div className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
                     <RadioGroupItem value="community-services" id="prog1" />
@@ -145,10 +159,10 @@ const ManagerSurvey = () => {
               </div>
             </div>
 
-            {/* SECTION 1: ORIC-12 VALIDATED INSTRUMENT */}
+            {/* SECTION 2: ORIC-12 VALIDATED INSTRUMENT */}
             <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
               <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
-                Section 1: Organizational Readiness Assessment (ORIC-12)
+                Section 2: Organizational Readiness Assessment (ORIC-12)
               </h2>
               <p className="text-sm text-muted-foreground mb-6">
                 Please rate your agreement with each statement about implementing the new data dashboard system.
@@ -217,10 +231,295 @@ const ManagerSurvey = () => {
               </div>
             </div>
 
-            {/* SECTION 2: Current Data Practices */}
+            {/* SECTION 3: Biopsychosocial Assessment Baseline */}
             <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
               <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
-                Section 2: Your Current Data Practices
+                Section 3: Biopsychosocial Assessment Baseline
+              </h2>
+              <p className="text-sm text-muted-foreground mb-6">
+                Rate your current confidence in assessing each domain (1=Not confident, 5=Very confident)
+              </p>
+              
+              {/* Biological Factors */}
+              <div className="mb-8">
+                <h3 className="text-base font-semibold mb-4 text-primary">Biological Factors</h3>
+                {["Medical conditions", "Medications", "Physical health", "Substance use", "Sleep patterns"].map((item, index) => (
+                  <div key={`bio${index + 1}`} className="mb-4 p-4 bg-muted/10 rounded-lg">
+                    <p className="mb-3 text-body">{item}</p>
+                    <RadioGroup name={`bio-${index + 1}`} className="grid grid-cols-5 gap-2">
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <div key={value} className="text-center">
+                          <RadioGroupItem 
+                            value={value.toString()} 
+                            id={`bio-${index + 1}-${value}`}
+                            className="sr-only"
+                          />
+                          <Label 
+                            htmlFor={`bio-${index + 1}-${value}`}
+                            className="block p-2 bg-muted/20 rounded-lg cursor-pointer transition-all hover:bg-primary hover:text-white font-medium text-sm"
+                          >
+                            {value}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                  </div>
+                ))}
+              </div>
+
+              {/* Psychological Factors */}
+              <div className="mb-8">
+                <h3 className="text-base font-semibold mb-4 text-primary">Psychological Factors</h3>
+                {["Mental health", "Trauma history", "Coping skills", "Cognitive function", "Emotional regulation"].map((item, index) => (
+                  <div key={`psych${index + 1}`} className="mb-4 p-4 bg-muted/10 rounded-lg">
+                    <p className="mb-3 text-body">{item}</p>
+                    <RadioGroup name={`psych-${index + 1}`} className="grid grid-cols-5 gap-2">
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <div key={value} className="text-center">
+                          <RadioGroupItem 
+                            value={value.toString()} 
+                            id={`psych-${index + 1}-${value}`}
+                            className="sr-only"
+                          />
+                          <Label 
+                            htmlFor={`psych-${index + 1}-${value}`}
+                            className="block p-2 bg-muted/20 rounded-lg cursor-pointer transition-all hover:bg-primary hover:text-white font-medium text-sm"
+                          >
+                            {value}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                  </div>
+                ))}
+              </div>
+
+              {/* Social Factors */}
+              <div className="mb-8">
+                <h3 className="text-base font-semibold mb-4 text-primary">Social Factors</h3>
+                {["Housing stability", "Family support", "Employment", "Community connections", "Legal issues"].map((item, index) => (
+                  <div key={`social${index + 1}`} className="mb-4 p-4 bg-muted/10 rounded-lg">
+                    <p className="mb-3 text-body">{item}</p>
+                    <RadioGroup name={`social-${index + 1}`} className="grid grid-cols-5 gap-2">
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <div key={value} className="text-center">
+                          <RadioGroupItem 
+                            value={value.toString()} 
+                            id={`social-${index + 1}-${value}`}
+                            className="sr-only"
+                          />
+                          <Label 
+                            htmlFor={`social-${index + 1}-${value}`}
+                            className="block p-2 bg-muted/20 rounded-lg cursor-pointer transition-all hover:bg-primary hover:text-white font-medium text-sm"
+                          >
+                            {value}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                  </div>
+                ))}
+              </div>
+
+              {/* Environmental Factors */}
+              <div className="mb-8">
+                <h3 className="text-base font-semibold mb-4 text-primary">Environmental Factors</h3>
+                {["Safety", "Accessibility", "Triggers", "Supports", "Barriers"].map((item, index) => (
+                  <div key={`env${index + 1}`} className="mb-4 p-4 bg-muted/10 rounded-lg">
+                    <p className="mb-3 text-body">{item}</p>
+                    <RadioGroup name={`env-${index + 1}`} className="grid grid-cols-5 gap-2">
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <div key={value} className="text-center">
+                          <RadioGroupItem 
+                            value={value.toString()} 
+                            id={`env-${index + 1}-${value}`}
+                            className="sr-only"
+                          />
+                          <Label 
+                            htmlFor={`env-${index + 1}-${value}`}
+                            className="block p-2 bg-muted/20 rounded-lg cursor-pointer transition-all hover:bg-primary hover:text-white font-medium text-sm"
+                          >
+                            {value}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                  </div>
+                ))}
+              </div>
+
+              {/* Spiritual/Cultural Factors */}
+              <div>
+                <h3 className="text-base font-semibold mb-4 text-primary">Spiritual/Cultural Factors</h3>
+                {["Beliefs", "Practices", "Identity", "Meaning", "Values"].map((item, index) => (
+                  <div key={`spirit${index + 1}`} className="mb-4 p-4 bg-muted/10 rounded-lg">
+                    <p className="mb-3 text-body">{item}</p>
+                    <RadioGroup name={`spirit-${index + 1}`} className="grid grid-cols-5 gap-2">
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <div key={value} className="text-center">
+                          <RadioGroupItem 
+                            value={value.toString()} 
+                            id={`spirit-${index + 1}-${value}`}
+                            className="sr-only"
+                          />
+                          <Label 
+                            htmlFor={`spirit-${index + 1}-${value}`}
+                            className="block p-2 bg-muted/20 rounded-lg cursor-pointer transition-all hover:bg-primary hover:text-white font-medium text-sm"
+                          >
+                            {value}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* SECTION 4: Service Documentation Awareness */}
+            <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
+              <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
+                Section 4: Service Documentation Awareness
+              </h2>
+              <p className="text-sm text-muted-foreground mb-6">
+                How does your program currently track these service categories?
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  "Bed nights",
+                  "Meals served", 
+                  "Medical services",
+                  "Wellness checks",
+                  "Laundry services",
+                  "Employment stages (resume→interview→employed)"
+                ].map((service, index) => (
+                  <div key={index}>
+                    <Label className="text-body font-medium mb-3 block">
+                      How does your program track {service.toLowerCase()}?
+                    </Label>
+                    <Select name={`service-tracking-${index}`}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select tracking method" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="daily-log">Daily log</SelectItem>
+                        <SelectItem value="weekly-summary">Weekly summary</SelectItem>
+                        <SelectItem value="monthly-report">Monthly report</SelectItem>
+                        <SelectItem value="not-tracked">Not currently tracked</SelectItem>
+                        <SelectItem value="unsure">Unsure</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* SECTION 5: Documentation Readiness Assessment */}
+            <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
+              <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
+                Section 5: Documentation Readiness Assessment
+              </h2>
+              
+              <div className="space-y-8">
+                <div>
+                  <Label className="text-body font-medium mb-4 block">
+                    How many hours per week do you spend on documentation?
+                  </Label>
+                  <RadioGroup name="documentation-hours" className="space-y-3">
+                    {["0-2", "3-5", "6-10", "11-15", "16+"].map((range) => (
+                      <div key={range} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                        <RadioGroupItem value={range} id={`hours-${range}`} />
+                        <Label htmlFor={`hours-${range}`} className="flex-1 cursor-pointer">{range} hours</Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+
+                <div>
+                  <Label className="text-body font-medium mb-4 block">
+                    What percentage of services delivered do you think goes undocumented?
+                  </Label>
+                  <RadioGroup name="undocumented-percentage" className="space-y-3">
+                    {["0-10%", "11-25%", "26-50%", "51-75%", "76%+"].map((range) => (
+                      <div key={range} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                        <RadioGroupItem value={range} id={`undoc-${range}`} />
+                        <Label htmlFor={`undoc-${range}`} className="flex-1 cursor-pointer">{range}</Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+
+                <div>
+                  <Label className="text-body font-medium mb-4 block">
+                    Do you understand how documentation connects to reimbursement?
+                  </Label>
+                  <RadioGroup name="reimbursement-understanding" className="space-y-3">
+                    {[
+                      { value: "very-well", label: "Very well" },
+                      { value: "somewhat", label: "Somewhat" },
+                      { value: "not-really", label: "Not really" },
+                      { value: "not-at-all", label: "Not at all" }
+                    ].map((option) => (
+                      <div key={option.value} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                        <RadioGroupItem value={option.value} id={`reimb-${option.value}`} />
+                        <Label htmlFor={`reimb-${option.value}`} className="flex-1 cursor-pointer">{option.label}</Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+
+                <div>
+                  <Label className="text-body font-medium mb-4 block">
+                    Rate your comfort with technology (1=Very uncomfortable, 5=Very comfortable)
+                  </Label>
+                  <RadioGroup name="technology-comfort" className="grid grid-cols-5 gap-2">
+                    {[1, 2, 3, 4, 5].map((value) => (
+                      <div key={value} className="text-center">
+                        <RadioGroupItem 
+                          value={value.toString()} 
+                          id={`tech-comfort-${value}`}
+                          className="sr-only"
+                        />
+                        <Label 
+                          htmlFor={`tech-comfort-${value}`}
+                          className="block p-3 bg-muted/20 rounded-lg cursor-pointer transition-all hover:bg-primary hover:text-white font-medium"
+                        >
+                          {value}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                  <div className="flex justify-between mt-2 text-xs text-muted-foreground">
+                    <span>Very uncomfortable</span>
+                    <span>Very comfortable</span>
+                  </div>
+                </div>
+
+                <div>
+                  <Label className="text-body font-medium mb-4 block">
+                    Do you have access to a smartphone/tablet for documentation?
+                  </Label>
+                  <RadioGroup name="device-access" className="space-y-3">
+                    {[
+                      { value: "yes", label: "Yes" },
+                      { value: "no", label: "No" },
+                      { value: "sometimes", label: "Sometimes" }
+                    ].map((option) => (
+                      <div key={option.value} className="flex items-center space-x-3 p-4 bg-muted/20 rounded-lg hover:bg-muted/40 transition-colors">
+                        <RadioGroupItem value={option.value} id={`device-${option.value}`} />
+                        <Label htmlFor={`device-${option.value}`} className="flex-1 cursor-pointer">{option.label}</Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 6: Current Data Practices */}
+            <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
+              <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
+                Section 6: Your Current Data Practices
               </h2>
               
               <div className="space-y-8">
@@ -286,17 +585,17 @@ const ManagerSurvey = () => {
               </div>
             </div>
 
-            {/* SECTION 3: Program-Specific Questions (with skip logic) */}
+            {/* SECTION 7: Program-Specific Questions (with skip logic) */}
             {programType === "interim-housing" && (
               <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
                 <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
-                  Section 3: Interim Housing Specific
+                  Section 7: Interim Housing Specific
                 </h2>
                 
                 <div className="space-y-6 sm:space-y-8">
                   <div>
                     <Label className="text-sm sm:text-body font-medium mb-3 sm:mb-4 block">
-                      The 90-day interim housing limit - how do you currently track it?
+                      The 90-day interim housing goal - how do you currently track it?
                     </Label>
                     <RadioGroup name="housing-tracking" className="space-y-2 sm:space-y-3">
                       {[
@@ -340,7 +639,7 @@ const ManagerSurvey = () => {
             {programType === "community-services" && (
               <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
                 <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
-                  Section 3: Community Services Specific
+                  Section 7: Community Services Specific
                 </h2>
                 
                 <div className="space-y-6 sm:space-y-8">
@@ -387,10 +686,10 @@ const ManagerSurvey = () => {
               </div>
             )}
 
-            {/* SECTION 4: Barriers & Looking Forward */}
+            {/* SECTION 7: Barriers & Looking Forward */}
             <div className="px-4 sm:px-8 py-6 sm:py-8 border-b border-border">
               <h2 className="text-lg sm:text-xl lg:text-headline text-primary mb-4 sm:mb-6">
-                Section 4: Barriers & Future Vision
+                Section 7: Barriers & Future Vision
               </h2>
               
               <div className="space-y-6 sm:space-y-8">
@@ -499,20 +798,17 @@ const ManagerSurvey = () => {
                 <Button 
                   type="submit" 
                   className="bg-primary hover:bg-primary-light text-white px-6 sm:px-8 py-3 text-sm sm:text-body font-medium w-full sm:w-auto"
-                  disabled={!programType}
                 >
                   Submit Survey Response
                 </Button>
-                {!programType && (
-                  <p className="text-xs sm:text-caption text-red-500 mt-2">
-                    Please select your program type to continue
-                  </p>
-                )}
+                <p className="text-xs sm:text-caption text-green-600 mt-2 font-medium">
+                  ✓ All questions optional - submit anytime with partial completion
+                </p>
                 <p className="text-xs sm:text-caption text-muted-foreground mt-3">
-                  This will open your email client with the completed survey
+                  This will open your email client with your responses
                 </p>
                 <p className="text-xs text-muted-foreground mt-2">
-                  Estimated completion time: 5 minutes
+                  Thank you for participating in this important research study
                 </p>
               </div>
             </div>
