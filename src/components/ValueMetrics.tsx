@@ -7,13 +7,13 @@ export const ValueMetrics = () => {
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: "Overall Documentation Rate",
-      current: "77%",
-      target: "90%",
-      trend: "+12% this month",
-      status: "STRONG",
-      statusColor: "text-success bg-success-light",
-      detail: "$3.4M properly documented | $1.0M opportunity remaining",
-      color: "border-success"
+      current: "Assessment",
+      target: "In-Progress",
+      trend: "Survey Initiated",
+      status: "ACTIVE",
+      statusColor: "text-wfd-blue bg-wfd-blue/10",
+      detail: "Baseline Documentation Assessment In-Progress",
+      color: "border-wfd-blue"
     },
     {
       icon: <DollarSign className="w-6 h-6" />,

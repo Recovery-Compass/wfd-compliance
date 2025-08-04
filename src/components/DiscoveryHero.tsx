@@ -35,7 +35,7 @@ export const DiscoveryHero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 opacity-95 font-light">
-          WFD delivers exceptional services. We just haven't been counting them all.
+          Whittier First Day delivers exceptional services. We've now validated a significant opportunity to fully account for their profound impact and value.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -60,13 +60,14 @@ export const DiscoveryHero = () => {
           <div className="bg-white/15 backdrop-blur rounded-xl p-5 transform hover:scale-105 transition-transform">
             <div className="flex items-center justify-between mb-2">
               <ChevronRight className="w-5 h-5 opacity-80" />
-              <span className="text-xs uppercase tracking-wider opacity-80">To Target</span>
+              <span className="text-xs uppercase tracking-wider opacity-80">Next Step</span>
             </div>
-            <div className="text-3xl font-bold">{remainingPercentage}%</div>
-            <div className="text-sm opacity-90">To reach 90% target</div>
+            <div className="text-3xl font-bold">Survey</div>
+            <div className="text-sm opacity-90">Pre-Assessment Survey Initiated Today</div>
           </div>
         </div>
         
+        {false && (
         <div className="mb-8">
           <div className="flex justify-between text-sm mb-3 font-medium">
             <span>Documentation Recovery Progress</span>
@@ -85,13 +86,14 @@ export const DiscoveryHero = () => {
             <span>$1.0M opportunity remaining</span>
           </div>
         </div>
+        )}
         
         <Button 
           size="lg" 
           className="bg-white text-wfd-purple hover:bg-gray-100 font-semibold shadow-lg transform hover:scale-105 transition-all"
           onClick={() => document.getElementById('discovery-story')?.scrollIntoView({ behavior: 'smooth' })}
         >
-          See How We Found $4.4M 
+          Unlocking Full Value: The Documentation Revolution Begins
           <ChevronRight className="ml-2 w-5 h-5" />
         </Button>
       </div>
