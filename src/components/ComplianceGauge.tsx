@@ -39,10 +39,10 @@ export const ComplianceGauge = ({
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-h2 mb-2" style={{ color: 'hsl(var(--text-dark))' }}>
-            Compliance Gauge
+            Baseline Assessment
           </h2>
           <p className="text-label" style={{ color: 'hsl(var(--grey-500))' }}>
-            CURRENT STATUS
+            PRE-ASSESSMENT INITIATED
           </p>
         </div>
 
@@ -68,15 +68,15 @@ export const ComplianceGauge = ({
             <div className="text-center">
               <div 
                 className="text-data-large mb-1"
-                style={{ color: getZoneColor(currentCompliance) }}
+                style={{ color: 'hsl(var(--wfd-blue))' }}
               >
-                {currentCompliance}%
+                Survey
               </div>
               <div className="text-body" style={{ color: 'hsl(var(--text-dark))' }}>
-                Current Compliance
+                Assessment In-Progress
               </div>
               <div className="text-label mt-1" style={{ color: 'hsl(var(--grey-500))' }}>
-                Target: {targetCompliance}%
+                Establishing Baseline
               </div>
             </div>
           </div>
@@ -118,18 +118,13 @@ export const ComplianceGauge = ({
         {/* Current Zone Status */}
         <div 
           className="text-center p-4 rounded"
-          style={{ backgroundColor: 'hsl(var(--grey-100))' }}
+          style={{ backgroundColor: 'hsl(var(--wfd-blue) / 0.1)' }}
         >
           <div className="text-h3 mb-1" style={{ color: 'hsl(var(--text-dark))' }}>
-            Current Zone: {getZoneLabel(currentCompliance)}
+            Status: Baseline Assessment Active
           </div>
           <p className="text-body" style={{ color: 'hsl(var(--grey-600))' }}>
-            {currentCompliance < 70 
-              ? "Critical action needed to reach compliance targets"
-              : currentCompliance < 90 
-              ? "Making progress - continue improvement efforts" 
-              : "Excellent compliance - maintain current standards"
-            }
+            Pre-assessment survey initiated to establish documentation baseline and identify optimization opportunities.
           </p>
         </div>
       </Card>

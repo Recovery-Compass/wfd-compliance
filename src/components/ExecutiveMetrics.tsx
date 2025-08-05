@@ -5,31 +5,31 @@ import { CheckCircle, TrendingUp, DollarSign, Target } from "lucide-react";
 export const ExecutiveMetrics = () => {
   const metrics = [
     {
-      title: "Funding Secured",
-      value: "$11M",
-      subtitle: "protected",
-      status: "success",
+      title: "Assessment Phase",
+      value: "ACTIVE",
+      subtitle: "Baseline Survey",
+      status: "active",
       icon: <CheckCircle className="w-6 h-6" />
     },
     {
-      title: "Documentation Rate",
-      value: "77%",
-      subtitle: "↑12% this month",
-      status: "success",
+      title: "Survey Status",
+      value: "In-Progress",
+      subtitle: "Manager responses",
+      status: "active",
       icon: <TrendingUp className="w-6 h-6" />
     },
     {
-      title: "Monthly Recovery",
-      value: "$367,000",
-      subtitle: "annualized impact",
-      status: "success",
+      title: "Opportunity Scope",
+      value: "$4.4M",
+      subtitle: "identified value",
+      status: "active",
       icon: <DollarSign className="w-6 h-6" />
     },
     {
-      title: "90-Day Target",
-      value: "ON TRACK",
-      subtitle: "95% by Oct 15",
-      status: "success",
+      title: "Next Milestone",
+      value: "ANALYSIS",
+      subtitle: "Data processing",
+      status: "active",
       icon: <Target className="w-6 h-6" />
     }
   ];
@@ -37,17 +37,17 @@ export const ExecutiveMetrics = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Board Report Snapshot</CardTitle>
+        <CardTitle>Assessment Status Dashboard</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {metrics.map((metric, idx) => (
-            <div key={idx} className="text-center p-3 md:p-4 bg-success/10 border border-success/20 rounded-lg">
-              <div className="flex justify-center mb-2 text-success">
+            <div key={idx} className="text-center p-3 md:p-4 bg-wfd-blue/10 border border-wfd-blue/20 rounded-lg">
+              <div className="flex justify-center mb-2 text-wfd-blue">
                 {metric.icon}
               </div>
-              <div className="text-lg md:text-2xl font-bold text-success">{metric.value}</div>
-              <div className="text-sm text-success/80">{metric.subtitle}</div>
+              <div className="text-lg md:text-2xl font-bold text-wfd-blue">{metric.value}</div>
+              <div className="text-sm text-wfd-blue/80">{metric.subtitle}</div>
               <div className="text-xs text-muted-foreground mt-1">{metric.title}</div>
             </div>
           ))}
