@@ -3,8 +3,11 @@ import { ExecutiveMetrics } from "@/components/ExecutiveMetrics";
 import { HotSpots } from "@/components/HotSpots";
 import { OneClickReports } from "@/components/OneClickReports";
 import { DecisionSupport } from "@/components/DecisionSupport";
+import { buildQualtricsUrl } from "@/lib/qualtrics";
+import { JulyDataBuckets } from "@/components/JulyDataBuckets";
 
 const ExecutiveDashboard = () => {
+  const surveyUrl = buildQualtricsUrl('app');
   return (
     <div className="min-h-screen bg-background">
       <WFDHeader />
@@ -15,9 +18,17 @@ const ExecutiveDashboard = () => {
           <p className="text-muted-foreground text-sm md:text-base">Real-Time Organizational Intelligence</p>
         </div>
 
+        <div className="mb-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-accent/5 border border-accent/20 rounded-lg p-3">
+            <p className="text-sm text-muted-foreground">Distribution: Microsoft Forms | Instrument: Qualtrics (ORIC-12) | Status: Assessment In-Progress</p>
+            <a href={surveyUrl} target="_blank" rel="noopener noreferrer" className="text-body-base font-medium text-wfd-blue hover:text-wfd-blue-light underline">Open Survey</a>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           <div className="lg:col-span-2 space-y-6">
             <ExecutiveMetrics />
+            <JulyDataBuckets />
             <HotSpots />
             <DecisionSupport />
           </div>

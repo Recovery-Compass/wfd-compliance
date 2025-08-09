@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SiteTypeProvider } from "@/hooks/useSiteType";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
-import ManagerSurvey from "./pages/ManagerSurvey";
+import SurveyDeprecated from "./pages/SurveyDeprecated";
 import ResearchDashboard from "./pages/ResearchDashboard";
 import TechnologySurvey from "./pages/TechnologySurvey";
 import Programs from "./pages/Programs";
@@ -29,7 +29,8 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/survey" element={<ManagerSurvey />} />
+              <Route path="/assessment" element={<TechnologySurvey />} />
+              <Route path="/survey" element={<SurveyDeprecated />} />
               <Route path="/research" element={<ResearchDashboard />} />
               <Route path="/technology-survey" element={<TechnologySurvey />} />
               <Route path="/programs" element={<Programs />} />

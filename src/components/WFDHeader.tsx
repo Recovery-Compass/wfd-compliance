@@ -47,6 +47,9 @@ export const WFDHeader = ({ className = "" }: WFDHeaderProps) => {
             <Link to="/research" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors px-3 py-2 rounded-md">
               Research Export
             </Link>
+            <Link to="/assessment" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors px-3 py-2 rounded-md">
+              Assessment
+            </Link>
             <Link to="/story-mode" className="text-body-base font-medium text-gray-700 hover:text-wfd-purple transition-colors px-3 py-2 rounded-md">
               Story Mode
             </Link>

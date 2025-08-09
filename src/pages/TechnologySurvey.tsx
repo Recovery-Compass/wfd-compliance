@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
-
-const QUALTRICS_URL = 'https://qualtricsxmnl72x43l7.qualtrics.com/jfe/form/SV_9GH8KCnqcJYdVZA';
+import { buildQualtricsUrl } from '@/lib/qualtrics';
 
 export default function TechnologySurvey() {
   const [loadState, setLoadState] = useState<'loading' | 'ready' | 'error'>('loading');
@@ -35,6 +35,7 @@ export default function TechnologySurvey() {
     console.error('❌ Qualtrics iframe failed to load');
   };
 
+  const surveyUrl = buildQualtricsUrl('app');
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-wfd-gold/5 to-wfd-purple/5">
       {/* Brand Header */}
@@ -52,12 +53,12 @@ export default function TechnologySurvey() {
                 <p className="text-white/90 mt-1 font-medium">Whittier First Day Assessment</p>
               </div>
             </div>
-            <a 
-              href="/" 
+            <Link 
+              to="/" 
               className="text-white hover:text-wfd-gold-light transition-colors duration-200 font-medium bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm hover:bg-white/20"
             >
               ← Back to Dashboard
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -71,8 +72,14 @@ export default function TechnologySurvey() {
             <p className="text-gray-700">Please take a few minutes to complete this technology perception survey.</p>
           </div>
 
+          {/* Trust & Privacy */}
+          <div className="rounded-lg mb-4 p-4 bg-accent/5 border border-accent/10">
+            <p className="font-semibold">ORIC-12 validated instrument (Shea et al., 2014)</p>
+            <p className="text-sm text-muted-foreground mt-2">Please do not include PHI or personally identifiable client details.</p>
+            <p className="text-sm text-muted-foreground mt-1">Participation is voluntary. Data will be aggregated for organizational improvement.</p>
+          </div>
+
           {/* Loading State */}
-          {loadState === 'loading' && (
             <div className="text-center py-16 px-6">
               <div className="relative">
                 <div className="animate-spin rounded-full h-16 w-16 border-4 border-wfd-gold/30 border-t-wfd-sunset mx-auto mb-6"></div>
@@ -83,14 +90,14 @@ export default function TechnologySurvey() {
                 <div className="mt-4 p-4 bg-wfd-gold/10 rounded-lg border border-wfd-gold/20">
                   <p className="text-sm text-gray-700">
                     Taking longer than expected? 
-                    <a 
-                      href={QUALTRICS_URL} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-wfd-sunset hover:text-wfd-primary transition-colors ml-1 font-medium underline"
-                    >
-                      Open in new tab
-                    </a>
+                      <a 
+                        href={surveyUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-wfd-sunset hover:text-wfd-primary transition-colors ml-1 font-medium underline"
+                      >
+                        Open in new tab
+                      </a>
                   </p>
                 </div>
               )}
@@ -109,7 +116,7 @@ export default function TechnologySurvey() {
                   The embedded survey is having loading issues. Please use the direct link below to ensure a smooth experience.
                 </p>
                 <a
-                  href={QUALTRICS_URL}
+                  href={surveyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-wfd-sunset to-wfd-primary text-white rounded-xl hover:from-wfd-primary hover:to-wfd-sunset transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
@@ -126,7 +133,7 @@ export default function TechnologySurvey() {
 
           {/* Qualtrics iFrame */}
           <iframe
-            src={QUALTRICS_URL}
+            src={surveyUrl}
             className="w-full border-0"
             style={{ 
               height: '800px',
@@ -152,7 +159,7 @@ export default function TechnologySurvey() {
                     <p className="text-sm mt-1 text-green-700">
                       Having issues? 
                       <a 
-                        href={QUALTRICS_URL} 
+                        href={surveyUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-green-800 hover:text-green-900 underline ml-1 font-medium"
