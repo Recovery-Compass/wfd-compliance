@@ -1,0 +1,37 @@
+# Recovery Compass CODEOWNERS
+# This file defines who is responsible for code in this repository
+# These owners will be automatically requested for review when someone opens a pull request
+
+# Default owners for everything in the repo
+* @ericjones @Recovery-Compass/admins
+
+# Documentation
+*.md @ericjones @Recovery-Compass/documentation-team
+
+# Configuration files
+*.yml @Recovery-Compass/devops
+*.yaml @Recovery-Compass/devops
+amplify.yml @ericjones @Recovery-Compass/devops
+
+# Security-sensitive files
+.env* @ericjones
+*.key @ericjones
+*.pem @ericjones
+SECURITY.md @ericjones @Recovery-Compass/security
+
+# Frontend code
+/src/ @Recovery-Compass/frontend
+*.tsx @Recovery-Compass/frontend
+*.jsx @Recovery-Compass/frontend
+
+# Backend code
+/app/ @Recovery-Compass/backend
+*.py @Recovery-Compass/backend
+
+# CI/CD
+.github/ @Recovery-Compass/devops
+/scripts/ @Recovery-Compass/devops
+
+# MCP and AI context
+*context* @ericjones
+*mcp* @ericjones
