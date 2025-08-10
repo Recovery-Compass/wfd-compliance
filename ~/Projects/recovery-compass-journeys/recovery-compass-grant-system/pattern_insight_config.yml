@@ -1,0 +1,58 @@
+# Pattern-Insight Engine Configuration for Grant System
+# Integrates grant discovery with opportunity surfacing
+
+data_sources:
+  grant_docs:
+    path: "docs/*.md"
+    type: "documentation"
+    weight: 1.5
+
+  grant_applications:
+    path: "recovery-compass-grant-system/data/applications/**/*.md"
+    type: "application_content"
+    weight: 2.0
+
+  grant_reports:
+    path: "reports/*.md"
+    type: "opportunity_reports"
+    weight: 1.8
+
+  source_code:
+    path: "src/**/*.py"
+    type: "implementation"
+    weight: 1.2
+
+pattern_tags:
+  - "#GRANT:NEW"
+  - "#GRANT:HIGH_MATCH"
+  - "#GRANT:DEADLINE_APPROACHING"
+  - "#GRANT:501C3_REQUIRED"
+
+metrics_export:
+  grant_pipeline_fill:
+    source: "data/discoveries/*.json"
+    metric: "count"
+
+  grant_success_probability:
+    source: "models/grant_success_predictor.py"
+    metric: "average_score"
+
+  application_velocity:
+    source: "reports/weekly_*.json"
+    metric: "applications_per_week"
+
+integration:
+  metrics_relay:
+    enabled: true
+    export_path: "grant_metrics.csv"
+    update_frequency: "hourly"
+
+  pattern_insight:
+    enabled: true
+    vector_db_namespace: "grant_system"
+    embedding_model: "all-mpnet-base-v2"
+
+  opportunity_messenger:
+    enabled: true
+    channel: "grant_discoveries"
+    min_score: 0.75

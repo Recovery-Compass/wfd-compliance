@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WFD Compliance - Whistler First Day Recovery Support</title>
+    <meta name="description" content="501(c)(3) Compliance Platform for Recovery Organizations">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .powered-by {
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-description {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .cta {
+            margin-top: 3rem;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .status {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        footer {
+            margin-top: 4rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WFD Compliance</h1>
+        <p class="subtitle">Whistler First Day Recovery Support System</p>
+        <p class="powered-by">🚀 Powered by Recovery Compass</p>
+        
+        <div class="status">✅ Platform Active</div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📋</div>
+                <div class="feature-title">501(c)(3) Compliance</div>
+                <div class="feature-description">
+                    Complete regulatory compliance tracking and automated reporting for recovery organizations
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <div class="feature-title">Grant Management</div>
+                <div class="feature-description">
+                    Federal and state grant application assistance with AI-powered optimization
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <div class="feature-title">Recovery Support</div>
+                <div class="feature-description">
+                    Comprehensive program management for sustained recovery excellence
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta">
+            <a href="https://recovery-compass.org" class="button">Learn More</a>
+            <a href="mailto:compliance@recovery-compass.org" class="button secondary">Contact Us</a>
+        </div>
+        
+        <footer>
+            <p>© 2025 Recovery Compass | Building Recovery Excellence</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                Seismic • Crystal • Lava
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Simple analytics
+        console.log('WFD Compliance Platform Loaded');
+        
+        // Add dynamic year
+        document.addEventListener('DOMContentLoaded', function() {
+            const year = new Date().getFullYear();
+            const footer = document.querySelector('footer p');
+            if (footer) {
+                footer.innerHTML = footer.innerHTML.replace('2025', year);
+            }
+        });
+    </script>
+</body>
+</html>
