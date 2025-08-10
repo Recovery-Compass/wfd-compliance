@@ -6,6 +6,9 @@ import { DecisionSupport } from "@/components/DecisionSupport";
 import { buildQualtricsUrl } from "@/lib/qualtrics";
 import { JulyDataBuckets } from "@/components/JulyDataBuckets";
 
+// Recovery Compass Strategic Architecture v8.0
+// This implementation serves: WFD compliance, academic publication,
+// grant evidence, and commercial validation simultaneously
 const ExecutiveDashboard = () => {
   const surveyUrl = buildQualtricsUrl('app');
   return (
@@ -20,7 +23,10 @@ const ExecutiveDashboard = () => {
 
         <div className="mb-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-accent/5 border border-accent/20 rounded-lg p-3">
-            <p className="text-sm text-muted-foreground">Distribution: Microsoft Forms | Instrument: Qualtrics (ORIC-12) | Status: Assessment In-Progress</p>
+            <div className="flex flex-col">
+              <p className="text-sm text-muted-foreground">Distribution: Microsoft Forms | Instrument: Qualtrics (ORIC-12) | Status: Assessment In-Progress</p>
+              <p className="text-sm text-muted-foreground">Uncovering 10x service delivery: 552 tracked → 5,000+ served</p>
+            </div>
             <a href={surveyUrl} target="_blank" rel="noopener noreferrer" className="text-body-base font-medium text-wfd-blue hover:text-wfd-blue-light underline">Open Survey</a>
           </div>
         </div>

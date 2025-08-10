@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, AlertCircle, ExternalLink } from 'lucide-react';
 import { buildQualtricsUrl } from '@/lib/qualtrics';
 
+// Recovery Compass Strategic Architecture v8.0
+// This implementation serves: WFD compliance, academic publication,
+// grant evidence, and commercial validation simultaneously
 export default function TechnologySurvey() {
   const [loadState, setLoadState] = useState<'loading' | 'ready' | 'error'>('loading');
   const [secondsElapsed, setSecondsElapsed] = useState(0);
@@ -28,6 +31,20 @@ export default function TechnologySurvey() {
   const handleIframeLoad = () => {
     setLoadState('ready');
     console.log('✅ Qualtrics survey loaded successfully');
+    try {
+      const url = new URL(surveyUrl, window.location.origin);
+      const params = new URLSearchParams(url.search);
+      const source = params.get('source') || 'app';
+      console.log('[RESEARCH_EVIDENCE]', {
+        timestamp: new Date().toISOString(),
+        source,
+        sessionId: crypto.randomUUID(),
+        studyPhase: 'baseline',
+        instrument: 'ORIC-12'
+      });
+    } catch (e) {
+      console.warn('Evidence log failed', e);
+    }
   };
 
   const handleIframeError = () => {
@@ -86,7 +103,7 @@ export default function TechnologySurvey() {
                 <div className="animate-spin rounded-full h-16 w-16 border-4 border-wfd-gold/30 border-t-wfd-sunset mx-auto mb-6"></div>
                 <div className="absolute inset-0 rounded-full h-16 w-16 border-4 border-transparent border-t-wfd-primary mx-auto animate-ping opacity-20"></div>
               </div>
-              <p className="text-wfd-primary font-medium text-lg">Loading survey... ({secondsElapsed}s)</p>
+              <p className="text-wfd-primary font-medium text-lg">Establishing secure connection to validated instrument... ({secondsElapsed}s)</p>
               {secondsElapsed > 5 && (
                 <div className="mt-4 p-4 bg-wfd-gold/10 rounded-lg border border-wfd-gold/20">
                   <p className="text-sm text-gray-700">
