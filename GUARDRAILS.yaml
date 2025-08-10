@@ -1,0 +1,44 @@
+profile: solo-dev-low-traffic
+project_type: vite-react-spa
+environments:
+  prod_only: true
+  allow_preview: true
+hosting:
+  provider: amplify
+  output_dir: dist
+  ci: amplify_only
+cloudflare:
+  role: dns_cdn_only
+  allow_workers: false
+dependencies:
+  policy: minimize
+  require_reason_in_pr: true
+build:
+  node_engines: ["^18", "^20"]
+  commands:
+    install: "npm ci || npm install"
+    build: "npm run build"
+artifacts:
+  output: "dist"
+repo:
+  forbidden:
+    - ".env"
+    - ".env.local"
+    - "node_modules/"
+    - "dist/"
+    - ".next/"
+    - "server/"
+automation:
+  mcp_servers_can:
+    - read_context
+    - open_pr
+  mcp_servers_cannot:
+    - push_to_main
+    - create_infra
+    - modify_dns
+approvals:
+  required_for:
+    - adding_workers
+    - adding_serverless
+    - adding_new_ci
+  label: "rc-approve"

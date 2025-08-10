@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "WFD Compliance Platform - Recovery Compass",
   "type": "module",
+  "engines": {
+    "node": "^18 || ^20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "start": "vite preview --port 8080",
-    "deploy": "bash deploy-wfd-compliance.sh"
+    "deploy": "bash deploy-wfd-compliance.sh",
+    "verify:solo": "bash scripts/verify-guardrails.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
