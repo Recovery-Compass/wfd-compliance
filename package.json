@@ -9,10 +9,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "start": "vite preview --port 8080",
     "deploy": "bash deploy-wfd-compliance.sh",
-    "verify:solo": "bash scripts/verify-guardrails.sh"
+    "verify:solo": "bash scripts/verify-guardrails.sh",
+    "check:dns": "bash scripts/dns-check.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
