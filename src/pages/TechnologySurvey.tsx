@@ -80,6 +80,7 @@ export default function TechnologySurvey() {
           </div>
 
           {/* Loading State */}
+          {loadState === 'loading' && (
             <div className="text-center py-16 px-6">
               <div className="relative">
                 <div className="animate-spin rounded-full h-16 w-16 border-4 border-wfd-gold/30 border-t-wfd-sunset mx-auto mb-6"></div>
