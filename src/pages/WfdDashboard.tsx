@@ -1,16 +1,35 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
-const Stat = ({ label, value }: { label: string; value: string | number }) => (
-  <div className="flex flex-col gap-1">
-    <span className="text-label text-ink-700 uppercase tracking-wide">{label}</span>
-    <span className="text-data-large tabular-nums text-ink-900">{value}</span>
-  </div>
-)
+const formatValue = (v: number | string) =>
+  typeof v === "number" ? v.toLocaleString("en-US") : v;
+
+function Stat({
+  label,
+  value,
+}: {
+  label: string;
+  value: number | string;
+}) {
+  return (
+    <div className="min-w-0">
+      <div className="text-ink-600">{label}</div>
+      <div className="tabular-nums text-ink-900 text-xl">
+        {formatValue(value)}
+      </div>
+    </div>
+  );
+}
 
 export default function WfdDashboard() {
   useEffect(() => {
-    document.title = "Ted's Place - July 2025"
-  }, [])
+    document.title = "Ted's Place - July 2025";
+  }, []);
+
+  const data = {
+    intake: 36,
+    services: { meals: 1880, wellness: 744, laundry: 140 },
+    exits: { housed: 1, successful: 1, uha: 1 },
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -26,24 +45,24 @@ export default function WfdDashboard() {
         <section className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           <article className="bg-card border border-line rounded-lg shadow-enterprise p-4 md:p-6">
             <h2 className="text-h3-card text-ink-700 mb-3">Clients Served</h2>
-            <Stat label="Unduplicated" value={36} />
+            <Stat label="Unduplicated" value={data.intake} />
           </article>
 
           <article className="bg-card border border-line rounded-lg shadow-enterprise p-4 md:p-6">
             <h2 className="text-h3-card text-ink-700 mb-3">Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <Stat label="Meals" value={"1,880"} />
-              <Stat label="Wellness Checks" value={744} />
-              <Stat label="Laundry" value={140} />
+              <Stat label="Meals" value={data.services.meals} />
+              <Stat label="Wellness Checks" value={data.services.wellness} />
+              <Stat label="Laundry Services" value={data.services.laundry} />
             </div>
           </article>
 
           <article className="bg-card border border-line rounded-lg shadow-enterprise p-4 md:p-6">
             <h2 className="text-h3-card text-ink-700 mb-3">Exits</h2>
             <div className="grid grid-cols-3 gap-4">
-              <Stat label="Housed" value={1} />
-              <Stat label="Successful" value={1} />
-              <Stat label="UHA Certified" value={1} />
+              <Stat label="Housed" value={data.exits.housed} />
+              <Stat label="Successful" value={data.exits.successful} />
+              <Stat label="UHA Certified" value={data.exits.uha} />
             </div>
           </article>
         </section>
