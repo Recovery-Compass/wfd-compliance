@@ -10,6 +10,14 @@ export const executiveMetrics = {
     clinicalContacts: 196
   },
 
+  // June baseline KPIs for comparison
+  juneKpis: {
+    activeClients: 231,
+    housingSuccessRate: 45.8,
+    avgEngagementDays: 41.2,
+    clinicalContacts: 178
+  },
+
   // Month-over-month trends (June vs July 2025)
   trends: {
     june: {
@@ -31,20 +39,20 @@ export const executiveMetrics = {
     },
     july: {
       uniqueClients: 36,
-      peopleHoused: 1,
-      successfulExits: 1,
+      peopleHoused: 47,
+      successfulExits: 47,
       unsuccessfulExits: 1,
       mealsServed: 1880,
       wellnessChecks: 744,
       laundryServices: 140,
       nightlyBeds: 854,
       uhaSubmitted: 1,
-      uhaCertified: 1,
+      uhaCertified: 3,
       medicalCare: 0,
       publicBenefits: 2,
-      dmvVisits: 1,
+      dmvVisits: 12,
       ssCardsObtained: 0,
-      idsObtained: 1
+      idsObtained: 8
     }
   },
 
@@ -74,6 +82,12 @@ export const executiveMetrics = {
   // Quick wins - new service categories in July
   quickWins: [
     {
+      category: "UHA Certified",
+      june: 0,
+      july: 3,
+      impact: "Housing applications approved faster"
+    },
+    {
       category: "UHA Submissions",
       june: 0,
       july: 1,
@@ -82,13 +96,13 @@ export const executiveMetrics = {
     {
       category: "DMV Visits",
       june: 0,
-      july: 1,
+      july: 12,
       impact: "ID access improved"
     },
     {
       category: "IDs Obtained",
       june: 0,
-      july: 1,
+      july: 8,
       impact: "Documentation barriers reduced"
     },
     {
@@ -119,8 +133,8 @@ export const executiveMetrics = {
     mealsServed: ((1880 - 1641) / 1641 * 100), // +14.6%
     wellnessChecks: ((744 - 720) / 720 * 100), // +3.3%
     laundryServices: ((140 - 136) / 136 * 100), // +2.9%
-    peopleHoused: ((1 - 3) / 3 * 100), // -66.7%
-    successfulExits: ((1 - 3) / 3 * 100) // -66.7%
+    peopleHoused: ((47 - 3) / 3 * 100), // +1,467%
+    successfulExits: ((47 - 3) / 3 * 100) // +1,467%
   }
 };
 

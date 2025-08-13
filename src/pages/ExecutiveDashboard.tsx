@@ -34,14 +34,14 @@ const ExecutiveDashboard: React.FC = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
               <img 
-                src="/wfd-logo.svg" 
-                alt="WFD" 
+                src="/lovable-uploads/99d2ad22-59f8-4c35-8f1b-8947ccf5657e.png" 
+                alt="Whittier First Day logo" 
                 className="h-8 w-auto"
               />
               <div className="hidden sm:block h-6 w-px bg-line" />
               <img 
-                src="/rc-logo.svg" 
-                alt="Recovery Compass" 
+                src="/lovable-uploads/afbdd2d6-a84b-471a-a0cb-05b4a50829ee.png" 
+                alt="Recovery Compass logo" 
                 className="h-8 w-auto"
               />
             </div>
