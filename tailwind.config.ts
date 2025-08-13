@@ -19,17 +19,20 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
-				'poppins': ['Poppins', 'sans-serif'],
+				'display': ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+				'text': ['SF Pro Text', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'], // Fallback
 			},
 			spacing: {
-				'micro': 'var(--spacing-micro)',
-				'xs': 'var(--spacing-xs)', 
-				'sm': 'var(--spacing-sm)',
-				'md': 'var(--spacing-md)',
-				'lg': 'var(--spacing-lg)',
-				'xl': 'var(--spacing-xl)',
-				'2xl': 'var(--spacing-2xl)',
+				'1': '4px',     // 0.25rem - Micro spacing
+				'2': '8px',     // 0.5rem  - Tight spacing
+				'3': '12px',    // 0.75rem - Small spacing
+				'4': '16px',    // 1rem    - Base spacing
+				'6': '24px',    // 1.5rem  - Comfortable spacing
+				'8': '32px',    // 2rem    - Large spacing
+				'12': '48px',   // 3rem    - Extra large spacing
+				'16': '64px',   // 4rem    - Section spacing
+				'24': '96px',   // 6rem    - Page spacing
 			},
 			fontSize: {
 				'h1-hero': ['3rem', { lineHeight: '1.2', fontWeight: '700' }],

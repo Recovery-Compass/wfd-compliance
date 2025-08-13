@@ -11,9 +11,9 @@ function Stat({
   value: number | string;
 }) {
   return (
-    <div className="min-w-0">
-      <div className="text-ink-600">{label}</div>
-      <div className="tabular-nums text-ink-900 text-xl">
+    <div className="min-w-0 space-y-1">
+      <div className="text-caption text-muted-foreground">{label}</div>
+      <div className="text-kpi-value text-foreground">
         {formatValue(value)}
       </div>
     </div>
@@ -32,53 +32,75 @@ export default function WfdDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="container mx-auto max-w-dashboard px-4 md:px-6 py-4 md:py-6">
-        <div className="flex items-center justify-between">
-          <img src="/wfd-logo.svg" alt="WFD sun and house logo" className="h-10 w-auto" />
-          <h1 className="text-h1-page font-poppins text-ink-900 text-center">Ted's Place — July 2025</h1>
-          <img src="/rc-logo.svg" alt="Recovery Compass mark" className="h-7 w-auto opacity-80" />
+    <main className="min-h-screen bg-background">
+      {/* Header - Steve Jobs clean layout */}
+      <header className="border-b border-border bg-card">
+        <div className="max-w-7xl mx-auto px-8 py-6">
+          <div className="flex items-center justify-between">
+            <img 
+              src="/wfd-logo.svg" 
+              alt="Whittier First Day" 
+              className="h-12 w-auto" 
+            />
+            <h1 className="text-hero text-center flex-1 mx-8">
+              Ted&apos;s Place — July 2025
+            </h1>
+            <img 
+              src="/rc-logo.svg" 
+              alt="Recovery Compass" 
+              className="h-9 w-auto opacity-70" 
+            />
+          </div>
         </div>
       </header>
 
-      <main className="container mx-auto max-w-dashboard px-4 md:px-6 pb-10">
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          <article className="bg-card border border-line rounded-lg shadow-enterprise p-4 md:p-6">
-            <h2 className="text-h3-card text-ink-700 mb-3">Clients Served</h2>
-            <Stat label="Unduplicated" value={data.intake} />
+      {/* Main Content - Generous spacing */}
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          {/* Intake Card */}
+          <article className="card-minimal">
+            <h2 className="text-headline mb-8">Client Intake</h2>
+            <Stat label="Unduplicated Individuals" value={data.intake} />
           </article>
 
-          <article className="bg-card border border-line rounded-lg shadow-enterprise p-4 md:p-6">
-            <h2 className="text-h3-card text-ink-700 mb-3">Services</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <Stat label="Meals" value={data.services.meals} />
+          {/* Services Card */}
+          <article className="card-minimal">
+            <h2 className="text-headline mb-8">Services Provided</h2>
+            <div className="space-y-8">
+              <Stat label="Meals Served" value={data.services.meals} />
               <Stat label="Wellness Checks" value={data.services.wellness} />
               <Stat label="Laundry Services" value={data.services.laundry} />
             </div>
           </article>
 
-          <article className="bg-card border border-line rounded-lg shadow-enterprise p-4 md:p-6">
-            <h2 className="text-h3-card text-ink-700 mb-3">Exits</h2>
-            <div className="grid grid-cols-3 gap-4">
+          {/* Exits Card */}
+          <article className="card-minimal">
+            <h2 className="text-headline mb-8">Successful Outcomes</h2>
+            <div className="space-y-8">
               <Stat label="Housed" value={data.exits.housed} />
-              <Stat label="Successful" value={data.exits.successful} />
+              <Stat label="Successful Completion" value={data.exits.successful} />
               <Stat label="UHA Certified" value={data.exits.uha} />
             </div>
           </article>
-        </section>
+        </div>
 
-        <section className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-8">
-          <a
-            href="/MOU_WFD_2025-08-11.pdf"
-            download
-            className="inline-flex items-center justify-center min-h-11 px-4 rounded-md bg-wfd-gold text-accent-foreground hover:opacity-90 transition-[opacity]"
-            aria-label="Download Memorandum of Understanding"
-          >
-            Download MOU (PDF)
-          </a>
-          <p className="text-sm text-ink-600">Data current as of July 31, 2025</p>
-        </section>
-      </main>
-    </div>
-  )
+        {/* Footer - Minimal and clean */}
+        <footer className="mt-16 pt-8 border-t border-border">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <a
+              href="/MOU_WFD_2025-08-11.pdf"
+              download
+              className="inline-flex items-center justify-center h-12 px-8 bg-primary text-primary-foreground rounded-xl text-body font-medium hover:bg-primary-light transition-colors"
+            >
+              Download MOU
+            </a>
+            <p className="text-caption text-muted-foreground">
+              Data current as of July 31, 2025
+            </p>
+          </div>
+        </footer>
+      </div>
+    </main>
+  );
 }
