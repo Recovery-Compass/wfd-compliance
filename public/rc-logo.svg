@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="28" viewBox="0 0 110 28" fill="none">
+  <circle cx="14" cy="14" r="10" stroke="#1976D2" stroke-width="2"/>
+  <path d="M14 6 L18 14 L14 22 L10 14 Z" fill="#1976D2"/>
+  <text x="30" y="18" font-family="Inter, sans-serif" font-size="12" fill="#1976D2">Recovery Compass</text>
+</svg>

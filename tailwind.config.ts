@@ -74,9 +74,12 @@ export default {
 					foreground: 'hsl(var(--popover-foreground))'
 				},
 				card: {
-					DEFAULT: 'hsl(var(--card))',
+					DEFAULT: '#f9fafb',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				ink: { 900: '#111827', 700: '#374151', 600: '#4B5563' },
+				line: '#e5e7eb',
+				rc: { green: '#2D5F3F' },
 				// WFD Brand Colors - Warm sunset/sunrise palette
 				wfd: {
 					purple: 'hsl(var(--primary))',
@@ -86,7 +89,8 @@ export default {
 					orange: 'hsl(var(--wfd-orange))',
 					'orange-light': 'hsl(var(--wfd-orange-light))',
 					blue: 'hsl(var(--wfd-blue))',
-					'blue-light': 'hsl(var(--wfd-blue-light))'
+					'blue-light': 'hsl(var(--wfd-blue-light))',
+					navy: '#1e3a5f'
 				},
 				// Survey specific colors
 				survey: {

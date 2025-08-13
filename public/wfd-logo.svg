@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 120 40" fill="none">
+  <circle cx="20" cy="20" r="10" fill="#4A148C"/>
+  <rect x="40" y="18" width="14" height="10" fill="#4A148C"/>
+  <polygon points="47,10 35,18 59,18" fill="#4A148C"/>
+  <rect x="65" y="14" width="2" height="16" fill="#4A148C"/>
+  <text x="72" y="24" font-family="Inter, sans-serif" font-size="12" fill="#4A148C">WFD</text>
+</svg>
