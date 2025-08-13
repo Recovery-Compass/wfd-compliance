@@ -22,7 +22,7 @@ export default {
     ];
     
     for (const path of blockedPaths) {
-      if (url.pathname.match(new RegExp(path.replace('*', '.*')))) {
+      if (url.pathname.match(new RegExp(path.replace(/\*/g, '.*')))) {
         return new Response('Forbidden', { 
           status: 403,
           headers: { 'Content-Type': 'text/plain' }
