@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="110" height="28" viewBox="0 0 110 28" fill="none">
-  <circle cx="14" cy="14" r="10" stroke="#1976D2" stroke-width="2"/>
-  <path d="M14 6 L18 14 L14 22 L10 14 Z" fill="#1976D2"/>
-  <text x="30" y="18" font-family="Inter, sans-serif" font-size="12" fill="#1976D2">Recovery Compass</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="40" viewBox="0 0 200 40" fill="none">
+  <!-- Compass Diamond Icon -->
+  <g transform="translate(4, 8)">
+    <circle cx="12" cy="12" r="11" fill="#7BB3E8" stroke="#5A9BD4" stroke-width="1"/>
+    <path d="M12 2 L18 12 L12 22 L6 12 Z" fill="#FFFFFF"/>
+    <path d="M12 2 L18 12 L12 22 Z" fill="#5A9BD4" opacity="0.7"/>
+  </g>
+  
+  <!-- Recovery Compass Text -->
+  <text x="32" y="16" font-family="SF Pro Text, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#5A9BD4">Recovery</text>
+  <text x="32" y="30" font-family="SF Pro Text, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#5A9BD4">Compass</text>
 </svg>
