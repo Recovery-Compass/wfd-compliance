@@ -69,7 +69,7 @@ export const getRoleVisibility = (role: ViewRole) => {
       showQuickWins: true,
       showOpportunity: true,
       showNarrative: true,
-      priority: ['kpis', 'opportunity', 'narrative', 'trends', 'quickWins']
+      priority: ['trends', 'opportunity', 'narrative', 'kpis', 'quickWins']
     },
     funder: {
       showKPIs: true,
@@ -78,7 +78,7 @@ export const getRoleVisibility = (role: ViewRole) => {
       showQuickWins: true,
       showOpportunity: true,
       showNarrative: false,
-      priority: ['kpis', 'opportunity', 'trends', 'demographics', 'quickWins']
+      priority: ['trends', 'opportunity', 'kpis', 'demographics', 'quickWins']
     },
     staff: {
       showKPIs: true,
@@ -87,7 +87,7 @@ export const getRoleVisibility = (role: ViewRole) => {
       showQuickWins: true,
       showOpportunity: false,
       showNarrative: true,
-      priority: ['kpis', 'trends', 'quickWins', 'demographics', 'narrative']
+      priority: ['trends', 'narrative', 'kpis', 'quickWins', 'demographics']
     }
   };
 

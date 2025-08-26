@@ -13,8 +13,11 @@ export const OpportunityPanel: React.FC = () => {
           <DollarSign className="w-6 h-6" />
           $4.4M Uncaptured Value Opportunity
         </CardTitle>
-        <p className="text-sm text-orange-800">
-          Annual revenue potential hidden by documentation system gaps
+        <p className="text-sm text-orange-800 font-medium">
+          Quantifying Your Team's Unseen Impact
+        </p>
+        <p className="text-xs text-orange-700 mt-1">
+          Annual revenue potential hidden by system barriers
         </p>
       </CardHeader>
       <CardContent className="space-y-6">

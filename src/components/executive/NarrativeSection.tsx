@@ -61,7 +61,7 @@ export const NarrativeSection: React.FC = () => {
             <div className="space-y-3">
               <div className="bg-red-50 p-3 rounded-lg border border-red-200">
                 <div className="text-sm font-medium text-red-900 mb-1">
-                  Documentation Burden
+                  Administrative Challenges
                 </div>
                 <div className="text-xs text-red-800">
                   Complex paperwork diverts 40% of staff time from direct client care, 
@@ -86,7 +86,7 @@ export const NarrativeSection: React.FC = () => {
         <div className="bg-white/80 p-4 rounded-lg border border-blue-200">
           <div className="flex items-center gap-2 mb-3">
             <Wrench className="w-5 h-5 text-purple-600" />
-            <h3 className="font-medium text-purple-900">System Redesign Opportunity</h3>
+            <h3 className="font-medium text-purple-900">A System Worthy of Your Staff</h3>
           </div>
           <p className="text-sm text-purple-800 leading-relaxed">
             <strong>Mobile intake tools</strong> and <strong>streamlined documentation</strong> can reduce 

@@ -99,10 +99,10 @@ export const TrendsComparison: React.FC = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-ink-primary">
           <ArrowRight className="w-5 h-5" />
-          Service Delivery Trends
+          Service Delivery Excellence
         </CardTitle>
         <p className="text-sm text-ink-secondary">
-          June vs July 2025 comparison showing service delivery changes
+          Your Team's Measurable Impact in Action — Highlighting 1,880 meals served (+14.6% increase)
         </p>
       </CardHeader>
       <CardContent className="space-y-6">

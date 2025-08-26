@@ -12,7 +12,7 @@ const ExecutiveDashboard: React.FC = () => {
 
   // Set document title
   useEffect(() => {
-    document.title = 'Executive Dashboard - WFD Leadership';
+    document.title = 'WFD Performance & Opportunity Briefing';
   }, []);
 
   const visibility = getRoleVisibility(currentRole);
@@ -47,7 +47,7 @@ const ExecutiveDashboard: React.FC = () => {
             </div>
             <div className="text-right">
               <h1 className="text-lg font-semibold text-ink-primary">
-                Executive Command Center
+                WFD Performance & Opportunity Briefing
               </h1>
               <p className="text-xs text-ink-tertiary">
                 Aug 13, 2025 Leadership Demo
@@ -97,7 +97,17 @@ const ExecutiveDashboard: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-line">
+        {/* Clarity Note */}
+        <div className="mt-12 mb-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <p className="text-sm text-blue-800">
+              <strong>Note:</strong> This briefing is based on July 2025 data to demonstrate what's possible. 
+              The revised MOU makes this dashboard live and real-time starting September 1.
+            </p>
+          </div>
+        </div>
+
+        <footer className="mt-8 pt-8 border-t border-line">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="text-sm text-ink-tertiary">
               Data current as of July 31, 2025
