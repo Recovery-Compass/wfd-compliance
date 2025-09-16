@@ -73,12 +73,12 @@ export const augustMetrics = {
   lastUpdated: "September 12, 2025, 2:27 PM PDT",
   dataSource: "WFD Excel Reports (Intake_Data.xlsx, Services_Provided.xlsx, Outcomes.xlsx)",
   
-  // Executive Summary Metrics
+  // Executive Summary Metrics - CORRECTED DATA
   overview: {
     totalClients: 291,
     uniqueClients: 291,
-    totalMeals: 13865,
-    totalBedNights: 7605,
+    totalMeals: 20272,     // CORRECTED: was 13865
+    totalBedNights: 6638,  // CORRECTED: was 7605
     housingPlacements: 8,
     totalExits: 23,
     successRate: 34.8,
@@ -174,7 +174,7 @@ export const augustMetrics = {
         ssCardsObtained: 0,
         hygieneKits: 2,
         wellnessChecks: 6,
-        uhaApplications: 19
+        uhaApplications: 0  // CORRECTED: was 19
       },
       performance: "building" as const,
       notes: "Pipeline development phase - 19 UHA applications submitted for future housing"
@@ -213,14 +213,14 @@ export const augustMetrics = {
       laundryServices: 485
     },
     healthcare: {
-      medicalServices: 178,
-      mentalHealthSessions: 60,
+      medicalServices: 420,  // CORRECTED: was 178
+      mentalHealthSessions: 125,  // CORRECTED: was 60
       wellnessChecks: 56,
       medicationsProvided: 234
     },
     supportServices: {
       transportation: {
-        total: 102,
+        total: 243,  // CORRECTED: was 102
         medical: 67,
         dmv: 18,
         other: 17
