@@ -4,9 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* STEVE JOBS MINIMALIST DESIGN SYSTEM
+/* STEVE JOBS MINIMALIST DESIGN SYSTEM + GLASSMORPHISM
  * Inspired by Recovery Compass + Whittier First Day logos
  * Clean hierarchy, purposeful spacing, unified color story
+ * Enhanced with premium glassmorphic effects
  */
 
 @layer base {
@@ -257,5 +258,64 @@
   
   .force-white-text * {
     color: #FFFFFF !important;
+  }
+
+  /* GLASSMORPHISM UTILITIES */
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .glass-light {
+    @apply backdrop-blur-lg bg-white/5 border border-white/10;
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-2xl bg-white/20 border border-white/30;
+  }
+
+  /* PREMIUM ANIMATIONS */
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* GLASSMORPHIC GRADIENTS */
+  .glass-gradient-primary {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+  }
+
+  .glass-gradient-success {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.1) 100%);
+  }
+
+  .glass-gradient-warning {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.1) 100%);
+  }
+
+  /* INTERACTIVE ELEMENTS */
+  .glass-button {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20 text-white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-button:hover {
+    @apply bg-white/20 border-white/30;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
   }
 }
