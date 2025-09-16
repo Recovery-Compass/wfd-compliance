@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import WfdDashboard from "./pages/WfdDashboard";
 import ExecutiveDashboard from "./pages/ExecutiveDashboard";
+import AugustDashboard from "./pages/AugustDashboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 console.info("[mount] Application starting");
@@ -14,6 +15,7 @@ root.render(
       <Routes>
         <Route path="/" element={<WfdDashboard />} />
         <Route path="/executive-dashboard" element={<ExecutiveDashboard />} />
+        <Route path="/august-dashboard" element={<AugustDashboard />} />
       </Routes>
     </BrowserRouter>
   </ErrorBoundary>
