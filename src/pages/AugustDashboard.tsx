@@ -18,13 +18,7 @@ import {
   Share2,
   Eye,
   BarChart3,
-  TrendingUp,
-  Heart,
-  Brain,
-  ArrowUpRight,
-  Calendar,
-  Sparkles,
-  ChevronRight
+  TrendingUp
 } from 'lucide-react';
 
 import augustMetrics, {
@@ -301,7 +295,7 @@ export default function AugustDashboard() {
             <GlassCard>
               <CardHeader className="border-b border-white/10 pb-6">
                 <CardTitle className="text-white font-light text-xl flex items-center gap-3">
-                  <Sparkles className="w-5 h-5 text-purple-300" />
+                  <Users className="w-5 h-5 text-purple-300" />
                   Client Journey Pipeline
                 </CardTitle>
               </CardHeader>
@@ -326,7 +320,7 @@ export default function AugustDashboard() {
                         </div>
                       </div>
                       {index < 3 && (
-                        <ChevronRight className="w-8 h-8 text-white/20 mx-4" />
+                        <div className="w-8 h-8 flex items-center justify-center text-white/20 mx-4">→</div>
                       )}
                     </React.Fragment>
                   ))}
@@ -468,9 +462,9 @@ export default function AugustDashboard() {
                 <CardContent className="p-6">
                   <div className="space-y-6">
                     {[
-                      { label: 'Medical Services', value: correctedServices.medicalServices, max: 500, color: 'bg-green-500', icon: Heart },
-                      { label: 'Mental Health Sessions', value: correctedServices.mentalHealthSessions, max: 200, color: 'bg-purple-500', icon: Brain },
-                      { label: 'Transportation Services', value: correctedServices.transportation, max: 300, color: 'bg-blue-500', icon: ArrowUpRight },
+                      { label: 'Medical Services', value: correctedServices.medicalServices, max: 500, color: 'bg-green-500', icon: Target },
+                      { label: 'Mental Health Sessions', value: correctedServices.mentalHealthSessions, max: 200, color: 'bg-purple-500', icon: Users },
+                      { label: 'Transportation Services', value: correctedServices.transportation, max: 300, color: 'bg-blue-500', icon: TrendingUp },
                       { label: 'Documents Obtained', value: augustMetrics.overview.documentsObtained.total, max: 50, color: 'bg-orange-500', icon: FileText },
                     ].map((metric) => (
                       <div key={metric.label} className="space-y-3">

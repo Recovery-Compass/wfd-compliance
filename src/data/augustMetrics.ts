@@ -101,11 +101,11 @@ export const augustMetrics = {
         housedClients: 5,
         employedClients: 1,
         successRate: 83.3,
-        meals: 4700,
-        bedNights: 2820,
-        medicalServices: 58,
-        transportation: 35,
-        mentalHealth: 18,
+        meals: 6510,
+        bedNights: 2015,
+        medicalServices: 195,
+        transportation: 157,
+        mentalHealth: 54,
         idsObtained: 2,
         ssCardsObtained: 1,
         hygieneKits: 8,
@@ -122,11 +122,11 @@ export const augustMetrics = {
         housedClients: 1,
         employedClients: 1,
         successRate: 9.1,
-        meals: 5250,
-        bedNights: 3150,
-        medicalServices: 65,
-        transportation: 42,
-        mentalHealth: 22,
+        meals: 9765,
+        bedNights: 3255,
+        medicalServices: 205,
+        transportation: 47,
+        mentalHealth: 55,
         idsObtained: 9,
         ssCardsObtained: 4,
         hygieneKits: 9,
@@ -143,11 +143,11 @@ export const augustMetrics = {
         housedClients: 2,
         employedClients: 1,
         successRate: 33.3,
-        meals: 1750,
-        bedNights: 1050,
-        medicalServices: 22,
-        transportation: 14,
-        mentalHealth: 8,
+        meals: 3162,
+        bedNights: 850,
+        medicalServices: 20,
+        transportation: 27,
+        mentalHealth: 4,
         idsObtained: 3,
         ssCardsObtained: 0,
         hygieneKits: 3,
@@ -165,16 +165,16 @@ export const augustMetrics = {
         housedClients: 0,
         employedClients: 0,
         successRate: 0,
-        meals: 1600,
-        bedNights: 960,
-        medicalServices: 20,
-        transportation: 8,
-        mentalHealth: 7,
+        meals: 0,
+        bedNights: 0,
+        medicalServices: 0,
+        transportation: 0,
+        mentalHealth: 0,
         idsObtained: 0,
         ssCardsObtained: 0,
         hygieneKits: 2,
         wellnessChecks: 6,
-        uhaApplications: 0  // CORRECTED: was 19
+        uhaApplications: 0
       },
       performance: "building" as const,
       notes: "Pipeline development phase - 19 UHA applications submitted for future housing"
@@ -187,11 +187,11 @@ export const augustMetrics = {
         housedClients: 0,
         employedClients: 0,
         successRate: 0,
-        meals: 1250,
-        bedNights: 625,
-        medicalServices: 13,
-        transportation: 3,
-        mentalHealth: 5,
+        meals: 835,
+        bedNights: 518,
+        medicalServices: 0,
+        transportation: 12,
+        mentalHealth: 12,
         idsObtained: 3,
         ssCardsObtained: 0,
         hygieneKits: 0,
@@ -205,10 +205,10 @@ export const augustMetrics = {
   // Service Delivery Summary (From Excel: Services_Provided.xlsx)
   services: {
     basicNeeds: {
-      meals: 13865,
-      mealValue: 138650, // $10 per meal average
-      bedNights: 7605,
-      bedNightValue: 380250, // $50 per night
+      meals: 20272,
+      mealValue: 202720, // $10 per meal average
+      bedNights: 6638,
+      bedNightValue: 331900, // $50 per night
       hygieneKits: 22,
       laundryServices: 485
     },
@@ -331,7 +331,7 @@ export const augustMetrics = {
     august2025: {
       clients: 291,
       housed: 8,
-      meals: 13865,
+      meals: 20272,
       wellnessChecks: 56
     },
     analysis: "Transition from pilot program (36 clients) to full operations (291 clients). Housing numbers reflect different program phase - July was transitional housing completions, August represents permanent housing placements."
@@ -365,11 +365,11 @@ export const augustMetrics = {
     },
     {
       label: "Meals Served",
-      value: 13865,
-      change: 637.5,
+      value: 20272,
+      change: 978.7,
       trend: "up" as const,
       target: 10000,
-      achievement: 138.7
+      achievement: 202.7
     },
     {
       label: "Documents Obtained",
