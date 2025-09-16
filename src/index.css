@@ -12,6 +12,11 @@
 
 @layer base {
   :root {
+    /* WFD BRAND COLORS */
+    --wfd-blue: 213 100% 42%;            /* #1976d2 - WFD Primary Blue */
+    --wfd-purple: 279 100% 29%;          /* #4a148c - WFD Purple */
+    --wfd-gold: 30 84% 57%;              /* #ffa726 - WFD Gold */
+    
     /* LOGO-DERIVED COLOR PALETTE */
     --primary: 262 81% 25%;              /* Deep Purple from "First" */
     --primary-light: 262 81% 40%;        /* Lighter purple variation */
