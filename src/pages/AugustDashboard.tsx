@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar, PieChart, Pie, Cell, Legend, LineChart, Line, CartesianGrid, LabelList } from 'recharts';
+import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar, PieChart, Pie, Cell, Legend, LineChart, Line, CartesianGrid } from 'recharts';
 import { motion, AnimatePresence } from 'framer-motion';
+import { augustMetrics } from '@/data/augustMetrics';
+import { AlertTriangle, Info, Calendar } from 'lucide-react';
 
 // WFD Brand Colors
 const WFD_NAVY = '#0A2B4C';
@@ -29,76 +31,86 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-// Data for Program Performance with Brand Colors
-const programPerformanceData = [
-  { name: 'ICMS', clients: 107, color: WFD_BLUE },
-  { name: 'Pathway Home', clients: 105, color: 'rgba(0, 159, 223, 0.8)' },
-  { name: 'Hondo', clients: 94, color: 'rgba(0, 159, 223, 0.6)' },
-  { name: 'Ted\'s Place', clients: 35, color: WFD_GOLD },
-  { name: 'A2C', clients: 32, color: 'rgba(253, 184, 19, 0.8)' },
-  { name: 'Midvale', clients: 25, color: 'rgba(253, 184, 19, 0.6)' },
-];
+// Generate program performance data from augustMetrics
+const programPerformanceData = augustMetrics.programs.map((program, index) => ({
+  name: program.name,
+  clients: program.metrics.uniqueClients,
+  color: [WFD_BLUE, 'rgba(0, 159, 223, 0.8)', 'rgba(0, 159, 223, 0.6)', WFD_GOLD, 'rgba(253, 184, 19, 0.8)'][index] || WFD_BLUE
+}));
 
-// Data for Housing Outcomes
+// Calculate housing outcomes from augustMetrics (8 housed + 15 other exits)
+const totalExits = augustMetrics.overview.totalExits;
+const housingPlacements = augustMetrics.overview.housingPlacements;
+const otherExits = totalExits - housingPlacements;
+
 const housingOutcomesData = [
-  { name: 'Housed', value: 7 },
-  { name: 'Other Positive Exits', value: 19 },
-  { name: 'Negative Exits', value: 10 },
+  { name: 'Housed', value: housingPlacements },
+  { name: 'Other Exits', value: otherExits }
 ];
-const HOUSING_COLORS = [WFD_BLUE, WFD_GOLD, WFD_NEGATIVE_RED];
+const HOUSING_COLORS = [WFD_BLUE, WFD_GOLD];
 
-// Data for Housing Outcomes Trajectory
+// July to August trajectory data from monthOverMonth
 const trajectoryData = [
-    { month: 'March', housed: 2, positive: 12, negative: 8 },
-    { month: 'April', housed: 4, positive: 15, negative: 6 },
-    { month: 'May', housed: 5, positive: 14, negative: 9 },
-    { month: 'June', housed: 6, positive: 18, negative: 7 },
-    { month: 'July', housed: 8, positive: 16, negative: 5 },
-    { month: 'August', housed: 7, positive: 19, negative: 10 },
-];
-
-// Data for the new Exit Comparison Chart
-const exitComparisonData = [
-    { category: 'Other Positive Exits', value: 319 },
-    { category: 'Housed', value: 101 }
+  { 
+    month: 'July', 
+    clients: augustMetrics.monthOverMonth.july2025.clients,
+    exits: 0, // Not available in data structure
+    housed: augustMetrics.monthOverMonth.july2025.housed
+  },
+  { 
+    month: 'August', 
+    clients: augustMetrics.monthOverMonth.august2025.clients,
+    exits: augustMetrics.overview.totalExits,
+    housed: augustMetrics.monthOverMonth.august2025.housed
+  }
 ];
 
 
 // Main Dashboard Component
 export const AugustDashboard = () => {
-  const [selectedView, setSelectedView] = useState('impact'); // Default to 'impact' to showcase new chart
+  const [selectedView, setSelectedView] = useState('overview');
 
   const renderContent = () => {
     switch (selectedView) {
       case 'overview':
         return (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <GlassCard>
                 <CardHeader>
                     <CardTitle className="text-xl font-bold text-sky-300">Total Clients Served</CardTitle>
-                    <p className="text-sm text-white/70">Across all programs in August</p>
+                    <p className="text-sm text-white/70">Unique clients across all programs</p>
                 </CardHeader>
                 <CardContent>
-                    <p className="text-6xl font-bold">398</p>
+                    <p className="text-6xl font-bold">{augustMetrics.overview.totalClients}</p>
                 </CardContent>
             </GlassCard>
             <GlassCard>
                 <CardHeader>
-                    <CardTitle className="text-xl font-bold text-sky-300">Housing Placement Rate</CardTitle>
-                    <p className="text-sm text-white/70">Of all exits this month</p>
+                    <CardTitle className="text-xl font-bold text-sky-300">Housing Success Rate</CardTitle>
+                    <p className="text-sm text-white/70">Of all program exits</p>
                 </CardHeader>
                 <CardContent>
-                    <p className="text-6xl font-bold">27%</p>
-                    <p className="text-sm text-white/70 mt-2">(7 of 26 total exits)</p>
+                    <p className="text-6xl font-bold">{augustMetrics.overview.successRate}%</p>
+                    <p className="text-sm text-white/70 mt-2">({augustMetrics.overview.housingPlacements} of {augustMetrics.overview.totalExits} exits)</p>
                 </CardContent>
             </GlassCard>
             <GlassCard>
                 <CardHeader>
-                    <CardTitle className="text-xl font-bold text-sky-300">Avg. Length of Stay (Housed)</CardTitle>
-                    <p className="text-sm text-white/70">For clients who secured housing</p>
+                    <CardTitle className="text-xl font-bold text-sky-300">Services Delivered</CardTitle>
+                    <p className="text-sm text-white/70">Total service interactions</p>
                 </CardHeader>
                 <CardContent>
-                    <p className="text-6xl font-bold">319 <span className="text-2xl">days</span></p>
+                    <p className="text-6xl font-bold">{augustMetrics.overview.totalMeals}</p>
+                    <p className="text-sm text-white/70 mt-1">Meals + Bed Nights</p>
+                </CardContent>
+            </GlassCard>
+            <GlassCard>
+                <CardHeader>
+                    <CardTitle className="text-xl font-bold text-sky-300">Data Quality</CardTitle>
+                    <p className="text-sm text-white/70">Compliance score</p>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-6xl font-bold">{augustMetrics.compliance.overallCompliance}%</p>
                 </CardContent>
             </GlassCard>
           </motion.div>
@@ -132,22 +144,20 @@ export const AugustDashboard = () => {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <GlassCard>
                 <CardHeader>
-                    <CardTitle className="text-xl font-bold text-sky-300">Avg. Length of Stay by Exit Type</CardTitle>
-                    <p className="text-sm text-white/70 pt-1">Direct response to the August 13 strategic question about client pathway trends</p>
+                    <CardTitle className="text-xl font-bold text-sky-300">July → August Growth</CardTitle>
+                    <p className="text-sm text-white/70 pt-1">Pre-pilot scale-up trajectory</p>
                 </CardHeader>
                 <CardContent>
                     <ResponsiveContainer width="100%" height={300}>
-                        <BarChart data={exitComparisonData} margin={{ top: 30, right: 20, left: 40, bottom: 5 }}>
+                        <BarChart data={trajectoryData} margin={{ top: 30, right: 20, left: 20, bottom: 5 }}>
                             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.2)" />
-                            <XAxis dataKey="category" stroke="rgba(255, 255, 255, 0.7)" />
-                            <YAxis stroke="rgba(255, 255, 255, 0.7)" domain={[0, 350]} unit=" days" />
+                            <XAxis dataKey="month" stroke="rgba(255, 255, 255, 0.7)" />
+                            <YAxis stroke="rgba(255, 255, 255, 0.7)" />
                             <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(0, 159, 223, 0.1)' }}/>
-                            <Bar dataKey="value" name="Avg. Length of Stay">
-                                <LabelList dataKey="value" position="top" style={{ fill: 'white', fontSize: '16px', fontWeight: 'bold' }} />
-                                {exitComparisonData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={index === 0 ? WFD_GOLD : WFD_BLUE} />
-                                ))}
-                            </Bar>
+                            <Legend wrapperStyle={{ color: 'white' }}/>
+                            <Bar dataKey="clients" name="Total Clients" fill={WFD_BLUE} />
+                            <Bar dataKey="exits" name="Total Exits" fill={WFD_GOLD} />
+                            <Bar dataKey="housed" name="Housing Placements" fill="rgba(0, 159, 223, 0.8)" />
                         </BarChart>
                     </ResponsiveContainer>
                 </CardContent>
@@ -155,27 +165,8 @@ export const AugustDashboard = () => {
 
             <GlassCard>
                 <CardHeader>
-                    <CardTitle className="text-xl font-bold text-sky-300">Housing Outcomes Trajectory</CardTitle>
-                     <p className="text-sm text-white/70 pt-1">6-Month Trend</p>
-                </CardHeader>
-                <CardContent>
-                     <ResponsiveContainer width="100%" height={300}>
-                        <LineChart data={trajectoryData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.2)"/>
-                            <XAxis dataKey="month" stroke="rgba(255, 255, 255, 0.7)"/>
-                            <YAxis stroke="rgba(255, 255, 255, 0.7)"/>
-                            <Tooltip content={<CustomTooltip />}/>
-                            <Legend wrapperStyle={{ color: 'white' }}/>
-                            <Line type="monotone" dataKey="housed" name="Housed" stroke={WFD_BLUE} strokeWidth={3} />
-                            <Line type="monotone" dataKey="positive" name="Other Positive" stroke={WFD_GOLD} strokeWidth={2} />
-                            <Line type="monotone" dataKey="negative" name="Negative" stroke={WFD_NEGATIVE_RED} strokeWidth={2} />
-                        </LineChart>
-                    </ResponsiveContainer>
-                </CardContent>
-            </GlassCard>
-            <GlassCard>
-                <CardHeader>
-                    <CardTitle className="text-sky-300">August Exit Distribution</CardTitle>
+                    <CardTitle className="text-sky-300">August Exit Outcomes</CardTitle>
+                    <p className="text-sm text-white/70 pt-1">Program completion distribution</p>
                 </CardHeader>
                 <CardContent>
                     <ResponsiveContainer width="100%" height={300}>
@@ -200,6 +191,21 @@ export const AugustDashboard = () => {
                     </ResponsiveContainer>
                 </CardContent>
             </GlassCard>
+
+            <GlassCard className="lg:col-span-2">
+                <CardHeader>
+                    <CardTitle className="text-xl font-bold text-sky-300">Key Performance Indicators</CardTitle>
+                    <p className="text-sm text-white/70 pt-1">August 2025 baseline metrics</p>
+                </CardHeader>
+                <CardContent className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {augustMetrics.kpis.map((kpi, index) => (
+                        <div key={index} className="text-center">
+                            <p className="text-2xl font-bold text-sky-300">{kpi.value}</p>
+                            <p className="text-sm text-white/70">{kpi.label}</p>
+                        </div>
+                    ))}
+                </CardContent>
+            </GlassCard>
           </motion.div>
         );
       default:
@@ -210,8 +216,24 @@ export const AugustDashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0A2B4C] to-[#0d3b66] text-white p-8 font-sans">
       <div className="max-w-7xl mx-auto">
+        {/* Pre-Pilot Banner */}
+        <div className="bg-amber-600/20 border border-amber-500/50 rounded-lg p-4 mb-6 flex items-center gap-3">
+          <AlertTriangle className="text-amber-400 h-5 w-5" />
+          <div className="flex-1">
+            <h2 className="font-semibold text-amber-200">August 2025 Pre-Pilot Baseline Data</h2>
+            <p className="text-sm text-amber-100/80">
+              This dashboard displays baseline metrics collected prior to the September 1, 2025 pilot validation phase. 
+              Data sourced from WFD Excel reports under the Recovery Compass + Whittier First Day MOU partnership.
+            </p>
+          </div>
+          <Calendar className="text-amber-400 h-5 w-5" />
+        </div>
+
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold">August 2025 Performance</h1>
+          <div>
+            <h1 className="text-4xl font-bold">August 2025 Baseline Dashboard</h1>
+            <p className="text-sky-200/80 mt-2">Environmental Response Design Evidence Collection</p>
+          </div>
           <div className="bg-slate-900/40 p-1 rounded-full flex space-x-1 border border-sky-400/20">
             {['overview', 'programs', 'impact'].map((view) => (
               <button
@@ -225,9 +247,24 @@ export const AugustDashboard = () => {
             ))}
           </div>
         </div>
+        
         <AnimatePresence mode="wait">
           {renderContent()}
         </AnimatePresence>
+
+        {/* Data Provenance Footer */}
+        <div className="mt-12 pt-6 border-t border-sky-400/20">
+          <div className="flex items-center justify-between text-sm text-white/60">
+            <div className="flex items-center gap-2">
+              <Info className="h-4 w-4" />
+              <span>Data Quality: {augustMetrics.compliance.overallCompliance}% compliance</span>
+            </div>
+            <div className="text-right">
+              <p>Data Source: WFD Master Program Data Sheet</p>
+              <p>Last Updated: September 12, 2025, 2:27 PM PDT</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
