@@ -137,7 +137,7 @@ export const AugustDashboard = () => {
                 </CardHeader>
                 <CardContent>
                     <ResponsiveContainer width="100%" height={300}>
-                        <BarChart data={exitComparisonData} margin={{ top: 30, right: 20, left: -10, bottom: 5 }}>
+                        <BarChart data={exitComparisonData} margin={{ top: 30, right: 20, left: 40, bottom: 5 }}>
                             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.2)" />
                             <XAxis dataKey="category" stroke="rgba(255, 255, 255, 0.7)" />
                             <YAxis stroke="rgba(255, 255, 255, 0.7)" domain={[0, 350]} unit=" days" />
