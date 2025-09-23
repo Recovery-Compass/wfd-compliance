@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar, PieChart, Pie, Cell, Legend, LineChart, Line, CartesianGrid } from 'recharts';
 import { motion, AnimatePresence } from 'framer-motion';
 import { augustMetrics } from '@/data/augustMetrics';
-import { AlertTriangle, Info, Calendar } from 'lucide-react';
+import { AlertTriangle, Info, Calendar, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // WFD Brand Colors
 const WFD_NAVY = '#0A2B4C';
@@ -234,17 +235,26 @@ export const AugustDashboard = () => {
             <h1 className="text-4xl font-bold">August 2025 Baseline Dashboard</h1>
             <p className="text-sky-200/80 mt-2">Environmental Response Design Evidence Collection</p>
           </div>
-          <div className="bg-slate-900/40 p-1 rounded-full flex space-x-1 border border-sky-400/20">
-            {['overview', 'programs', 'impact'].map((view) => (
-              <button
-                key={view}
-                onClick={() => setSelectedView(view)}
-                className={`px-4 py-2 text-sm font-medium rounded-full transition-colors relative ${selectedView === view ? 'text-white' : 'text-white/60 hover:bg-white/10'}`}
-              >
-                {selectedView === view && <motion.div layoutId="active-pill" className="absolute inset-0 bg-sky-500/50 rounded-full" />}
-                <span className="relative z-10 capitalize">{view}</span>
-              </button>
-            ))}
+          <div className="flex items-center gap-4">
+            <Link 
+              to="/opportunity-dashboard" 
+              className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 shadow-lg hover:shadow-green-500/25 border border-green-500/30"
+            >
+              <TrendingUp className="h-4 w-4" />
+              $4.4M Opportunity
+            </Link>
+            <div className="bg-slate-900/40 p-1 rounded-full flex space-x-1 border border-sky-400/20">
+              {['overview', 'programs', 'impact'].map((view) => (
+                <button
+                  key={view}
+                  onClick={() => setSelectedView(view)}
+                  className={`px-4 py-2 text-sm font-medium rounded-full transition-colors relative ${selectedView === view ? 'text-white' : 'text-white/60 hover:bg-white/10'}`}
+                >
+                  {selectedView === view && <motion.div layoutId="active-pill" className="absolute inset-0 bg-sky-500/50 rounded-full" />}
+                  <span className="relative z-10 capitalize">{view}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         
@@ -260,8 +270,8 @@ export const AugustDashboard = () => {
               <span>Data Quality: {augustMetrics.compliance.overallCompliance}% compliance</span>
             </div>
             <div className="text-right">
-              <p>Data Source: WFD Master Program Data Sheet</p>
-              <p>Last Updated: September 12, 2025, 2:27 PM PDT</p>
+              <p>Data Source: WFD Master Program Data Sheet (Verified)</p>
+              <p>Verified by Jacob Lozoya - September 15, 2025 at 2:26 PM</p>
             </div>
           </div>
         </div>
