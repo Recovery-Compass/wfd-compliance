@@ -11,7 +11,7 @@ export const OpportunityPanel: React.FC = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-orange-900">
           <DollarSign className="w-6 h-6" />
-          $4.4M Uncaptured Value Opportunity
+          Data Governance Value Achievement
         </CardTitle>
         <p className="text-sm text-orange-800 font-medium">
           Quantifying Your Team's Unseen Impact
@@ -42,7 +42,7 @@ export const OpportunityPanel: React.FC = () => {
             {Object.entries(opportunityValue.breakdown).map(([key, value]) => (
               <div key={key} className="bg-white/60 p-3 rounded-lg border border-orange-200">
                 <div className="text-lg font-bold text-orange-900 tabular-nums">
-                  ${value}M
+                  {typeof value === 'string' && value.includes('%') ? value : `✓ ${value}`}
                 </div>
                 <div className="text-xs text-orange-700 capitalize">
                   {key.replace(/([A-Z])/g, ' $1').trim()}
@@ -67,10 +67,10 @@ export const OpportunityPanel: React.FC = () => {
         <div className="bg-white/80 p-4 rounded-lg border border-orange-200">
           <div className="text-center">
             <div className="text-2xl font-bold text-orange-900 tabular-nums">
-              ${opportunityValue.total}M
+              {opportunityValue.total}
             </div>
             <div className="text-sm text-orange-700">
-              Total annual opportunity
+              Data governance achievement
             </div>
             <div className="text-xs text-orange-600 mt-1">
               Immediate action required to capture value

@@ -253,7 +253,7 @@ export const AugustDashboard = () => {
               className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 shadow-lg hover:shadow-green-500/25 border border-green-500/30"
             >
               <TrendingUp className="h-4 w-4" />
-              $4.4M Opportunity
+              Data Governance
             </Link>
             <div className="bg-slate-900/40 p-1 rounded-full flex space-x-1 border border-sky-400/20">
               {['overview', 'programs', 'impact'].map((view) => (

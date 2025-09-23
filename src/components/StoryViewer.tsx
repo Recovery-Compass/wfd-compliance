@@ -85,10 +85,10 @@ export const StoryViewer = ({ perspective }: StoryViewerProps) => {
       },
       {
         day: "August 5, 2025",
-        title: "We discovered $4.4M in services we were already delivering!",
-        content: "Not a service problem - a documentation problem. The solution was simple: better counting.",
-        visual: "🎉",
-        impact: "$4.4M in recovered funding"
+        title: "We discovered our data architecture was fundamentally flawed!",
+        content: "Not a service problem - a data problem. We fixed it before it destroyed our grant applications.",
+        visual: "🛡️",
+        impact: "Prevented funding disasters, protected credibility"
       }
     ] as ExecutiveStory[],
     staff: [

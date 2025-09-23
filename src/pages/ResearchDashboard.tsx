@@ -10,7 +10,7 @@ const ResearchDashboard = () => {
       title: "Executive Summary Export",
       description: "Ready-to-present materials for leadership",
       items: [
-        "$4.4M Discovery One-Pager (PDF)",
+        "Data Governance Achievement One-Pager (PDF)",
         "90-Day Transformation Timeline (PDF)",
         "Before/After Compliance Metrics (Excel)"
       ],

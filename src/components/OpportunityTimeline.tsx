@@ -14,8 +14,8 @@ export const OpportunityTimeline = () => {
           <div className="flex gap-4 items-start">
             <CheckCircle className="w-8 h-8 text-success flex-shrink-0" />
             <div className="flex-grow">
-              <h3 className="font-semibold text-success">Phase 1: Discovery Complete ✅</h3>
-              <p className="text-muted-foreground">Found $4.4M in undocumented services</p>
+              <h3 className="font-semibold text-success">Phase 1: Data Governance Complete ✅</h3>
+              <p className="text-muted-foreground">Prevented grant application disasters</p>
               <p className="text-sm text-muted-foreground/70 mt-1">Completed July 15, 2025</p>
             </div>
           </div>
