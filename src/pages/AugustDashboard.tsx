@@ -272,6 +272,7 @@ export const AugustDashboard = () => {
             <div className="text-right">
               <p>Data Source: WFD Master Program Data Sheet (Verified)</p>
               <p>Verified by Jacob Lozoya - September 15, 2025 at 2:26 PM</p>
+              <p>Dashboard updated: September 23, 2025 at 9:05 AM PT</p>
             </div>
           </div>
         </div>
