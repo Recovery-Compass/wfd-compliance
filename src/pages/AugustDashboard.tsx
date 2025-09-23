@@ -114,6 +114,18 @@ export const AugustDashboard = () => {
                     <p className="text-6xl font-bold">{augustMetrics.compliance.overallCompliance}%</p>
                 </CardContent>
             </GlassCard>
+            
+            {/* Explanatory Context for Success Rate Calculation */}
+            <div className="lg:col-span-4 mt-4">
+              <div className="bg-slate-800/30 border border-sky-400/20 rounded-lg p-4">
+                <p className="text-sm text-white/70 mb-2">
+                  <strong>Success Rate Calculation:</strong> Housing placements ÷ total program exits = {augustMetrics.overview.housingPlacements}/{augustMetrics.overview.actualExits} = {augustMetrics.overview.successRate}%
+                </p>
+                <p className="text-xs text-white/60">
+                  Success rate = housed exits ÷ total exits • Not all clients served have exited programs yet
+                </p>
+              </div>
+            </div>
           </motion.div>
         );
       case 'programs':

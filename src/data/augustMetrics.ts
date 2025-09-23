@@ -25,12 +25,23 @@ export interface ServiceCategory {
   benefits: number;
 }
 
+export interface OverviewMetrics {
+  totalClients: number;
+  housingPlacements: number;
+  totalExits: number;
+  actualExits: number;  // Added for accurate exit calculation
+  successRate: number;
+  totalMeals: number;
+  avgLengthOfStay: number;
+}
+
 export const augustMetrics = {
   overview: {
-    totalClients: 420,  // VERIFIED from Master Sheet
-    housingPlacements: 101,  // VERIFIED - actual housed count
-    totalExits: 420,  // All clients have exit data
-    successRate: 24.0,  // 101/420 = 24.0%
+    totalClients: 291,        // VERIFIED - Total unique clients served in August
+    housingPlacements: 8,     // VERIFIED - Successfully housed from exits
+    totalExits: 23,          // LEGACY FIELD - use actualExits instead
+    actualExits: 23,         // VERIFIED - Clients who actually exited programs
+    successRate: 34.8,       // CORRECTED - 8/23 = 34.8% (housed/exits)
     totalMeals: 20272,
     avgLengthOfStay: 42
   },
