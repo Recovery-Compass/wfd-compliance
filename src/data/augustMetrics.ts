@@ -50,11 +50,11 @@ export const augustMetrics = {
     {
       name: "Hondo",
       metrics: {
-        uniqueClients: 122,
-        housingPlacements: 55,
-        totalExits: 122,
-        successRate: 45.1,
-        avgLengthOfStay: 45,
+        uniqueClients: 95,
+        housingPlacements: 5,
+        totalExits: 10,
+        successRate: 50.0,
+        avgLengthOfStay: 87,
         totalServices: 8500,
         documentationRate: 95,
         performanceRating: "Excellent",
@@ -64,11 +64,11 @@ export const augustMetrics = {
     {
       name: "Pathway Home",
       metrics: {
-        uniqueClients: 108,
-        housingPlacements: 46,
-        totalExits: 108,
-        successRate: 42.6,
-        avgLengthOfStay: 38,
+        uniqueClients: 85,
+        housingPlacements: 2,
+        totalExits: 8,
+        successRate: 25.0,
+        avgLengthOfStay: 62,
         totalServices: 6800,
         documentationRate: 95,
         performanceRating: "Excellent",
@@ -78,11 +78,11 @@ export const augustMetrics = {
     {
       name: "Ted's Place",
       metrics: {
-        uniqueClients: 37,
-        housingPlacements: 0,
-        totalExits: 37,
-        successRate: 0,
-        avgLengthOfStay: 30,
+        uniqueClients: 30,
+        housingPlacements: 1,
+        totalExits: 3,
+        successRate: 33.3,
+        avgLengthOfStay: 45,
         totalServices: 1200,
         documentationRate: 92,
         performanceRating: "Building Pipeline",
@@ -92,11 +92,11 @@ export const augustMetrics = {
     {
       name: "A2C",
       metrics: {
-        uniqueClients: 9,
+        uniqueClients: 8,
         housingPlacements: 0,
-        totalExits: 9,
+        totalExits: 1,
         successRate: 0,
-        avgLengthOfStay: 15,
+        avgLengthOfStay: 120,
         totalServices: 300,
         documentationRate: 88,
         performanceRating: "Developing",
@@ -106,11 +106,11 @@ export const augustMetrics = {
     {
       name: "Other Programs",
       metrics: {
-        uniqueClients: 144,
+        uniqueClients: 73,
         housingPlacements: 0,
-        totalExits: 144,
+        totalExits: 1,
         successRate: 0,
-        avgLengthOfStay: 35,
+        avgLengthOfStay: 30,
         totalServices: 3472,
         documentationRate: 90,
         performanceRating: "Varied",
@@ -129,26 +129,26 @@ export const augustMetrics = {
 
   demographics: {
     gender: {
-      male: 294,
-      female: 115,
-      nonBinary: 8,
-      undisclosed: 3
+      male: 204,
+      female: 80,
+      nonBinary: 6,
+      undisclosed: 1
     },
     age: {
-      "18-24": 42,
-      "25-34": 126,
-      "35-44": 147,
-      "45-54": 84,
-      "55-64": 18,
-      "65+": 3
+      "18-24": 29,
+      "25-34": 73,
+      "35-44": 87,
+      "45-54": 67,
+      "55-64": 29,
+      "65+": 6
     },
     raceEthnicity: {
-      white: 168,
-      hispanic: 147,
-      black: 63,
-      asian: 21,
-      nativeAmerican: 12,
-      multiracial: 6,
+      white: 87,
+      hispanic: 93,
+      black: 70,
+      asian: 20,
+      nativeAmerican: 6,
+      multiracial: 12,
       other: 3
     }
   },
@@ -163,8 +163,8 @@ export const augustMetrics = {
   },
 
   grantMetrics: {
-    eligibleClients: 420,
-    documentedOutcomes: 420,
+    eligibleClients: 291,
+    documentedOutcomes: 291,
     successStories: 15,
     dataQuality: 95,
     complianceRate: 98,
@@ -176,23 +176,23 @@ export const augustMetrics = {
   monthOverMonth: {
     july2025: {
       clients: 276,
-      housed: 50,
+      housed: 12,
       services: 18500
     },
     august2025: {
-      clients: 420,
-      housed: 101,
+      clients: 291,
+      housed: 8,
       services: 20272
     }
   },
 
   kpis: [
-    { label: "Housing Success Rate", value: "24.0%" },
+    { label: "Housing Success Rate", value: "34.8%" },
     { label: "Avg Days to Housing", value: "42" },
     { label: "Service Utilization", value: "95%" },
     { label: "Data Compliance", value: "95%" },
-    { label: "Total Clients Served", value: "420" },
-    { label: "Housing Placements", value: "101" }
+    { label: "Total Clients Served", value: "291" },
+    { label: "Housing Placements", value: "8" }
   ],
 
   opportunityValue: {
