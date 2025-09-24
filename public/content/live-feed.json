@@ -1,0 +1,9 @@
+{
+  "title": "Live Community Feed",
+  "events": [
+    { "id": "e-1001", "ts": "2025-09-24T20:59:00Z", "type": "badge_awarded", "actor": "J. Harper", "message": "earned the ‘Docs Champion’ badge!", "icon": "📚", "link": "/engage/badges" },
+    { "id": "e-1002", "ts": "2025-09-24T21:01:00Z", "type": "milestone", "actor": "Program Team", "message": "reached 90% documentation completion this week", "icon": "🏆" },
+    { "id": "e-1003", "ts": "2025-09-24T21:05:30Z", "type": "move_in", "actor": "A. Rivera", "message": "successfully moved into stable housing!", "icon": "🏠" },
+    { "id": "e-1004", "ts": "2025-09-24T21:08:00Z", "type": "shoutout", "actor": "Community", "message": "big thanks to mentors helping peers hit milestones", "icon": "🎉" }
+  ]
+}
