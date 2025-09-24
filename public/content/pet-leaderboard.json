@@ -1,0 +1,8 @@
+{
+  "title": "Pet Contest Leaderboard",
+  "entries": [
+    { "id": "1", "name": "A. Rivera", "pet": "Mochi", "points": 120 },
+    { "id": "2", "name": "B. Chen", "pet": "Pixel", "points": 95 },
+    { "id": "3", "name": "C. Patel", "pet": "Sunny", "points": 140 }
+  ]
+}

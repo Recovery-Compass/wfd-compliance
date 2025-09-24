@@ -6,6 +6,7 @@ import WfdDashboard from "./pages/WfdDashboard";
 import ExecutiveDashboard from "./pages/ExecutiveDashboard";
 import AugustDashboard from "./pages/AugustDashboard";
 import OpportunityDashboard from "./pages/OpportunityDashboard";
+import PetLeaderboard from "./pages/PetLeaderboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 console.info("[mount] Application starting");
@@ -18,6 +19,7 @@ root.render(
         <Route path="/executive-dashboard" element={<ExecutiveDashboard />} />
         <Route path="/august-dashboard" element={<AugustDashboard />} />
         <Route path="/opportunity-dashboard" element={<OpportunityDashboard />} />
+        <Route path="/engage/pet-leaderboard" element={<PetLeaderboard />} />
       </Routes>
     </BrowserRouter>
   </ErrorBoundary>
