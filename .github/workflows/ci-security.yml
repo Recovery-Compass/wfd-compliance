@@ -51,7 +51,7 @@ jobs:
           echo "✅ No forbidden files found"
       
       - name: Secret scanning
-        uses: trufflesecurity/trufflehog@main
+        uses: trufflesecurity/trufflehog@v3.70.1
         with:
           path: ./
           base: ${{ github.event.repository.default_branch }}
@@ -104,7 +104,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
       
       - name: Install dependencies
@@ -150,7 +150,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
       
       - name: Install dependencies
@@ -183,11 +183,22 @@ jobs:
           fi
       
       - name: Check branch naming
+        shell: bash
         run: |
           BRANCH="${{ github.head_ref }}"
-          if [[ ! "$BRANCH" =~ ^(feature|fix|hotfix|docs|chore|refactor)/.+ ]]; then
-            echo "⚠️ Branch name should follow pattern: type/description"
-            echo "   Examples: feature/add-auth, fix/login-bug"
+          prefix="${BRANCH%%/*}"
+          case "$prefix" in
+            feature|fix|hotfix|docs|chore|refactor) ;;
+            *)
+              echo "⚠️ Branch name should follow pattern: type/description (got: $BRANCH)"
+              echo "   Examples: feature/add-auth, fix/login-bug"
+              # Warning only; do not fail the job
+              exit 0
+              ;;
+          esac
+          # Require a non-empty description after the prefix
+          if [ "${BRANCH#*/}" = "$BRANCH" ] || [ -z "${BRANCH#*/}" ]; then
+            echo "⚠️ Branch must include a description after the prefix, e.g., feature/add-auth"
           fi
       
       - name: Verify signed commits
