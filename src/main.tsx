@@ -6,6 +6,9 @@ import WfdDashboard from "./pages/WfdDashboard";
 import ExecutiveDashboard from "./pages/ExecutiveDashboard";
 import AugustDashboard from "./pages/AugustDashboard";
 import OpportunityDashboard from "./pages/OpportunityDashboard";
+import EngageHub from "./pages/EngageHub";
+import AboutData from "./pages/AboutData";
+import NotFound from "./pages/NotFound";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 console.info("[mount] Application starting");
@@ -18,6 +21,9 @@ root.render(
         <Route path="/executive-dashboard" element={<ExecutiveDashboard />} />
         <Route path="/august-dashboard" element={<AugustDashboard />} />
         <Route path="/opportunity-dashboard" element={<OpportunityDashboard />} />
+        <Route path="/engage" element={<EngageHub />} />
+        <Route path="/about-data" element={<AboutData />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </ErrorBoundary>
