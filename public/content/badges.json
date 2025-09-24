@@ -1,0 +1,8 @@
+{
+  "title": "Achievement Badges",
+  "badges": [
+    { "id": "quick-start", "name": "Quick Start", "description": "Completed onboarding in 24 hours", "points": 50, "icon": "🏁" },
+    { "id": "docs-champion", "name": "Docs Champion", "description": "Submitted 3 documentation improvements", "points": 80, "icon": "📚" },
+    { "id": "mentor", "name": "Mentor", "description": "Helped another participant reach a milestone", "points": 120, "icon": "🤝" }
+  ]
+}
