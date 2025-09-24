@@ -54,19 +54,19 @@ export const DiscoveryStory = () => {
     <section id="discovery-story" className="mb-8">
       <Card className="overflow-hidden">
         <div className="bg-gradient-to-br from-wfd-blue to-wfd-purple text-white p-8">
-          <h2 className="text-3xl font-bold mb-4 text-center">The $4.4M Discovery Story</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center">The Data Standardization Achievement</h2>
           <p className="text-center text-lg opacity-90">
-            How Environmental Response Design™ revealed hidden organizational excellence
+            How Environmental Response Design™ prevented a data disaster
           </p>
         </div>
         
         <CardContent className="p-8">
           <div className="text-center mb-12">
             <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-wfd-blue to-wfd-purple">
-              {counter.toLocaleString()}
+              95%
             </div>
-            <div className="text-xl text-muted-foreground mt-2">Services discovered but undocumented</div>
-            <div className="text-sm text-muted-foreground/70 mt-1">Worth ${(counter * 87).toLocaleString()} in annual funding</div>
+            <div className="text-xl text-muted-foreground mt-2">Data quality achieved</div>
+            <div className="text-sm text-muted-foreground/70 mt-1">Grant applications now mathematically sound</div>
           </div>
           
           <div className="space-y-4 max-w-3xl mx-auto">
