@@ -1,0 +1,8 @@
+{
+  "title": "Community Wall of Fame",
+  "honorees": [
+    { "name": "A. Rivera", "achievement": "Completed documentation in record time", "date": "2025-08-14" },
+    { "name": "B. Chen", "achievement": "Secured stable housing after 90 days", "date": "2025-08-20" },
+    { "name": "C. Patel", "achievement": "Mentored two peers through training milestones" }
+  ]
+}

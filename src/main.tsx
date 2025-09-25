@@ -11,6 +11,7 @@ import AboutData from "./pages/AboutData";
 import NotFound from "./pages/NotFound";
 import DataStory from "./pages/DataStory";
 import PetLeaderboard from "./pages/PetLeaderboard";
+import WallOfFame from "./pages/WallOfFame";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 console.info("[mount] Application starting");
@@ -27,6 +28,7 @@ root.render(
         <Route path="/about-data" element={<AboutData />} />
         <Route path="/engage/data-story" element={<DataStory />} />
         <Route path="/engage/pet-leaderboard" element={<PetLeaderboard />} />
+        <Route path="/engage/wall-of-fame" element={<WallOfFame />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
