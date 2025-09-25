@@ -10,6 +10,7 @@ import EngageHub from "./pages/EngageHub";
 import AboutData from "./pages/AboutData";
 import NotFound from "./pages/NotFound";
 import DataStory from "./pages/DataStory";
+import PetLeaderboard from "./pages/PetLeaderboard";
 import Badges from "./pages/Badges";
 import WallOfFame from "./pages/WallOfFame";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -27,6 +28,7 @@ root.render(
         <Route path="/engage" element={<EngageHub />} />
         <Route path="/about-data" element={<AboutData />} />
         <Route path="/engage/data-story" element={<DataStory />} />
+        <Route path="/engage/pet-leaderboard" element={<PetLeaderboard />} />
         <Route path="/engage/badges" element={<Badges />} />
         <Route path="/engage/wall-of-fame" element={<WallOfFame />} />
         <Route path="*" element={<NotFound />} />
