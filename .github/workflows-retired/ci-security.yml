@@ -1,6 +1,0 @@
-name: Retired - CI Security Pipeline
-
-on:
-  workflow_dispatch:
-
-jobs: {}

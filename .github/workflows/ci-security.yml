@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+name: Retired - CI Security Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs: {}
+=======
 name: CI Security + Build + Quality
 
 on:
@@ -141,3 +149,4 @@ jobs:
           echo "- ✅ quality"
           echo "- ✅ build"
           echo "Recommendations: enforce branch protection with required checks (security, quality, build)."
+>>>>>>> origin/main
