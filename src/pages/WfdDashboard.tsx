@@ -38,7 +38,7 @@ export default function WfdDashboard() {
         <div className="max-w-7xl mx-auto px-8 py-6">
           <div className="flex items-center justify-between">
             <img 
-              src="/wfd-logo.svg" 
+src="/whittier-first-day-logo.png"
               alt="Whittier First Day" 
               className="h-12 w-auto" 
             />
@@ -46,7 +46,7 @@ export default function WfdDashboard() {
               Ted&apos;s Place — July 2025
             </h1>
             <img 
-              src="/rc-logo.svg" 
+src="/recovery-compass-logo.png"
               alt="Recovery Compass" 
               className="h-9 w-auto opacity-70" 
             />

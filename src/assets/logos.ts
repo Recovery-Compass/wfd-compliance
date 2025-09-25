@@ -1,8 +1,8 @@
 // Logo imports for WFD Partnership Dashboard
 // These will be used in the premium glassmorphic dashboard
 
-export const RECOVERY_COMPASS_LOGO = '/public/rc-logo.svg';
-export const WFD_LOGO = '/public/wfd-logo.svg';
+export const RECOVERY_COMPASS_LOGO = '/recovery-compass-logo.png';
+export const WFD_LOGO = '/whittier-first-day-logo.png';
 
 // Logo animation variants for framer-motion
 export const logoAnimationVariants = {
