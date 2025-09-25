@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WFD Impact Dashboard - September 2025</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -99,11 +99,15 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             <div class="bg-white rounded-xl shadow-lg p-6 fade-in" style="animation-delay: 0.5s">
                 <h3 class="text-xl font-bold text-[#2C1A52] mb-4">Housing Success Rate by Program</h3>
-                <canvas id="barChart" width="400" height="300"></canvas>
+                <div style="height: 300px;">
+                    <canvas id="barChart"></canvas>
+                </div>
             </div>
             <div class="bg-white rounded-xl shadow-lg p-6 fade-in" style="animation-delay: 0.6s">
                 <h3 class="text-xl font-bold text-[#2C1A52] mb-4">Client Distribution</h3>
-                <canvas id="pieChart" width="400" height="300"></canvas>
+                <div style="height: 300px;">
+                    <canvas id="pieChart"></canvas>
+                </div>
             </div>
         </div>
 
@@ -236,8 +240,13 @@
     </div>
 
     <script>
-        // Initialize charts after DOM loads
+        // Initialize charts after DOM loads with error handling
         document.addEventListener('DOMContentLoaded', function() {
+            // Verify Chart.js loaded
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js failed to load from CDN');
+                return;
+            }
             // Bar Chart Configuration
             const barCtx = document.getElementById('barChart').getContext('2d');
             new Chart(barCtx, {
