@@ -6,6 +6,10 @@ import WfdDashboard from "./pages/WfdDashboard";
 import ExecutiveDashboard from "./pages/ExecutiveDashboard";
 import AugustDashboard from "./pages/AugustDashboard";
 import OpportunityDashboard from "./pages/OpportunityDashboard";
+import EngageHub from "./pages/EngageHub";
+import AboutData from "./pages/AboutData";
+import NotFound from "./pages/NotFound";
+import DataStory from "./pages/DataStory";
 import Badges from "./pages/Badges";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
@@ -19,7 +23,11 @@ root.render(
         <Route path="/executive-dashboard" element={<ExecutiveDashboard />} />
         <Route path="/august-dashboard" element={<AugustDashboard />} />
         <Route path="/opportunity-dashboard" element={<OpportunityDashboard />} />
+        <Route path="/engage" element={<EngageHub />} />
+        <Route path="/about-data" element={<AboutData />} />
+        <Route path="/engage/data-story" element={<DataStory />} />
         <Route path="/engage/badges" element={<Badges />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </ErrorBoundary>
