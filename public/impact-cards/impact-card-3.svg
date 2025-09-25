@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .title { font: 700 64px Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+      .body { font: 400 40px Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+      .meta { font: 600 44px Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    </style>
+  </defs>
+  <rect width="1080" height="1080" fill="#1e3a5f"/>
+  <g transform="translate(80,120)" fill="#ffffff">
+    <text class="title" y="0">Celebrating the Team</text>
+    <text class="body" y="120" opacity="0.95">“Behind every success is a team that won’t give up.”</text>
+    <text class="meta" y="220">Staff celebration • September</text>
+  </g>
+  <g transform="translate(80,960)" fill="#ffffff" opacity="0.8">
+    <text class="body">WFD • Recovery Compass</text>
+  </g>
+</svg>

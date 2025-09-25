@@ -15,6 +15,8 @@ import Badges from "./pages/Badges";
 import WallOfFame from "./pages/WallOfFame";
 import LiveFeed from "./pages/LiveFeed";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import WowDashboard from "./pages/WowDashboard";
+import ImpactCards from "./pages/ImpactCards";
 
 console.info("[mount] Application starting");
 const root = createRoot(document.getElementById("root")!);
@@ -32,6 +34,8 @@ root.render(
         <Route path="/engage/pet-leaderboard" element={<PetLeaderboard />} />
         <Route path="/engage/badges" element={<Badges />} />
         <Route path="/engage/wall-of-fame" element={<WallOfFame />} />
+        <Route path="/wow" element={<WowDashboard />} />
+        <Route path="/impact-cards" element={<ImpactCards />} />
         <Route path="/engage/live-feed" element={<LiveFeed />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
