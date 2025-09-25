@@ -6,6 +6,8 @@ const CARDS = [
   { file: "/impact-cards/impact-card-3.svg", title: "Card 3 — Staff Celebration" },
 ];
 
+import { BrandShell } from "@/components/BrandShell";
+
 export default function ImpactCards() {
   const container = useRef<HTMLDivElement>(null);
 
@@ -14,8 +16,11 @@ export default function ImpactCards() {
   }, []);
 
   return (
-    <div style={{ padding: 24 }}>
-      <h1 style={{ marginBottom: 8 }}>Impact Story Cards (1080×1080)</h1>
+    <BrandShell>
+      <div style={{ padding: 8 }}>
+        <div className="wfd-header" style={{ marginBottom: 12 }}>
+          <h1 style={{ margin: 0 }}>Impact Story Cards (1080×1080)</h1>
+        </div>
       <p style={{ marginTop: 0, color: "#555" }}>
         Right-click an image to save as SVG, or open in a new tab and export to PNG using your system tools.
       </p>
@@ -32,6 +37,7 @@ export default function ImpactCards() {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    </BrandShell>
   );
 }

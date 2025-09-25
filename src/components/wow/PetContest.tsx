@@ -76,6 +76,12 @@ export default function PetContest() {
 
   return (
     <div>
+      <div className="wfd-header" style={{ marginBottom: 12, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <strong>Pet Photo Contest</strong>
+        <span>
+          Total votes: <span className="text-gradient-wfd">{photos.reduce((a, b) => a + b.votes, 0)}</span>
+        </span>
+      </div>
       <div
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}

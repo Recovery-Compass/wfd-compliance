@@ -3,10 +3,16 @@ import PetContest from "@/components/wow/PetContest";
 import SuccessStoriesCarousel from "@/components/wow/SuccessStoriesCarousel";
 import ImpactMeter from "@/components/wow/ImpactMeter";
 
+import { BrandShell } from "@/components/BrandShell";
+
 export default function WowDashboard() {
   return (
-    <div style={{ padding: "24px", maxWidth: 1200, margin: "0 auto" }}>
-      <h1 style={{ marginBottom: 8 }}>Wow Dashboard</h1>
+    <BrandShell>
+      <div style={{ padding: "8px" }}>
+        <div className="wfd-header" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <h1 style={{ margin: 0 }}>Wow Dashboard</h1>
+          <a className="btn-rc" href="/impact-cards">Impact Cards</a>
+        </div>
       <p style={{ marginTop: 0, color: "#555" }}>
         Rapid demo modules to delight stakeholders and drive shares.
       </p>
@@ -25,6 +31,7 @@ export default function WowDashboard() {
         <h2>3) Community Impact Meter</h2>
         <ImpactMeter />
       </section>
-    </div>
+      </div>
+    </BrandShell>
   );
 }

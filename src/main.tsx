@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
+import "./styles/rc-brand.css";
 import WfdDashboard from "./pages/WfdDashboard";
 import ExecutiveDashboard from "./pages/ExecutiveDashboard";
 import AugustDashboard from "./pages/AugustDashboard";

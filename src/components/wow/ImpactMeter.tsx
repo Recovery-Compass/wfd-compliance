@@ -21,7 +21,7 @@ function Bar({ value, goal, color }: { value: number; goal: number; color: strin
         style={{
           width: `${pct}%`,
           height: "100%",
-          background: color,
+          background: "linear-gradient(90deg, var(--wfd-blue-from), var(--wfd-blue-to))",
           transition: "width 600ms ease",
         }}
       />
@@ -52,9 +52,9 @@ export default function ImpactMeter() {
     <div>
       {celebrate && (
         <div style={{
-          background: "#dcfce7",
-          border: "1px solid #86efac",
-          color: "#166534",
+          background: "#FFF6E5",
+          border: "1px solid #F4A51C",
+          color: "#8B5E00",
           padding: 8,
           borderRadius: 6,
           marginBottom: 12,

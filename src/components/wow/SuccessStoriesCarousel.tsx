@@ -55,7 +55,8 @@ export default function SuccessStoriesCarousel() {
       {story.image && (
         <img src={story.image} alt={story.title} style={{ width: "100%", maxHeight: 280, objectFit: "cover" }} />
       )}
-      <div style={{ padding: 12 }}>
+      <div style={{ padding: 12, background: "#ffffff" }}>
+        <div style={{ fontWeight: 700, fontSize: 18, color: "#1E3A5F" }}>{story.title}</div>
         <div style={{ fontWeight: 700, fontSize: 18 }}>{story.title}</div>
         <div style={{ marginTop: 6, fontStyle: "italic", color: "#333" }}>“{story.quote}”</div>
         <div style={{ marginTop: 6, color: "#1e3a5f", fontWeight: 600 }}>{story.metric}</div>
@@ -63,8 +64,8 @@ export default function SuccessStoriesCarousel() {
           <button onClick={() => setIndex((i) => (i - 1 + STORIES.length) % STORIES.length)}>Prev</button>
           <button onClick={() => setIndex((i) => (i + 1) % STORIES.length)}>Next</button>
           <div style={{ flex: 1 }} />
-          <button onClick={() => share("twitter", story)}>Share on X</button>
-          <button onClick={() => share("linkedin", story)}>Share on LinkedIn</button>
+          <button style={{ background: "#F4A51C", color: "#1E3A5F", border: "none", padding: "8px 10px", borderRadius: 8 }} onClick={() => share("twitter", story)}>Share on X</button>
+          <button style={{ background: "#F4A51C", color: "#1E3A5F", border: "none", padding: "8px 10px", borderRadius: 8 }} onClick={() => share("linkedin", story)}>Share on LinkedIn</button>
         </div>
       </div>
     </div>
