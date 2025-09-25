@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .title { font: 700 64px Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+      .body { font: 400 40px Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+      .meta { font: 600 44px Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    </style>
+  </defs>
+<rect width="1080" height="1080" fill="#2C1A52"/>
+  <g transform="translate(80,120)" fill="#ffffff">
+    <text class="title" y="0">Pets Are Family</text>
+    <text class="body" y="120" opacity="0.95">“Fewer impossible choices: pets stay with their people.”</text>
+    <text class="meta" y="220">Pet support program launched</text>
+</g>
+<image href="/whittier-first-day-logo.png" x="880" y="900" width="140" height="140" opacity="0.85"/>
+  <g transform="translate(80,960)" fill="#ffffff" opacity="0.8">
+    <text class="body">WFD • Recovery Compass</text>
+  </g>
+</svg>
