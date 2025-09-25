@@ -8,7 +8,12 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    fs: {
+      strict: true,
+      allow: ["public"]
+    }
   },
+  publicDir: "public",
   plugins: [
     react(),
     mode === 'development' &&
