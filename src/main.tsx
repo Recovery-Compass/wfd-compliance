@@ -18,6 +18,9 @@ import LiveFeed from "./pages/LiveFeed";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import WowDashboard from "./pages/WowDashboard";
 import ImpactCards from "./pages/ImpactCards";
+import Dashboard from "./pages/Dashboard";
+import ClientList from "./pages/ClientList";
+import DataValidation from "./pages/DataValidation";
 
 console.info("[mount] Application starting");
 const root = createRoot(document.getElementById("root")!);
@@ -38,6 +41,12 @@ root.render(
         <Route path="/wow" element={<WowDashboard />} />
         <Route path="/impact-cards" element={<ImpactCards />} />
         <Route path="/engage/live-feed" element={<LiveFeed />} />
+
+        {/* Prep routes for Step 2 dashboard work (no Firebase) */}
+        <Route path="/prep/dashboard" element={<Dashboard />} />
+        <Route path="/prep/clients" element={<ClientList />} />
+        <Route path="/prep/validation" element={<DataValidation />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
