@@ -113,6 +113,17 @@ export default {
 					DEFAULT: 'hsl(var(--success))',
 					light: 'hsl(var(--success-light))'
 				},
+				// Recovery Compass Brand Colors
+				'rc-primary': '#1A365D',
+				'rc-accent': '#3182CE',
+				'rc-success': '#38A169',
+				'rc-warning': '#D69E2E',
+				'rc-error': '#E53E3E',
+				'rc-bg': '#F7FAFC',
+				// Data Quality Colors
+				'quality-red': '#E53E3E',
+				'quality-yellow': '#D69E2E',
+				'quality-green': '#38A169',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
