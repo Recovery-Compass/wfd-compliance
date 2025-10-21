@@ -1,0 +1,7 @@
+name = "wfd-compliance"
+compatibility_date = "2025-10-21"
+pages_build_output_dir = "dist"
+
+# WFD Compliance - ERD Methodology Data Collection Tool
+# Deployed at: compliance.erdmethod.org
+# Purpose: Data collection for EBP certification pathway
