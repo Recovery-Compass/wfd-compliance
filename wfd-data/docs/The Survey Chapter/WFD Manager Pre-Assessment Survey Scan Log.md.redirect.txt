@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/WFD Manager Pre-Assessment Survey Scan Log.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Note__SVS__wfd-manager-pre-assessment-survey-scan-log__[357244de].md
+SHA256: 357244dee88798b20e33ce74f53d6bce2d7ae710c67268db7ce19aef769b886b
+Size: 3160
+Instructions: Open the destination path above.

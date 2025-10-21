@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/memory_clean.sh
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Quarantine/2025-08-05__File__SVS__memory-clean__[0c73026c].sh
+SHA256: 0c73026c1df0f4d3c1147869e7b27d42ab3c01dc398e702319b6c804747c53a2
+Size: 14195
+Instructions: Open the destination path above.

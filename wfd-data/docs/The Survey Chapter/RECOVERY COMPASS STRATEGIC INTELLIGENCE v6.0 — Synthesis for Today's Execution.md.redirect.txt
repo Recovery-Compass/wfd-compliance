@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/RECOVERY COMPASS STRATEGIC INTELLIGENCE v6.0 — Synthesis for Today's Execution.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Note__SVS__recovery-compass-strategic-intelligence-v6-0-synthesis-for__[ecda74b4].md
+SHA256: ecda74b47bc02f317078953f1128cc8338511aa11164f81fb56a5ed3fc7a2acd
+Size: 10502
+Instructions: Open the destination path above.

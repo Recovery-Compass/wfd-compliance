@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/Melvin'squestionspre-meeting.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Exhibit__SVS__melvin-squestionspre-meeting__[b15cba23].pdf
+SHA256: b15cba23baf6ffa4148c4cbefcb4f66c7a188386a351367918fcd54ec2598576
+Size: 430898
+Instructions: Open the destination path above.

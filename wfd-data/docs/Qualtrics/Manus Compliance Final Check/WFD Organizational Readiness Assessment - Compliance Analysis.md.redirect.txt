@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Qualtrics/Manus Compliance Final Check/WFD Organizational Readiness Assessment - Compliance Analysis.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/06_Research/2025-08-06__Note__SVS__wfd-organizational-readiness-assessment-compliance-analysi__[dfcb9e30].md
+SHA256: dfcb9e3060b23e5b6be4f410ee3bf9937b6a9cd8ee465db04bc3043bfe57c467
+Size: 14152
+Instructions: Open the destination path above.

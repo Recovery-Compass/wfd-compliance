@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/Dr. Donna Gallup's Survey Requirements Analysis.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Note__SVS__dr-donna-gallup-s-survey-requirements-analysis__[2659e9a4].md
+SHA256: 2659e9a448a0bfb812618432a072363dfd38ac3f9dbdb7ef7b23140fd8089031
+Size: 2893
+Instructions: Open the destination path above.

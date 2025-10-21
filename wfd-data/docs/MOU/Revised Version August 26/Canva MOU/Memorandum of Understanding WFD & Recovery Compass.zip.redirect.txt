@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/MOU/Revised Version August 26/Canva MOU/Memorandum of Understanding WFD & Recovery Compass.zip
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Quarantine/2025-08-26__File__SVS__memorandum-of-understanding-wfd-recovery-compass__[063ff2dc].zip
+SHA256: 063ff2dc82f47b9ac6978c26f066b5bd3f17b56ce7935a9de73009d0b5746e6f
+Size: 5428519
+Instructions: Open the destination path above.

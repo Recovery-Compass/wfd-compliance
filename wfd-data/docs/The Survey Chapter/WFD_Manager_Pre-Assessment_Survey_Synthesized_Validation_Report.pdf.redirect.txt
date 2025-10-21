@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/WFD_Manager_Pre-Assessment_Survey_Synthesized_Validation_Report.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/03_Evidence/Exhibits/2025-08-05__Exhibit__SVS__wfd-manager-pre-assessment-survey-synthesized-validation-rep__[23a31771].pdf
+SHA256: 23a317718a2395eb2834a1fe4e771de08f80de7e66f4c19de772e8622ecb1213
+Size: 146126
+Instructions: Open the destination path above.

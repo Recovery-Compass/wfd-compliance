@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Logos/Recovery Compass Logo Summer 2025.png
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Photo__SVS__recovery-compass-logo-summer-2025__[8ba804e8].png
+SHA256: 8ba804e812479b58782672a02f02a13ba6dd24d66a34dfcdd74c1f766e2d69ac
+Size: 5039213
+Instructions: Open the destination path above.

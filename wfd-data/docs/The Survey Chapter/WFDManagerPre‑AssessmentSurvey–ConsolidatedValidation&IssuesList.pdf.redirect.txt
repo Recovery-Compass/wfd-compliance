@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/WFDManagerPre‑AssessmentSurvey–ConsolidatedValidation&IssuesList.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/03_Evidence/Exhibits/2025-08-05__Exhibit__SVS__wfdmanagerpre-assessmentsurvey-consolidatedvalidation-issues__[9a5cfca8].pdf
+SHA256: 9a5cfca89a880b5a74068c5fa497457038cd03e05b31d0ba6b2679088f44e661
+Size: 127374
+Instructions: Open the destination path above.

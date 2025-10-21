@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/MOU/Emails/August 27 Follow Up MOU only Donna_ Formalizing Our Research Partnership.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/02_Correspondence/Other/2025-08-27__Email__SVS__august-27-follow-up-mou-only-donna-formalizing-our-research__[bc487efc].pdf
+SHA256: bc487efc97398a87b79deb65bebe3e5680eba228d306bbf18ed2c07f8a17e705
+Size: 261637
+Instructions: Open the destination path above.

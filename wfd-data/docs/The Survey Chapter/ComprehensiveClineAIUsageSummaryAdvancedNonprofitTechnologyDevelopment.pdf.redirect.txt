@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/ComprehensiveClineAIUsageSummaryAdvancedNonprofitTechnologyDevelopment.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/03_Evidence/Exhibits/2025-08-05__Exhibit__Sayegh__comprehensiveclineaiusagesummaryadvancednonprofittechnologyd__[cf0a7d46].pdf
+SHA256: cf0a7d46984d2b72315fb08ef27780d0564cd6167f098113d4ab5f3cf7a53c40
+Size: 226732
+Instructions: Open the destination path above.

@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Data/Intake Data for Erick June 2025/Exit Data for Erick June 2025.xlsx
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Quarantine/2025-07-28__File__SVS__exit-data-for-erick-june-2025__[48ab587b].xlsx
+SHA256: 48ab587b58f9c39a9a216dcffe774a4764b1fff2a70bec88995aed06eb545f28
+Size: 13078
+Instructions: Open the destination path above.

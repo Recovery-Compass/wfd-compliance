@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/MOU/Revised Version August 26/Canva MOU/Memorandum of Understanding WFD & Recovery Compass/Memorandum of Understanding A.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/03_Evidence/Exhibits/2025-08-27__Exhibit__SVS__memorandum-of-understanding-a__[76089711].pdf
+SHA256: 76089711df592dc24dc61abcb849ed43976d6f969e07f8b4203995fedaa68abf
+Size: 5007122
+Instructions: Open the destination path above.

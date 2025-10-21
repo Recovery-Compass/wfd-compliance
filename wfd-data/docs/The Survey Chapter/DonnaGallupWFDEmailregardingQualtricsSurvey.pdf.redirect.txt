@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/DonnaGallupWFDEmailregardingQualtricsSurvey.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Email__SVS__donnagallupwfdemailregardingqualtricssurvey__[93a4e73c].pdf
+SHA256: 93a4e73c2b7987c7c78e71d2c8919bbe0ed48c252377746c0174899ac08b422e
+Size: 40
+Instructions: Open the destination path above.

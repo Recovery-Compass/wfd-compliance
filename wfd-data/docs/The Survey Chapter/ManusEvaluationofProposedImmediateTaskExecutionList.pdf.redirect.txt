@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/ManusEvaluationofProposedImmediateTaskExecutionList.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Court__SVS__manusevaluationofproposedimmediatetaskexecutionlist__[cc7633d9].pdf
+SHA256: cc7633d9daa28674092afe60bec67c9f599caf8e936eb83d3ce77ed898abbb77
+Size: 10331
+Instructions: Open the destination path above.

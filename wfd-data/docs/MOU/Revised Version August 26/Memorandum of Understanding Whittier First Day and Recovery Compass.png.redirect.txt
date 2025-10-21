@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/MOU/Revised Version August 26/Memorandum of Understanding Whittier First Day and Recovery Compass.png
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/03_Evidence/Screenshots/2025-08-26__Photo__SVS__memorandum-of-understanding-whittier-first-day-and-recovery__[4947c42e].png
+SHA256: 4947c42e437bcb747cb591cfcc3e41842ed91b33641bfb5bc65f0424cc069412
+Size: 1196198
+Instructions: Open the destination path above.

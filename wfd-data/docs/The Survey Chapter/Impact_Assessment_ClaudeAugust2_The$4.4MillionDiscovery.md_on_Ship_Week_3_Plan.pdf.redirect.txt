@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/Impact_Assessment_ClaudeAugust2_The$4.4MillionDiscovery.md_on_Ship_Week_3_Plan.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Exhibit__SVS__impact-assessment-claudeaugust2-the-4-4milliondiscovery-md-o__[f0365948].pdf
+SHA256: f036594825316e361c145f08635cb7e472e5f41d237a909d1fc2e94b9cb9a342
+Size: 1105781
+Instructions: Open the destination path above.

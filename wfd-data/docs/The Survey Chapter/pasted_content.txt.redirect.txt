@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/pasted_content.txt
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/08_Working/2025-08-05__Note__SVS__pasted-content__[0d823278].txt
+SHA256: 0d823278eb859302b9ced1a7648280d050b9e2d3a0b7e56b6ba2f8c439710ac1
+Size: 4304
+Instructions: Open the destination path above.

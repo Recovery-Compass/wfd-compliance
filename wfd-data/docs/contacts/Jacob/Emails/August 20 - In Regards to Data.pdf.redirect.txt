@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Jacob/Emails/August 20 - In Regards to Data.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/02_Correspondence/Other/2025-08-20__Email__SVS__august-20-in-regards-to-data__[86cbd62d].pdf
+SHA256: 86cbd62d6dfe35765c13968e25ac62d662ef3243139aab8249e663ac2c992c46
+Size: 230373
+Instructions: Open the destination path above.

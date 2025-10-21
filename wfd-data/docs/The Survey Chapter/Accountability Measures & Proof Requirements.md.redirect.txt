@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/Accountability Measures & Proof Requirements.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/08_Working/2025-08-05__Note__SVS__accountability-measures-proof-requirements__[1588e5af].md
+SHA256: 1588e5af404b80e9b72ecd72bf9d90a48833d64573dffa802ee246852d7bce17
+Size: 16162
+Instructions: Open the destination path above.

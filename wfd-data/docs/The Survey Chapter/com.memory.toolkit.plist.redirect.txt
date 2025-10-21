@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/com.memory.toolkit.plist
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Quarantine/2025-08-05__File__SVS__com-memory-toolkit__[9b92bc27].plist
+SHA256: 9b92bc277dcc0930491fd351359a436f3945c99fc981a9f2d8947924cb43d34e
+Size: 1194
+Instructions: Open the destination path above.

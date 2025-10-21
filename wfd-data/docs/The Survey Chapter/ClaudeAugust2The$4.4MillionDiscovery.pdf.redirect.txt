@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/ClaudeAugust2The$4.4MillionDiscovery.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Exhibit__SVS__claudeaugust2the-4-4milliondiscovery__[57ce8154].pdf
+SHA256: 57ce8154e39c35e520b9bade868f41f06a5cd6f563d31fc4c5e6e3a833bc9d0e
+Size: 17790
+Instructions: Open the destination path above.

@@ -1,0 +1,107 @@
+To: randall@whittierfirstday.org, jacob@whittierfirstday.org
+Cc: donna@whittierfirstday.org
+Subject: WFD × RC — October Master Execution Complete + 5 Deliverables Attached [Action Required]
+
+Hi Randall and Jacob,
+
+Per the October Master Execution Prompt and our 10/2 meeting, I've completed the data standardization and sync verification workflow. All deliverables are attached.
+
+---
+
+📎 ATTACHMENTS (5 files):
+
+1. Housing_Tracker_2025-10_Cleaned.csv — Transformed April data into MOU structure
+2. Housing_Tracker_2025-10_MOU_Template.xlsx — Blank template for October (and all future months)
+3. Program_Data_Sheet_Intake_Spec.md — One-page guide for field names, update cadence, CSV export
+4. Sync_Reconciliation_Checklist.md — Step-by-step folder access verification
+5. Phase_2_Dashboard_Plan.md — Blueprint for Outcomes + Activity dashboards
+6. Completion_Report_Oct_2025.md — Full analysis, findings, and next steps
+
+All file hashes available for integrity verification (see file_hashes.txt if needed).
+
+---
+
+🔍 KEY FINDINGS
+
+Housing Tracker (First_Day_UHA_Housing_Match.xlsx):
+- ✅ 27 client records processed from April sheet
+- ❌ CRITICAL GAP: IntakeDate missing (cannot compute Length of Stay without this)
+- ⚠️ 96% of Exit Dates are null (26/27 blank)
+- ⚠️ 37% missing HMIS IDs (10/27 blank)
+- ⚠️ "UHA Date" semantics unclear (application sent vs. actual move-in?)
+
+Program Data Sheet (Master_Data_Spreadsheet.xlsx):
+- ✅ Aggregated metrics suitable for Activity Dashboard
+- ⚠️ Field names inconsistent (casing/punctuation varies)
+- ✅ No schema violations for its intended purpose (program-level summaries)
+
+MOU Compliance Status: 🟡 60% — Architecture complete; execution pending WFD data population
+
+---
+
+🚨 IMMEDIATE ACTION REQUIRED (This Week)
+
+1. FOLDER ACCESS (Randall)
+   - Share the canonical OneDrive folder path (the direct-link that worked in our 10/2 meeting)
+   - I'll verify sync parity and confirm "Step 1 Complete"
+
+2. OCTOBER HOUSING TRACKER (Jacob)
+   - Populate the MOU template (Housing_Tracker_2025-10_MOU_Template.xlsx) with October data
+   - Include ALL MOU-required fields: ClientID, ProgramName, IntakeDate, ExitDate, ExitDestination, HousingPlacementDate, LoS
+   - Backfill IntakeDate for existing clients (critical for LoS calculation)
+
+3. CLARIFY UHA DATE DEFINITION (Both)
+   - Does "UHA Date" = actual move-in date, or application submission date?
+   - This affects how we map HousingPlacementDate for MOU compliance
+
+Once I receive:
+- Folder access confirmation
+- October Housing Tracker with complete MOU fields
+- UHA Date clarification
+
+...I'll begin Phase 2 (Outcomes Dashboard) immediately and target a live preview for the Oct 14 management meeting.
+
+---
+
+📊 PHASE 2 PREVIEW (Post-Step 1)
+
+Outcomes Dashboard:
+- Housing placement rate (% with HousingPlacementDate)
+- Average Length of Stay by exit destination
+- Exit destinations pie chart (Permanent Housing, Program Transfer, etc.)
+- Time to housing histogram
+- Active vs. exited clients trend
+
+Activity Dashboard:
+- Service delivery cards (clients served, meals, services, transportation)
+- Services by site (grouped bar chart)
+- Demographics (age, gender, race/ethnicity breakdowns)
+- Month-over-month trends
+- Site comparison table
+
+Tech stack: Lovable.dev (React + Recharts) with WFD brand palette
+Timeline: 7-11 days from Step 1 completion
+
+---
+
+🛡️ MOU CHECK
+
+✅ Roles: WFD owns source data; RC architects & processes
+✅ IP: ERD model & RC platform = RC; source data = WFD; case study co-owned
+✅ Term: Sept 1, 2025 start; six-month term active
+✅ Claims posture: Descriptive KPIs only (no historical success claims until validated)
+
+---
+
+NEXT STEPS (Priority Order):
+
+TODAY: Review attachments and confirm receipt
+THIS WEEK: Provide folder path + October Housing Tracker + UHA Date clarification
+NEXT WEEK: Phase 2 dashboard build begins
+OCT 14: Management meeting with live dashboard preview
+
+Appreciate you both. We've got the architecture locked—once Step 1 is confirmed, the dashboards will move fast.
+
+Eric Jones
+Founder/CEO, Recovery Compass
+626-348-3019 • eric@recovery-compass.org

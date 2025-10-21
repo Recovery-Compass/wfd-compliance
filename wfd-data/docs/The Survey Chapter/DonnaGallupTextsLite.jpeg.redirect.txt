@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/DonnaGallupTextsLite.jpeg
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Photo__SVS__donnagalluptextslite__[c3c51765].jpeg
+SHA256: c3c51765c5f640061328609d87ed86e6f15e69a0b67c17445c7143a861d75146
+Size: 134558
+Instructions: Open the destination path above.

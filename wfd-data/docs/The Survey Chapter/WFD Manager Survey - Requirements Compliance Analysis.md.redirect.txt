@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/WFD Manager Survey - Requirements Compliance Analysis.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Note__SVS__wfd-manager-survey-requirements-compliance-analysis__[a575f061].md
+SHA256: a575f06114f907fa9022334f813050276f039d1e1f2beafd0bea9676aad64166
+Size: 6692
+Instructions: Open the destination path above.

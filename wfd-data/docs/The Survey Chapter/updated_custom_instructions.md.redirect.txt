@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/updated_custom_instructions.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/08_Working/2025-08-05__Note__SVS__updated-custom-instructions__[54faf100].md
+SHA256: 54faf1004d816d1501c85b30dec8c6bf1e8f7642dafe33095be6b5ff78d09e7c
+Size: 6767
+Instructions: Open the destination path above.

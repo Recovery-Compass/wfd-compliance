@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/daily_cleanup.sh
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Quarantine/2025-08-05__File__SVS__daily-cleanup__[2e9b6c51].sh
+SHA256: 2e9b6c515620c23f17efb2bdce6dd6784504965fda9b10c0a1a646112da43674
+Size: 15689
+Instructions: Open the destination path above.

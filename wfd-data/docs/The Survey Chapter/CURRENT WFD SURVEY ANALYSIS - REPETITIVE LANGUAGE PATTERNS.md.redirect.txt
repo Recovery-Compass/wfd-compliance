@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/CURRENT WFD SURVEY ANALYSIS - REPETITIVE LANGUAGE PATTERNS.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/06_Research/2025-08-05__Note__SVS__current-wfd-survey-analysis-repetitive-language-patterns__[c9cc5f84].md
+SHA256: c9cc5f8495dd37a52a827ca04d54864da5c88ceff7cdfec13bc76403bf6a26e4
+Size: 1609
+Instructions: Open the destination path above.

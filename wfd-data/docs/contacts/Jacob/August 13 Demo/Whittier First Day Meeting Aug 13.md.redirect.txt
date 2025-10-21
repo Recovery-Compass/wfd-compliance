@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Jacob/August 13 Demo/Whittier First Day Meeting Aug 13.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-20__Note__SVS__whittier-first-day-meeting-aug-13__[1a3bdf5b].md
+SHA256: 1a3bdf5b286a10970c079407480825be087bd121c6df6a034257a5e94f178c67
+Size: 71058
+Instructions: Open the destination path above.

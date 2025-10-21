@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/Ironclad Verification & Accountability Framework.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/08_Working/2025-08-05__Note__SVS__ironclad-verification-accountability-framework__[8066747c].md
+SHA256: 8066747c6ca6b21bff1d01fc1e504c8481d0faa6e399a46ce91ed5a7d59f8b93
+Size: 51962
+Instructions: Open the destination path above.

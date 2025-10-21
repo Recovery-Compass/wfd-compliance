@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/gallup_requirements_check.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/08_Working/2025-08-05__Note__SVS__gallup-requirements-check__[6e59d3bd].md
+SHA256: 6e59d3bdd8fb29afbec6ca366e9a9a53b7639b84a0acb58c8113d669c45616b5
+Size: 1819
+Instructions: Open the destination path above.

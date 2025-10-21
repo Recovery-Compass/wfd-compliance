@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Logos/Whittier First Day Logo Summer 2025 .jpg
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/03_Evidence/Screenshots/2025-08-13__Photo__SVS__whittier-first-day-logo-summer-2025__[0d21ee81].jpg
+SHA256: 0d21ee81b8ab694242b3a793d3e0fc4a9279388420dfb84d6021fe7e8613b649
+Size: 93296
+Instructions: Open the destination path above.

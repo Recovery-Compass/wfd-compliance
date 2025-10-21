@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Data/September/Outcomes.xlsx
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Quarantine/2025-09-08__File__SVS__outcomes__[e18ee180].xlsx
+SHA256: e18ee180a1777e3c501bb6e5989ee63eba4eec08c4fb0486d6ba339a84208d28
+Size: 8956
+Instructions: Open the destination path above.

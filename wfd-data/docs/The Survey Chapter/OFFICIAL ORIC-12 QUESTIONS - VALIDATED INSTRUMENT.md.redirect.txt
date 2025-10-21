@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/OFFICIAL ORIC-12 QUESTIONS - VALIDATED INSTRUMENT.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/08_Working/2025-08-05__Note__SVS__official-oric-12-questions-validated-instrument__[fc421ae6].md
+SHA256: fc421ae61058b33592335c17b337f8758973513b54158b545c73a26fc862829c
+Size: 1890
+Instructions: Open the destination path above.

@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/CleanShot2025-08-05at02.21.09@2x.png
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/03_Evidence/Screenshots/2025-08-05__Photo__SVS__cleanshot2025-08-05at02-21-09-2x__[482317b9].png
+SHA256: 482317b9e6e5c1824d8981c35fcb11463c4725765bc7994f45ca461a7330f212
+Size: 142282
+Instructions: Open the destination path above.

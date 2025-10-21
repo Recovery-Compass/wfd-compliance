@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/todo.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Note__SVS__todo__[005b6b8b].md
+SHA256: 005b6b8b49e7cab6284e0e10c350f2e3743154762871b7910581edbcd6c512db
+Size: 1393
+Instructions: Open the destination path above.

@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/oric_research_findings.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/06_Research/2025-08-05__Note__SVS__oric-research-findings__[4bf30288].md
+SHA256: 4bf30288e44b9ff3e7bef2f69bd4a2c4953407c0622c0cc2a0cae1e3c2a30471
+Size: 3076
+Instructions: Open the destination path above.

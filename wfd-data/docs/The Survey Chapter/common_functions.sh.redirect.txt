@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/common_functions.sh
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Quarantine/2025-08-05__File__SVS__common-functions__[092ccad0].sh
+SHA256: 092ccad02388bdb367032447a515517153c3014a4d6c034bc11629b4504dce93
+Size: 11788
+Instructions: Open the destination path above.

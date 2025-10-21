@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Jacob/Emails/August 22 One Drive part 1- Jacob Lozoya shared the folder _1. WFD Services Report_ with you.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/02_Correspondence/Other/2025-08-22__Email__SVS__august-22-one-drive-part-1-jacob-lozoya-shared-the-folder__[9fd43e56].pdf
+SHA256: 9fd43e56c96b685d2fb5f9fecf42d5bb9220540e260233ce3a0534acb0de9aee
+Size: 203600
+Instructions: Open the destination path above.

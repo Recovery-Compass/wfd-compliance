@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/Strategic Briefing Email for Dr. Donna Gallup.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/06_Research/2025-08-05__Note__SVS__strategic-briefing-email-for-dr-donna-gallup__[7ec81715].md
+SHA256: 7ec817159123bdcdf98b7d6250c8b1e972b7b0f974975e68e711fec39b0ef1d3
+Size: 7228
+Instructions: Open the destination path above.

@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/Detailed Testing Protocols & Verification Checklists.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/06_Research/2025-08-05__Note__SVS__detailed-testing-protocols-verification-checklists__[e9958384].md
+SHA256: e9958384ec7d22f14b6536f37a85d28d6965faaeaef542a0a5fd1ddcedbcf655
+Size: 18095
+Instructions: Open the destination path above.

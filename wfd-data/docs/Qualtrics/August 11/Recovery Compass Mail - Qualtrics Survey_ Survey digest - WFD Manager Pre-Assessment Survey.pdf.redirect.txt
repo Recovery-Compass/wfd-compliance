@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Qualtrics/August 11/Recovery Compass Mail - Qualtrics Survey_ Survey digest - WFD Manager Pre-Assessment Survey.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/02_Correspondence/Other/2025-08-11__Email__SVS__recovery-compass-mail-qualtrics-survey-survey-digest-wf__[8d8a04b2].pdf
+SHA256: 8d8a04b28ec978cd7c12d5572bd7c098bc787a067c8d2db16bdeb79221986f6e
+Size: 264281
+Instructions: Open the destination path above.

@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/August5TeamsInvitefromMelvin.pdf
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Duplicates/2025-08-05__Exhibit__SVS__august5teamsinvitefrommelvin__[e58ac230].pdf
+SHA256: e58ac2307c5b86ee5344d78b37581ae4a00adbb420bc72f0dcf6a26f5e44ac50
+Size: 191810
+Instructions: Open the destination path above.

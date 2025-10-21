@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/The Survey Chapter/BOARD OF DIRECTORS BRIEFING DOCUMENT.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/06_Research/2025-08-05__Note__SVS__board-of-directors-briefing-document__[4f8989f1].md
+SHA256: 4f8989f1dfafea65934c4b93da1803beb393991dfc0cee3ad639ea1e764b28b5
+Size: 18176
+Instructions: Open the destination path above.

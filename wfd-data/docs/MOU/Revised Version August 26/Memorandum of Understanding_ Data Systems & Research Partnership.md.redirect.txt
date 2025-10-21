@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/MOU/Revised Version August 26/Memorandum of Understanding_ Data Systems & Research Partnership.md
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/06_Research/2025-08-26__Note__SVS__memorandum-of-understanding-data-systems-research-partner__[72feb591].md
+SHA256: 72feb5913480854bfc754eff52b8188fffd4a34918be070230ee0f8ff9d51046
+Size: 3865
+Instructions: Open the destination path above.

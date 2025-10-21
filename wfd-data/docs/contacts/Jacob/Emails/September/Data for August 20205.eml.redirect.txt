@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Jacob/Emails/September/Data for August 20205.eml
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/02_Correspondence/Other/2025-09-08__Email__SVS__data-for-august-20205__[da95184b].eml
+SHA256: da95184bf58fabd0006150e619239d37aa6f7882678562ea01cded9abab6d0c3
+Size: 150927
+Instructions: Open the destination path above.

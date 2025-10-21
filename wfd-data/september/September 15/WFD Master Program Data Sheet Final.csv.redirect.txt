@@ -1,0 +1,7 @@
+Redirector Stub
+Created: 2025-09-21T11:20:22Z
+From: /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/WFD/Data/September/September 15/WFD Master Program Data Sheet Final.csv
+To:   /Users/ericjones/Library/Mobile Documents/com~apple~CloudDocs/Case Library/Sayegh_vs_Sayegh/99_Archive/Quarantine/2025-09-20__File__SVS__wfd-master-program-data-sheet-final__[ff81a9a5].csv
+SHA256: ff81a9a5ab0f124f2d42a8a1ee2e081416ce100d2711efea5ba313ba00e9bbdd
+Size: 3325
+Instructions: Open the destination path above.
