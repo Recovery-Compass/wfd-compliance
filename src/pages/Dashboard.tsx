@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useComplianceStore } from '@/stores/complianceStore';
 import { FileUploadInterface } from '@/components/compliance/FileUploadInterface';
 import { OverviewMetrics } from '@/components/compliance/OverviewMetrics';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BrandShell } from '@/components/BrandShell';
+import { Sparkles, PartyPopper, Coffee, Smile, Heart } from 'lucide-react';
 
 export default function Dashboard() {
   const clientRecords = useComplianceStore(state => state.clientRecords);
@@ -34,6 +36,40 @@ export default function Dashboard() {
         </header>
         
         <main className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+          {/* Fun Zone Call-to-Action - Always Visible */}
+          <Link to="/fun">
+            <Card className="border-2 border-purple-500 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 transition-all hover:shadow-lg cursor-pointer">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-8 h-8 text-purple-600 animate-pulse" />
+                      <div>
+                        <h3 className="text-2xl font-bold text-purple-900 flex items-center gap-2">
+                          Fun Zone
+                          <span className="text-3xl">✨</span>
+                        </h3>
+                        <p className="text-purple-700 mt-1">
+                          Team celebrations, coffee counter, daily memes & acts of kindness!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex items-center gap-3 text-3xl">
+                    <PartyPopper className="w-10 h-10 text-pink-500" />
+                    <Coffee className="w-10 h-10 text-amber-600" />
+                    <Smile className="w-10 h-10 text-yellow-500" />
+                    <Heart className="w-10 h-10 text-red-500" />
+                  </div>
+                </div>
+                <div className="mt-4 flex items-center gap-2 text-purple-600 font-semibold">
+                  <span>Click here to explore</span>
+                  <span className="text-xl">→</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
           {!hasData ? (
             <Card>
               <CardHeader>
