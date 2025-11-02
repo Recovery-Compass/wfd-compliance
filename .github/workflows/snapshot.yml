@@ -1,0 +1,99 @@
+name: Dashboard Snapshot Generator
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'docs/dashboards/**/*.html'
+
+jobs:
+  generate-snapshots:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: dashboards-publish-khpoa
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install Playwright
+        run: |
+          npm install -g playwright
+          npx playwright install --with-deps chromium
+          
+      - name: Generate PNG and PDF snapshots
+        run: |
+          cat > capture.js << 'EOF'
+          const { chromium } = require('playwright');
+          const path = require('path');
+          const fs = require('fs');
+
+          (async () => {
+            const browser = await chromium.launch();
+            const page = await browser.newPage({
+              viewport: { width: 1920, height: 1080 }
+            });
+            
+            // Load the live GitHub Pages URL
+            const url = 'https://recovery-compass.github.io/wfd-compliance/dashboards/khpoa-aps-nov02/dashboard.html';
+            console.log(`Loading ${url}...`);
+            
+            try {
+              await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+              
+              // Wait a bit for any dynamic content
+              await page.waitForTimeout(2000);
+              
+              // Get full page height
+              const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
+              await page.setViewportSize({ width: 1920, height: bodyHeight });
+              
+              // Generate PNG
+              const pngPath = 'docs/dashboards/khpoa-aps-nov02/dashboard.png';
+              await page.screenshot({ 
+                path: pngPath, 
+                fullPage: true 
+              });
+              console.log(`✅ PNG saved: ${pngPath}`);
+              
+              // Generate PDF
+              const pdfPath = 'docs/dashboards/khpoa-aps-nov02/dashboard.pdf';
+              await page.pdf({ 
+                path: pdfPath,
+                format: 'Letter',
+                printBackground: true,
+                margin: { top: '0.5in', right: '0.5in', bottom: '0.5in', left: '0.5in' }
+              });
+              console.log(`✅ PDF saved: ${pdfPath}`);
+              
+            } catch (error) {
+              console.error(`❌ Error: ${error.message}`);
+              process.exit(1);
+            }
+            
+            await browser.close();
+          })();
+          EOF
+          
+          npx playwright install chromium
+          node capture.js
+          
+      - name: Commit snapshots
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add docs/dashboards/khpoa-aps-nov02/dashboard.png docs/dashboards/khpoa-aps-nov02/dashboard.pdf
+          git diff --staged --quiet || git commit -m "Add dashboard PNG and PDF snapshots"
+          git push origin dashboards-publish-khpoa
+          
+      - name: Summary
+        run: |
+          echo "## 📸 Snapshots Generated" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ PNG: https://recovery-compass.github.io/wfd-compliance/dashboards/khpoa-aps-nov02/dashboard.png" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ PDF: https://recovery-compass.github.io/wfd-compliance/dashboards/khpoa-aps-nov02/dashboard.pdf" >> $GITHUB_STEP_SUMMARY
