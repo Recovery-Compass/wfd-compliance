@@ -26,10 +26,12 @@ jobs:
           
       - name: Generate PNG and PDF snapshots
         run: |
-          cat > capture.js << 'EOF'
-          const { chromium } = require('playwright');
-          const path = require('path');
-          const fs = require('fs');
+          cat > capture.mjs << 'EOF'
+          import { chromium } from 'playwright';
+          import { fileURLToPath } from 'url';
+          import { dirname, join } from 'path';
+
+          const __dirname = dirname(fileURLToPath(import.meta.url));
 
           (async () => {
             const browser = await chromium.launch();
@@ -37,19 +39,19 @@ jobs:
               viewport: { width: 1920, height: 1080 }
             });
             
-            // Load the live GitHub Pages URL
-            const url = 'https://recovery-compass.github.io/wfd-compliance/dashboards/khpoa-aps-nov02/dashboard.html';
-            console.log(`Loading ${url}...`);
+            // Load local file
+            const filePath = join(__dirname, 'docs/dashboards/khpoa-aps-nov02/dashboard.html');
+            console.log(`Loading file://${filePath}...`);
             
             try {
-              await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+              await page.goto(`file://${filePath}`, { waitUntil: 'networkidle', timeout: 30000 });
               
-              // Wait a bit for any dynamic content
+              // Wait for rendering
               await page.waitForTimeout(2000);
               
               // Get full page height
               const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
-              await page.setViewportSize({ width: 1920, height: bodyHeight });
+              await page.setViewportSize({ width: 1920, height: Math.max(bodyHeight, 1080) });
               
               // Generate PNG
               const pngPath = 'docs/dashboards/khpoa-aps-nov02/dashboard.png';
@@ -79,7 +81,7 @@ jobs:
           EOF
           
           npx playwright install chromium
-          node capture.js
+          node capture.mjs
           
       - name: Commit snapshots
         run: |
