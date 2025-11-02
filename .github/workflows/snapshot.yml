@@ -21,7 +21,8 @@ jobs:
           
       - name: Install Playwright
         run: |
-          npm install -g playwright
+          npm init -y
+          npm install playwright
           npx playwright install --with-deps chromium
           
       - name: Generate PNG and PDF snapshots
