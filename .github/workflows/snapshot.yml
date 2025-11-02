@@ -39,12 +39,12 @@ jobs:
               viewport: { width: 1920, height: 1080 }
             });
             
-            // Load local file
-            const filePath = join(__dirname, 'docs/dashboards/khpoa-aps-nov02/dashboard.html');
-            console.log(`Loading file://${filePath}...`);
+            // Load from live GitHub Pages URL
+            const liveUrl = 'https://recovery-compass.github.io/wfd-compliance/dashboards/khpoa-aps-nov02/dashboard.html';
+            console.log(`Loading ${liveUrl}...`);
             
             try {
-              await page.goto(`file://${filePath}`, { waitUntil: 'networkidle', timeout: 30000 });
+              await page.goto(liveUrl, { waitUntil: 'networkidle', timeout: 30000 });
               
               // Wait for rendering
               await page.waitForTimeout(2000);
