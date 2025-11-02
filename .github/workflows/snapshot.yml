@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: dashboards-publish-khpoa
           
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -89,7 +87,7 @@ jobs:
           git config user.email "actions@github.com"
           git add docs/dashboards/khpoa-aps-nov02/dashboard.png docs/dashboards/khpoa-aps-nov02/dashboard.pdf
           git diff --staged --quiet || git commit -m "Add dashboard PNG and PDF snapshots"
-          git push origin dashboards-publish-khpoa
+          git push origin main
           
       - name: Summary
         run: |
