@@ -6,6 +6,9 @@ on:
     paths:
       - 'docs/dashboards/**/*.html'
 
+permissions:
+  contents: write
+
 jobs:
   generate-snapshots:
     runs-on: ubuntu-latest
